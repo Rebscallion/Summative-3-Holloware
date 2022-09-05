@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 // bcrypt for encrypting data (passwrords)
 const bcrypt = require('bcryptjs');
+
+//grab our config file  
 const config = require("./config.json");
 
 // Schemas
@@ -17,7 +19,7 @@ const Users = require("./models/users.js");
 
 // -----Start Dependencies-----
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
 // -----Start Server-----
@@ -36,3 +38,15 @@ mongoose
     .catch((err) => {
         console.log(`DB connection error ${err.message}`);
     });
+
+
+//------------------------
+      //GET METHOD
+//------------------------
+app.get('/allProducts',(req, res) => {
+    Products.find()
+    .then(result => {
+        //send the result of the search to the fontend
+        res.send(result)
+    })
+});
