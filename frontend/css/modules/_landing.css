@@ -93,6 +93,7 @@
     right: 1%;
   }
 }
+
 @media screen and (min-width: 425px) {
   h5 {
     color: #591727;
@@ -109,6 +110,7 @@
     right: 1%;
   }
 }
+
 @media screen and (min-width: 768px) {
   .landing-h1 {
     color: #591727;
@@ -175,6 +177,7 @@
     flex-wrap: wrap;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .landing-h1 {
     color: #591727;
@@ -237,6 +240,7 @@
     flex-wrap: wrap;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .landing-h1 {
     color: #591727;
@@ -291,21 +295,4 @@
     display: flex;
     flex-wrap: wrap;
   }
-}
-* {
-  font-family: --roc;
-  font-weight: 400;
-  list-style: none;
-}
-
-body {
-  background-color: #FEFBDC;
-}
-
-#header {
-  display: flex;
-}
-#header #profile img {
-  height: 96px;
-  border-radius: 100%;
 }

@@ -1,5 +1,5 @@
 @import 'modules/variables';
-@import 'modules/navigation';
+@import 'modules/landing';
 @import 'modules/modals';
 @import 'modules/footer';
 
@@ -7,8 +7,6 @@
     font-family: --roc;
     font-weight: 400;
     list-style: none;
-    margin: 0% !important;
-    padding: 0% !important;
 }
 
 body {
