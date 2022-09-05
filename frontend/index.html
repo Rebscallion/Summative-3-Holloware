@@ -12,16 +12,38 @@
     <link rel="stylesheet" href="https://use.typekit.net/byy0vzi.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/frontend/css/style.css">
-    <title>Hollowware</title>
+    <title>Holloware</title>
 </head>
 
 <body>
     <nav>
-        <h1 id="company-name">Hollowware</h1>
+        <ul>
+            <li id="shop">Shop</li>
+            <li id="about">About</li>
+            <li id="contact">Contact</li>
+        </ul>
     </nav>
 
+    <div id="header">
+        <ul>
+            <li class="guest">Register</li>
+            <li class="guest">Login</li>
+            <li class="member" id="add">
+                <p>Add New Product</p><i class="bi bi-plus-circle"></i>
+            </li>
+            <li class="member" id="likes"><i class="bi bi-bag-heart"></i></li>
+            <li class="member" id="profile"><img src="img/profile.jpg" alt="user profile image"></li>
+        </ul>
+    </div>
 
+    <div id="grid-container"></div>
 
+    <div class="modal-container" id="add-product"></div>
+    <div class="modal-container" id="edit-product"></div>
+
+    <footer>
+
+    </footer>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>

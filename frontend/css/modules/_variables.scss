@@ -1,2 +1,33 @@
-// fonts
-$mainFont: 'font-family: ' roc-grotesk', sans-serif';
+//-----fonts-----
+$roc: 'font-family: ' roc-grotesk', sans-serif';
+$lust: 'font-family: ' lust-sans', sans-serif';
+
+//-----colours-----
+$orange: #E78550;
+$burgundy: #591727;
+$offwhite: #FEFBDC;
+$yellow: #FDE7AE;
+$pink: #F4C9FF;
+$mint: #BDF6CB;
+$tomato: #FF6347;
+
+//-----mixins-----
+@mixin modals {
+    .modal-container {
+        background-color: --yellow;
+
+        h2 {
+            font-family: roc-grotesk-wide, sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        label {
+            font-family: --roc;
+        }
+
+        input {
+            border: 2px solid --burgundy;
+        }
+    }
+}
