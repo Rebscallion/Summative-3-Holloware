@@ -1,0 +1,123 @@
+#add-product-form {
+    display: none;
+}
+
+#add-product-form.active {
+    display: block;
+    position: absolute;
+    background-color: $yellow;
+    z-index: 50;
+    width: 100vw;
+    height: 100%;
+    border: 2px solid $burgundy;
+    text-align: center;
+    font-family: $roc;
+    font-weight: 500;
+    color: $burgundy;
+    font-size: 20px;
+
+    #close-add-bttn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 35px;
+    }
+
+    h2 {
+        font-family: roc-grotesk-wide, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 30px;
+        width: 173px;
+        margin: auto;
+        margin-top: 60px;
+        margin-bottom: 63px;
+    }
+
+    input {
+        width: 340px;
+        height: 60px;
+        margin: 0 9px;
+        border: 1px solid $burgundy;
+        border-radius: 0;
+    }
+
+    button {
+        background-color: $pink;
+        border: 1px solid $burgundy;
+        font-weight: 700;
+        font-size: 24px;
+        color: $burgundy;
+        padding: 9px 35px;
+    }
+}
+
+// TABLET/IPAD -----------------------------------------------------------------------------------
+@media screen and (min-width: 834px) {
+    .mb-3 {
+        margin-bottom: 2rem !important;
+    }
+
+    #add-product-form.active {
+        font-size: 28px;
+
+        #close-add-bttn {
+            top: 5px;
+            right: 15px;
+            font-size: 65px;
+        }
+
+        h2 {
+            font-size: 40px;
+            width: 230px;
+            margin-top: 125px;
+        }
+
+        input {
+            margin: auto;
+        }
+
+        button {
+            margin-top: 15px;
+        }
+    }
+}
+
+// LAPTOP-----------------------------------------------------------------------------------
+@media screen and (min-width: 1024px) {
+    .mb-3 {
+        margin-bottom: 1rem !important;
+    }
+
+    #add-product-form.active {
+        font-size: 28px;
+        height: 928px;
+        width: 464px;
+        margin: 5vh 33vw;
+
+        #close-add-bttn {
+            top: 5px;
+            right: 15px;
+            font-size: 65px;
+        }
+
+        h2 {
+            margin-top: 70px;
+        }
+
+        input {
+            margin: auto;
+        }
+
+        button {
+            margin-top: 15px;
+        }
+    }
+}
+
+// Desktop-----------------------------------------------------------------------------------
+@media screen and (min-width: 1920px) {
+    #add-product-form.active {
+        margin: 7vh 38vw;
+    }
+}

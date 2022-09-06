@@ -19,7 +19,7 @@ const Users = require("./models/users.js");
 
 // -----Start Dependencies-----
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // -----Start Server-----
@@ -39,11 +39,33 @@ mongoose
         console.log(`DB connection error ${err.message}`);
     });
 
+// ====================
+//       ADD Method
+// ====================
+
+app.post(`/addProduct`, (req, res) => {
+    const newProduct = new Products({
+        _id: new mongoose.Types.ObjectId(),
+        image_url: req.body.image_url,
+        name: req.body.name,
+        price: req.body.price,
+        description: req.body.description
+    });
+    newProduct
+        .save()
+        .then((result) => {
+            console.log(`Added a new product successfully!`);
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(`Error: ${err.message}`);
+        });
+});
 
 //------------------------
-      //GET METHOD
+//GET METHOD
 //------------------------
-app.get('/allProducts',(req, res) => {
+app.get('/allProducts', (req, res) => {
     Products.find()
     .then(result => {
         //send the result of the search to the fontend
@@ -95,4 +117,8 @@ app.post('/loginUser', (req, res)=>{
             res.send('user not found'); 
         }
     })
+        .then(result => {
+            //send the result of the search to the fontend
+            res.send(result)
+        })
 });
