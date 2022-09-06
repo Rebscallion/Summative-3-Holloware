@@ -1,11 +1,4 @@
-$purple: #F4C9FF;
-$burgundy: #591727;
-$orange: #E78550;
-$yellow: #FDE7AE;
-$off-white: #FEFBDC;
-
-// Text ---------------------------------
-
+//-----Text Styling-----
 .landing-h1 {
     color: $burgundy;
     font-size: 60px;
@@ -19,10 +12,12 @@ $off-white: #FEFBDC;
 .landing-h5 {
     color: $burgundy;
     font-size: 20px;
-    margin: 20px 0 0 12%;
+    margin: 20px 0 0 20px;
+    overflow: hidden;
 }
 
-.landing-logo {
+#logo {
+    display: none;
     position: absolute;
     top: 2%;
     left: 3%;
@@ -30,339 +25,190 @@ $off-white: #FEFBDC;
     height: auto;
 }
 
-// Landing Page Divs --------------------
+nav {
+    width: 100%;
+    height: 81px;
+    background-color: $pink;
+    border-top: 1px solid $burgundy;
+    border-bottom: 1px solid $burgundy;
+    font-family: roc-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
 
-.landing-titles {
-    width: 90%;
-    height: 20vh;
-    position: absolute;
-    top: 38vh;
-    left: 5%;
-    text-align: center;
+    ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        line-height: 79px;
+
+        li {
+            color: #591727;
+            font-size: 20px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+    }
 }
 
+#header {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    height: 10vh;
+    font-family: roc-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    ul {
+        display: flex;
+
+        // .member {
+        //     display: none;
+        // }
+    }
+}
+
+// -----Landing Page Divs-----
 .landing-container {
     width: 100%;
-    height: 100vh;
+    height: 719px;
     display: flex;
     flex-wrap: wrap;
-}
 
-.landing-left {
-    display: none;
-}
-
-.landing-right {
-    width: 100%;
-    height: 90vh;
-    background-image: url(../img/right.png);
-    background-size: cover;
-    background-position: center;
-}
-
-.landing-login-nav {
-    width: 60%;
-    height: 10vh;
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 3vh;
-    right: 5%;
-}
-
-.landing-bottom-nav {
-    width: 100%;
-    height: 10vh;
-    background-color: $purple;
-    border-top: 2px solid $burgundy;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-// MOBILE MEDIUM -----------------------------------------------------------------------------------
-
-@media screen and (min-width: 375px) {
-
-    .landing-h1 {
-        color: $burgundy;
-        font-size: 64px;
-    }
-
-    .landing-h2 {
-        color: $burgundy;
-        font-size: 24px;
-    }
-
-    .landing-h5 {
-        color: $burgundy;
-        font-size: 20px;
-        margin: 20px 0 0 14%;
-    }
-
-    .landing-login-nav {
-        width: 60%;
-        height: 10vh;
-        display: flex;
-        flex-wrap: wrap;
+    .landing-titles {
+        width: 90%;
         position: absolute;
-        top: 3vh;
-        right: 1%;
-    }
-}
-
-// MOBILE LARGE -----------------------------------------------------------------------------------
-
-@media screen and (min-width: 425px) {
-
-    h5 {
-        color: $burgundy;
-        font-size: 24px;
-        margin: 20px 0 0 13%;
+        top: 38vh;
+        left: 5%;
+        text-align: center;
+        font-family: lust-sans, sans-serif;
+        font-weight: 500;
+        font-style: normal;
     }
 
-    .landing-login-nav {
-        width: 60%;
-        height: 10vh;
-        display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        top: 2vh;
-        right: 1%;
+    .landing-left {
+        display: none;
+    }
+
+    .landing-right {
+        width: 100%;
+        background-image: url(../img/right.png);
+        background-size: cover;
+        background-position: center;
     }
 }
 
 
 // TABLET/IPAD -----------------------------------------------------------------------------------
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 834px) {
 
-    // Text ---------------------------------
-
+    //-----Text Styling-----
     .landing-h1 {
-        color: $burgundy;
         font-size: 124px;
     }
 
     .landing-h2 {
-        color: $burgundy;
         font-size: 40px;
     }
 
     .landing-h5 {
-        color: $burgundy;
         font-size: 30px;
-        margin: 30px 0 0 18%;
+        margin: 30px 0 0 30px;
     }
 
-    .landing-logo {
+    nav ul li {
+        font-size: 28px;
+        margin: 0 40px;
+    }
+
+    #logo {
+        display: block;
         position: absolute;
         top: 2%;
         left: 5%;
-        width: 14%;
+        width: 10%;
         height: auto;
     }
 
-    // Landing Page Divs --------------------
-
-    .landing-titles {
-        width: 90%;
-        height: 20vh;
-        position: absolute;
-        top: 38vh;
-        left: 5%;
-        text-align: center;
-    }
-
+    // -----Landing Page Divs-----
     .landing-container {
         width: 100%;
-        height: 100vh;
+        height: 1113px;
         display: flex;
         flex-wrap: wrap;
-    }
 
-    .landing-left {
-        display: block;
-        width: 100%;
-        height: 45vh;
-        background-image: url(../img/left.png);
-        background-size: cover;
-        background-position: 60% 100%;
-    }
-
-    .landing-right {
-        width: 100%;
-        height: 45vh;
-        background-position: 80% 10%;
-    }
-
-    .landing-login-nav {
-        width: 40%;
-        height: 10vh;
-        display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        top: 2vh;
-        right: 5%;
-    }
-
-    .landing-bottom-nav {
-        width: 100%;
-        height: 10vh;
-        background-color: $purple;
-        border-top: 2px solid $burgundy;
-        display: flex;
-        flex-wrap: wrap;
+        .landing-titles {
+            width: 90%;
+            height: 20vh;
+            position: absolute;
+            top: 38vh;
+            left: 5%;
+            text-align: center;
+        }
     }
 }
 
-// LAPTOP SMALL -----------------------------------------------------------------------------------
-
+// LAPTOP-----------------------------------------------------------------------------------
 @media screen and (min-width: 1024px) {
 
-    // Text ---------------------------------
-
-    .landing-h1 {
-        color: $burgundy;
-        font-size: 110px;
+    #logo {
+        width: 6%;
+        left: 4%;
     }
 
-    .landing-h2 {
-        color: $burgundy;
-        font-size: 30px;
-    }
-
-    .landing-h5 {
-        color: $burgundy;
-        font-size: 26px;
-        margin: 18px 0 0 21%;
-    }
-
-    .landing-logo {
-        position: absolute;
-        top: 4%;
-        left: 3%;
-        width: 8%;
-        height: auto;
-    }
-
-    // Landing Page Divs --------------------
-
-    .landing-titles {
-        width: 60%;
-        height: 30vh;
-        position: absolute;
-        top: 34vh;
-        left: 20%;
-        text-align: center;
-    }
-
+    //-----Landing Page-----
     .landing-container {
         width: 100%;
-        height: 100vh;
+        height: 943px;
         display: flex;
         flex-wrap: wrap;
-    }
 
-    .landing-left {
-        display: block;
-        width: 50%;
-        height: 90vh;
-    }
+        .landing-titles {
+            width: 60%;
+            height: 30vh;
+            position: absolute;
+            top: 34vh;
+            left: 20%;
+            text-align: center;
+        }
 
-    .landing-right {
-        width: 50%;
-        height: 90vh;
-    }
+        .landing-left {
+            display: block;
+            width: 50%;
+            background-image: url(../img/left.png);
+            background-size: cover;
+            background-position: 60% 100%;
+        }
 
-    .landing-login-nav {
-        width: 30%;
-        height: 10vh;
-        display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        top: 3vh;
-        right: 5%;
-    }
-
-    .landing-bottom-nav {
-        width: 100%;
-        height: 10vh;
-        background-color: $purple;
-        border-top: 3px solid $burgundy;
-        display: flex;
-        flex-wrap: wrap;
+        .landing-right {
+            width: 50%;
+            background-position: 80% 10%;
+        }
     }
 }
 
 
-// LAPTOP LARGE -----------------------------------------------------------------------------------
+//Desktop-----------------------------------------------------------------------------------
+@media screen and (min-width: 1920px) {
 
-@media screen and (min-width: 1440px) {
-
-    // Text ---------------------------------
-
+    //-----Text Styling-----
     .landing-h1 {
-        color: $burgundy;
         font-size: 150px;
     }
 
     .landing-h2 {
-        color: $burgundy;
         font-size: 40px;
     }
 
-    .landing-h5 {
-        color: $burgundy;
-        font-size: 40px;
-        margin: 20px 0 0 20%;
+    nav ul li {
+        font-size: 30px;
+        margin: 0px 90px;
     }
 
-    // Landing Page Divs --------------------
-
-    .landing-titles {
-        width: 60%;
-        height: 30vh;
-        position: absolute;
-        top: 34vh;
-        left: 20%;
-        text-align: center;
-    }
-
+    //-----Landing Page-----
     .landing-container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .landing-left {
-        display: block;
-        width: 50%;
-        height: 90vh;
-    }
-
-    .landing-right {
-        width: 50%;
-        height: 90vh;
-    }
-
-    .landing-login-nav {
-        width: 30%;
-        height: 10vh;
-        display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        top: 3vh;
-        right: 5%;
-    }
-
-    .landing-bottom-nav {
-        width: 100%;
-        height: 10vh;
-        background-color: $purple;
-        border-top: 3px solid $burgundy;
-        display: flex;
-        flex-wrap: wrap;
+        height: 1000px;
     }
 }
