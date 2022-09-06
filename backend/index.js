@@ -67,6 +67,56 @@ app.post(`/addProduct`, (req, res) => {
 //------------------------
 app.get('/allProducts', (req, res) => {
     Products.find()
+    .then(result => {
+        //send the result of the search to the fontend
+        res.send(result)
+    })
+});
+
+
+//------------------------
+     //REGISTER USERS 
+//------------------------
+
+//register a new user on mongoDB
+
+app.post('/registerUser',(req, res)=>{
+    // Checking if user is in the DB already
+    Users.findOne({username:req.body.username}, (err, userResult)=>{
+        if(userResult){
+            res.send('username already exists');
+        } else {
+            const hash = bcrypt.hashSync(req.body.password); // Encrypt User Password
+            const user = new Users({
+                _id: new mongoose.Types.ObjectId,
+                username: req.body.username,
+                password: hash,
+                profile_img_url: req.body.profile_img_url
+            });
+            user.save().then(result=>{
+               // Save to database and notify userResult 
+               res.send(result);
+            }).catch(err=>res.send(err));
+        } //end of else statement 
+    })
+}) //end of register user 
+
+//------------------------
+     //LOGGING IN  
+//------------------------
+app.post('/loginUser', (req, res)=>{
+    //look for a user with the username
+    Users.findOne({username:req.body.username}, (err, userResult) => {
+        if(userResult){
+            if(bcrypt.compareSync(req.body.password, userResult.password)) {
+                res.send(userResult);
+            } else {
+                res.send('not authorised');
+            } 
+        } else {
+            res.send('user not found'); 
+        }
+    })
         .then(result => {
             //send the result of the search to the fontend
             res.send(result)

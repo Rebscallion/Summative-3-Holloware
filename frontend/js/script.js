@@ -1,4 +1,3 @@
-const gridContainer = document.getElementById("grid-container");
 
 // -----Inputs-----
 const imageURLInput = document.getElementById("image-url-input");
@@ -30,16 +29,23 @@ let showAllProducts = () => {
 
 //-----render products function-----
 let renderProducts = (products) => {
+    const gridContainer = document.getElementById("grid-container");
+    console.log("the render projects function is working");
     console.log("the render products function is working");
     gridContainer.innerHTML = "";
     products.forEach((item) => {
         gridContainer.innerHTML += `
         <div class="product-wrapper" id="${item._id}">
             <i class="bi bi-heart"></i>
+            <div class="hover-functions">
+               <i class="bi bi-pencil-fill edit-button"></i>
+               <i class="bi bi-trash3-fill delete-button"></i>             
+            </div>
             <img src="${item.image_url}" alt="${item.name}">
             <div class="product-bio">
             <h3>${item.name}</h3>
             <p>$${item.price}</p>
+            <i class="bi bi-chat-dots"></i>
             </div>
         </div>
         `
@@ -79,5 +85,9 @@ addBttn.onclick = () => {
   };
   console.log('connected');
 
-
+//-----------------------------
+    // LIST ALL PRODUCTS
+//-----------------------------
 showAllProducts();
+
+

@@ -60,6 +60,9 @@ nav ul li {
 #header ul {
   display: flex;
 }
+#header ul .member {
+  display: none;
+}
 
 .landing-container {
   width: 100%;
@@ -143,6 +146,32 @@ nav ul li {
     top: 34vh;
     left: 20%;
     text-align: center;
+  }
+  .landing-container .landing-left {
+    display: block;
+    width: 50%;
+    background-image: url(../img/left.png);
+    background-size: cover;
+    background-position: 60% 100%;
+  }
+  .landing-container .landing-right {
+    width: 50%;
+    background-position: 80% 10%;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .landing-h1 {
+    font-size: 150px;
+  }
+  .landing-h2 {
+    font-size: 40px;
+  }
+  nav ul li {
+    font-size: 30px;
+    margin: 0px 90px;
+  }
+  .landing-container {
+    height: 1000px;
   }
   .landing-container .landing-left {
     display: block;
