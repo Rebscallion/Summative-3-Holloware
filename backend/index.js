@@ -115,10 +115,6 @@ app.post('/loginUser', (req, res)=>{
             } 
         } else {
             res.send('user not found'); 
-        }
-    })
-        .then(result => {
-            //send the result of the search to the fontend
-            res.send(result)
-        })
-});
+        }//outer if 
+    })//find one ends 
+});// end of post login
