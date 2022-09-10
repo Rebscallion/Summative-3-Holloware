@@ -18,20 +18,32 @@
 </head>
 
 <body>
-    <div class="form-container">
-        <form id="register-form" action="javascript:void(0);">
-          
-            <label for="username-input">Username: </label>
-            <input id="username-input" name="username-input" type="text">
-            <label for="password-input">Password: </label>
-            <input id="password-input" name="password-input" type="password">
-            <label for="image-url-input">Profile Image URL </label>
-            <input id="image-url-input" name="image-url-input" type="text">
-            <button id="register-button">Register</button>
-          </form>
-    </div>
-    <div class="image-container">
-        <h1>Register</h1>
+    <div id="register-wrapper">
+        <div class="form-container">
+            <div class="logo-row">
+                <a id="logo-link" href="index.html"><img src="img/HWlogo1.png" alt="holloware logo" id="HWlogo"></a> 
+                <h1>Register</h1>
+            </div>
+            <form id="register-form" action="javascript:void(0);">
+            
+                <label for="username-input">Username: </label>
+                <br>
+                <input id="username-input" name="username-input" type="text">
+                <br>
+                <label for="password-input">Password: </label>
+                <br>
+                <input id="password-input" name="password-input" type="password">
+                <br>
+                <label for="image-url-input">Profile Image URL </label>
+                <br>
+                <input id="image-url-input" name="image-url-input" type="text">
+                <br>
+                <button id="register-button">Register</button>
+            </form>
+        </div>
+        <div class="image-container">
+            <h1>Register</h1>
+        </div>
     </div>
      <!-- JQuery -->
      <script src="https://code.jquery.com/jquery-3.6.1.min.js"
