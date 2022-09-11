@@ -191,6 +191,19 @@ i:hover {
 }
 
 // TABLET/IPAD -----------------------------------------------------------------------------------
+@media screen and (min-width: 768px) {
+    #shop-header {
+        padding: 1.5rem;
+        #logo-link{ 
+            width: 10%;
+        }
+        #profile-container{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+}
 
 @media screen and (min-width: 834px) {
     #grid-container {
