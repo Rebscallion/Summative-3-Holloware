@@ -224,6 +224,37 @@ nav ul li {
   padding: 9px 35px;
 }
 
+#user-profile {
+  display: none;
+}
+
+#user-profile.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  background-color: #FDE7AE;
+  z-index: 50;
+  width: 100vw;
+  height: 100%;
+  border: 2px solid #591727;
+  text-align: center;
+  font-family: roc-grotesk, "sans-serif";
+  font-weight: 500;
+  color: #591727;
+  font-size: 20px;
+}
+#user-profile.active #dp {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 50%;
+  background-position: 50% 50%;
+  background-size: cover;
+  border: 1px solid #591727;
+  background-color: #F4C9FF;
+  margin-left: 2rem;
+}
+
 @media screen and (min-width: 834px) {
   .mb-3 {
     margin-bottom: 2rem !important;
@@ -278,6 +309,463 @@ nav ul li {
     margin: 7vh 38vw;
   }
 }
+#register-wrapper {
+  display: flex;
+  width: 100vw;
+  position: relative;
+}
+#register-wrapper .form-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/registerHero.png);
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(254, 251, 220, 0.5);
+}
+#register-wrapper .form-container .logo-row {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  text-align: center;
+}
+#register-wrapper .form-container .logo-row #logo-link {
+  width: 15%;
+}
+#register-wrapper .form-container .logo-row #HWlogo {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#register-wrapper .form-container .logo-row h1 {
+  width: 90%;
+  font-family: lust-sans, "sans-serif";
+  color: #591727;
+  font-size: 40px;
+  margin-top: 0.5rem;
+}
+#register-wrapper .form-container #register-form {
+  margin-left: 20%;
+  margin-top: 5%;
+  width: 100%;
+}
+#register-wrapper .form-container #register-form label {
+  font-family: roc-grotesk, "sans-serif";
+  font-weight: bold;
+  font-size: 18px;
+  color: #591727;
+  margin-bottom: 0.5rem;
+}
+#register-wrapper .form-container #register-form input {
+  width: 60%;
+  color: #591727;
+  border: 1px solid #591727 !important;
+  padding: 0.4rem;
+  margin-bottom: 1rem;
+}
+#register-wrapper .form-container #register-form button {
+  border: 1px solid #591727;
+  background-color: #F4C9FF;
+  border: 1px solid #591727;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: roc-grotesk, "sans-serif";
+  color: #591727;
+  padding: 9px 35px;
+  margin: 2rem 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#register-wrapper .image-container {
+  display: none;
+}
+
+@media screen and (min-width: 414px) {
+  #register-wrapper .form-container #register-form {
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+  }
+  #register-wrapper .form-container #register-form label {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  #register-wrapper {
+    display: flex;
+    width: 100vw;
+    position: relative;
+  }
+  #register-wrapper .form-container {
+    background-color: #F4C9FF;
+    width: 50%;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+  }
+  #register-wrapper .form-container .logo-row h1 {
+    display: none;
+  }
+  #register-wrapper .form-container .logo-row #logo-link {
+    width: 20%;
+  }
+  #register-wrapper .form-container #register-form {
+    margin-top: 0;
+  }
+  #register-wrapper .form-container #register-form label {
+    font-size: 22px;
+  }
+  #register-wrapper .form-container #register-form input {
+    font-size: 18px;
+  }
+  #register-wrapper .form-container #register-form button {
+    background-color: #FDE7AE;
+    font-size: 22px;
+  }
+  #register-wrapper .image-container {
+    display: block;
+    width: 50%;
+    background-image: url(../img/loginHero.png);
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+  }
+  #register-wrapper .image-container h1 {
+    transform: rotate(90deg);
+    font-size: 150px;
+    color: #591727;
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    font-family: lust-sans, "sans-serif";
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #register-wrapper .form-container .logo-row {
+    padding: 2rem 2rem 0 2rem;
+  }
+  #register-wrapper .form-container .logo-row #logo-link {
+    width: 13%;
+  }
+  #register-wrapper .image-container h1 {
+    left: 10%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #register-wrapper .form-container .logo-row #logo-link {
+    width: 12%;
+  }
+  #register-wrapper .form-container #register-form label {
+    font-size: 24px;
+  }
+  #register-wrapper .form-container #register-form input {
+    padding: 0.6rem;
+    margin-bottom: 0;
+  }
+  #register-wrapper .form-container #register-form button {
+    font-size: 24px;
+  }
+  #register-wrapper .form-container #register-form #register-container p {
+    font-size: 18px;
+  }
+  #register-wrapper .form-container #register-form #register-container a, #register-wrapper .form-container #register-form #register-container b {
+    font-size: 24px;
+  }
+  #register-wrapper .image-container {
+    overflow: hidden;
+  }
+  #register-wrapper .image-container h1 {
+    left: 25%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #register-wrapper .image-container h1 {
+    left: 35%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #register-wrapper .form-container .logo-row #logo-link {
+    width: 10%;
+  }
+  #register-wrapper .form-container #register-form label {
+    font-size: 26px;
+  }
+  #register-wrapper .form-container #register-form input {
+    font-size: 20px;
+  }
+  #register-wrapper .image-container h1 {
+    left: 45%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #register-wrapper .image-container h1 {
+    left: 50%;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #register-wrapper .form-container .logo-row #logo-link {
+    width: 8%;
+  }
+  #register-wrapper .image-container h1 {
+    left: 55%;
+  }
+}
+@media screen and (min-width: 2200px) {
+  #register-wrapper .image-container h1 {
+    left: 60%;
+  }
+}
+#login-container {
+  display: flex;
+  width: 100vw;
+  position: relative;
+}
+#login-container .form-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/loginHero.png);
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(254, 251, 220, 0.5);
+}
+#login-container .form-container .logo-row {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  text-align: center;
+}
+#login-container .form-container .logo-row #logo-link {
+  width: 15%;
+}
+#login-container .form-container .logo-row #HWlogo {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#login-container .form-container .logo-row h1 {
+  width: 90%;
+  font-family: lust-sans, "sans-serif";
+  color: #591727;
+  font-size: 40px;
+}
+#login-container .form-container #login-form {
+  margin-left: 20%;
+  margin-top: 5%;
+  width: 100%;
+}
+#login-container .form-container #login-form label {
+  font-family: roc-grotesk, "sans-serif";
+  font-weight: bold;
+  font-size: 18px;
+  color: #591727;
+  margin-bottom: 0.5rem;
+}
+#login-container .form-container #login-form input {
+  width: 60%;
+  color: #591727;
+  border: 1px solid #591727 !important;
+  padding: 0.4rem;
+  margin-bottom: 1rem;
+}
+#login-container .form-container #login-form button {
+  border: 1px solid #591727;
+  background-color: #F4C9FF;
+  border: 1px solid #591727;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: roc-grotesk, "sans-serif";
+  color: #591727;
+  padding: 9px 35px;
+  margin: 2rem 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#login-container .form-container #login-form #register-container {
+  margin-top: 2rem;
+  width: 100%;
+}
+#login-container .form-container #login-form #register-container p {
+  color: #591727;
+  font-family: roc-grotesk, "sans-serif";
+}
+#login-container .form-container #login-form #register-container a {
+  -webkit-text-decoration-color: #591727;
+          text-decoration-color: #591727;
+  font-size: 18px;
+  font-weight: bold;
+}
+#login-container .image-container {
+  display: none;
+}
+
+@media screen and (min-width: 414px) {
+  #login-container .form-container #login-form {
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+  }
+  #login-container .form-container #login-form label {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  #login-container {
+    display: flex;
+    width: 100vw;
+    position: relative;
+  }
+  #login-container .form-container {
+    background-color: #F4C9FF;
+    width: 50%;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+  }
+  #login-container .form-container .logo-row h1 {
+    display: none;
+  }
+  #login-container .form-container .logo-row #logo-link {
+    width: 20%;
+  }
+  #login-container .form-container #login-form {
+    margin-top: 0;
+  }
+  #login-container .form-container #login-form label {
+    font-size: 22px;
+  }
+  #login-container .form-container #login-form input {
+    font-size: 18px;
+  }
+  #login-container .form-container #login-form button {
+    background-color: #FDE7AE;
+    font-size: 22px;
+  }
+  #login-container .form-container #login-form #register-container p {
+    font-size: 18px;
+  }
+  #login-container .form-container #login-form #register-container a, #login-container .form-container #login-form #register-container b {
+    font-size: 22px;
+  }
+  #login-container .image-container {
+    display: block;
+    width: 50%;
+    background-image: url(../img/loginHero.png);
+    background-size: cover;
+    background-repeat: none;
+    height: 100vh;
+    position: absolute;
+  }
+  #login-container .image-container h1 {
+    transform: rotate(90deg);
+    font-size: 150px;
+    color: #591727;
+    position: relative;
+    top: 40%;
+    left: 20%;
+    font-family: lust-sans, "sans-serif";
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #login-container .form-container .logo-row {
+    padding: 2rem 2rem 0 2rem;
+  }
+  #login-container .form-container .logo-row #logo-link {
+    width: 13%;
+  }
+  #login-container .image-container h1 {
+    left: 35%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #login-container .form-container .logo-row #logo-link {
+    width: 12%;
+  }
+  #login-container .form-container #login-form label {
+    font-size: 24px;
+  }
+  #login-container .form-container #login-form input {
+    padding: 0.6rem;
+    margin-bottom: 0;
+  }
+  #login-container .form-container #login-form button {
+    font-size: 24px;
+  }
+  #login-container .form-container #login-form #register-container p {
+    font-size: 18px;
+  }
+  #login-container .form-container #login-form #register-container a, #login-container .form-container #login-form #register-container b {
+    font-size: 24px;
+  }
+  #login-container .image-container {
+    overflow: hidden;
+  }
+  #login-container .image-container h1 {
+    left: 45%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #login-container .image-container {
+    overflow: hidden;
+  }
+  #login-container .image-container h1 {
+    left: 50%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #login-container .form-container .logo-row #logo-link {
+    width: 10%;
+  }
+  #login-container .form-container #login-form label {
+    font-size: 26px;
+  }
+  #login-container .form-container #login-form input {
+    font-size: 20px;
+  }
+  #login-container .form-container #login-form #register-container p {
+    font-size: 20px;
+  }
+  #login-container .form-container #login-form #register-container a, #login-container .form-container #login-form #register-container b {
+    font-size: 26px;
+  }
+  #login-container .image-container {
+    overflow: hidden;
+  }
+  #login-container .image-container h1 {
+    left: 55%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #login-container .image-container {
+    overflow: hidden;
+  }
+  #login-container .image-container h1 {
+    left: 60%;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #login-container .form-container .logo-row #logo-link {
+    width: 8%;
+  }
+  #login-container .image-container h1 {
+    left: 65%;
+  }
+}
+@media screen and (min-width: 2200px) {
+  #login-container .image-container h1 {
+    left: 70%;
+  }
+}
 * {
   list-style: none;
   overflow-x: hidden;
@@ -301,6 +789,68 @@ body::-webkit-scrollbar {
 
 i:hover {
   cursor: pointer;
+}
+
+#shop-header {
+  width: 100vw;
+  padding: 2rem;
+  display: flex;
+}
+#shop-header #logo-link {
+  width: 15%;
+}
+#shop-header #HWlogo {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#shop-header #profile-container {
+  width: 85%;
+}
+#shop-header #profile-container ul {
+  display: flex;
+  justify-content: flex-end;
+}
+#shop-header #profile-container ul li {
+  font-weight: bold;
+  font-family: "roc-grotesk";
+}
+#shop-header #profile-container ul a {
+  color: #591727;
+  text-decoration: none;
+}
+#shop-header #profile-container ul a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #591727;
+          text-decoration-color: #591727;
+}
+#shop-header #profile-container #user-details {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+#shop-header #profile-container #user-details #dp {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 50%;
+  background-position: 50% 50%;
+  background-size: cover;
+  border: 1px solid #591727;
+  background-color: #F4C9FF;
+  margin-left: 2rem;
+}
+#shop-header #profile-container #user-details i {
+  color: #591727;
+  font-size: 22px;
+  margin-left: 1rem;
+}
+#shop-header #profile-container #user-details #big-add {
+  display: none;
 }
 
 #grid-container {

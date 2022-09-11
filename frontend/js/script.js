@@ -90,4 +90,50 @@ console.log('connected');
 //-----------------------------
 showAllProducts();
 
+//-----------------------------
+      // LOGIN FUNCTION
+//-----------------------------
+// this function checks if the users logged in
+// if they are, show the username, their profile image, add new product, 
+let loggedin = false;
+let checkLogin = () => {
+  let navContent;
+  const profileContainer = document.getElementById("profile-container");
+  if (sessionStorage.userID) {
+    console.log("you logged in");
+    loggedin = true;
+    navContent=` 
+      <div id="user-details">
+        <i class="bi bi-plus-circle" id="small-add"></i>
+        <button id="big-add">Add New Product <i class="bi bi-plus-circle"></i></button>     
+        <i class="bi bi-bag-heart"></i>       
+        <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
+      </div>
+    `
 
+  } else {
+    loggedin = false;
+    console.log("you are a guest");
+    navContent = `
+      <ul>
+        <li class="landing-h5 guest"><a href="register.html">Register</a></li>
+        <li class="landing-h5 guest"><a href="login.html">Login</a></li>
+      </ul>
+    `
+  }
+  profileContainer.innerHTML = navContent;
+  if (loggedin == true){
+    const profileBtn = document.getElementById("dp");
+    const userProfle = document.getElementById("user-profile");
+
+    profileBtn.onclick = () => {
+      userProfle.classList.toggle('active');
+      userProfle.innerHTML = `
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
+      <button id="log-out">Log Out</button>     
+
+      `
+    }
+  };
+};
+checkLogin();

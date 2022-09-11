@@ -114,7 +114,7 @@ app.post('/loginUser', (req, res) => {
                 res.send('not authorised');
             }
         } else {
-            res.send('user not found');
-        }
-    })
-});
+            res.send('user not found'); 
+        }//outer if 
+    })//find one ends 
+});// end of post login

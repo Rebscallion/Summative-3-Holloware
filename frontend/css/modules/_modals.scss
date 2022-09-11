@@ -56,6 +56,38 @@
     }
 }
 
+#user-profile {
+    display: none;
+    
+}
+
+#user-profile.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    background-color: $yellow;
+    z-index: 50;
+    width: 100vw;
+    height: 100%;
+    border: 2px solid $burgundy;
+    text-align: center;
+    font-family: $roc;
+    font-weight: 500;
+    color: $burgundy;
+    font-size: 20px;
+    #dp {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        border-radius: 50%;
+        background-position: 50% 50%;
+        background-size: cover;
+        border: 1px solid $burgundy;
+        background-color: $pink;
+        margin-left: 2rem;
+    }
+}
+
 // TABLET/IPAD -----------------------------------------------------------------------------------
 @media screen and (min-width: 834px) {
     .mb-3 {
