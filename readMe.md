@@ -49,3 +49,13 @@ npm i
     "password": "your password"
 }
 ```
+
+<b>4.Run the app</b>
+
+```
+cd backend
+```
+
+```
+npm run app
+```
