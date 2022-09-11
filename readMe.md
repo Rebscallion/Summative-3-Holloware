@@ -25,11 +25,18 @@
 
 <h3>How to run the app</h3>
 
-<h5>1.Git clone</h5>
-- Run
+1.Git clone
 
+Run
 ```
 git clone https://github.com/Rebscallion/Summative-3-Holloware
+```
+
+2.Install the package
+
+Open terminal and run in backend folder
+```
+npm i
 ```
 
 ```
