@@ -22,3 +22,12 @@
 - Use a project management tool to ensure on time delivery.
 - Demonstrate collaborative and/or leadership skills to manage a group web project using version control tools.
 - Apply professional best practices for using an online repository hosting service collaboratively.
+
+<h3>How to run the app</h3>
+
+```
+{
+    "username": "your username",
+    "password": "your password"
+}
+```
