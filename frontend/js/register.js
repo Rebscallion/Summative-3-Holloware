@@ -5,7 +5,7 @@ const profileImgInput = document.getElementById("image-url-input");
 
 const server = "http://localhost:3000";
 
-registerBtn.onclick = function() {
+registerBtn.onclick = function () {
     event.preventDefault();
     let username = usernameInput.value;
     let password = passwordInput.value;
@@ -21,8 +21,8 @@ registerBtn.onclick = function() {
             password: password,
             profile_img_url: profileImg
         },
-        success:function(user) {
-            if(user!=='username already exists'){
+        success: function (user) {
+            if (user !== 'username already exists') {
                 console.log("you have registered")
                 console.log(user);
 
@@ -33,8 +33,8 @@ registerBtn.onclick = function() {
                         username: usernameInput.value,
                         password: passwordInput.value
                     },
-                    success: function(user){
-                        if(user == 'user not found'){
+                    success: function (user) {
+                        if (user == 'user not found') {
                             console.log('User not found, please register');
                         } else if (user == 'not authorised') {
                             console.log('Incorrect password, try again');
@@ -49,7 +49,7 @@ registerBtn.onclick = function() {
                             document.location.href = 'index.html';
                         }//end of if statement
                     },// end of inner success
-                    error: function(){
+                    error: function () {
                         console.log('error: cannot call api');
                         alert('Unable to login - unable to call api');
                     }// end of error
@@ -58,7 +58,7 @@ registerBtn.onclick = function() {
                 console.log('username taken already. Please try another name');
             }
         }, //end of outer success 
-        error: function(){
+        error: function () {
             console.log('cannot call api')
         }// end of error
     }) //end of ajax

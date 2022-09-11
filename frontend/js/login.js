@@ -15,7 +15,7 @@ loginBtn.onclick = () => {
         },
         
         success: (user) => {
-            if(user == 'user not found') {
+            if (user == 'user not found') {
                 console.log("user is not found please register");
             } else if (user == 'not authorised') {
                 console.log('Incorrect password, try again');
@@ -30,7 +30,7 @@ loginBtn.onclick = () => {
                 document.location.href = 'index.html';
             }// end of if statement 
         }, //end of success 
-        error:()=>{
+        error: () => {
             console.log("error cannot call api");
             
         }
