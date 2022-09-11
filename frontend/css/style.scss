@@ -37,40 +37,49 @@ i:hover {
     width: 100vw;
     padding: 2rem;
     display: flex;
-    #logo-link{
+
+    #logo-link {
         width: 15%;
     }
+
     #HWlogo {
         width: 100%;
         object-fit: cover;
 
-    } 
-    #profile-container{
+    }
+
+    #profile-container {
         width: 85%;
-        ul{
+
+        ul {
             display: flex;
             justify-content: flex-end;
+
             li {
                 font-weight: bold;
                 font-family: 'roc-grotesk';
             }
-            a{
+
+            a {
                 color: $burgundy;
                 text-decoration: none;
             }
-            a:hover{
+
+            a:hover {
                 opacity: 0.7;
                 text-decoration: underline;
                 text-decoration-color: $burgundy;
             }
         }
-        #user-details{
+
+        #user-details {
             display: flex;
             align-content: center;
             align-items: center;
             justify-content: flex-end;
             width: 100%;
             height: 100%;
+
             #dp {
                 width: 50px;
                 height: 50px;
@@ -82,11 +91,13 @@ i:hover {
                 background-color: $pink;
                 margin-left: 2rem;
             }
-            i{
+
+            i {
                 color: $burgundy;
                 font-size: 22px;
                 margin-left: 1rem;
             }
+
             #big-add {
                 display: none;
             }
@@ -94,6 +105,33 @@ i:hover {
     }
 }
 
+.modal-body {
+
+    #image-preview {
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    #productForm {
+        margin-top: 3rem;
+        padding: 10px 20px;
+        width: 500px;
+
+        label,
+        input {
+            margin-top: 8px;
+        }
+
+        label {
+            margin-right: 5px;
+        }
+    }
+}
 
 #grid-container {
     width: 100vw;

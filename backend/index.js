@@ -114,7 +114,65 @@ app.post('/loginUser', (req, res) => {
                 res.send('not authorised');
             }
         } else {
-            res.send('user not found'); 
+            res.send('user not found');
         }//outer if 
     })//find one ends 
 });// end of post login
+
+// ====================
+//     DELETE Method
+// ====================
+app.delete('/deleteProduct/:id', (req, res) => {
+    const productId = req.params.id;
+    console.log("The following product was deleted:")
+    console.log(productId);
+    Products.findById(productId, (err, product) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(product);
+            Products.deleteOne({ _id: productId })
+                .then(() => {
+                    console.log("Success! Actually deleted from mongoDB")
+                    res.send(product)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+
+    });
+});
+
+// ====================
+//      EDIT Method
+// ====================
+
+app.patch('/updateProduct/:id', (req, res) => {
+    const idParam = req.params.id;
+    Products.findById(idParam, (err, product) => {
+        const updatedProduct = {
+            image_url: req.body.image_url,
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description
+        }
+        Products.updateOne({
+            _id: idParam
+        }, updatedProduct).
+            then(result => {
+                res.send(result);
+            }).catch(err => res.send(err));
+    })
+})
+
+app.get('/product/:id', (req, res) => {
+    const productId = req.params.id;
+    Products.findById(productId, (err, product) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(product);
+        }
+    })
+})
