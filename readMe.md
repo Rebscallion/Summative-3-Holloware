@@ -28,6 +28,7 @@
 <b>1.Git clone</b>
 
 <p>Run</p>
+
 ```
 git clone https://github.com/Rebscallion/Summative-3-Holloware
 ```
@@ -35,6 +36,7 @@ git clone https://github.com/Rebscallion/Summative-3-Holloware
 <b>2.Install the package</b>
 
 <p>Open terminal and run this in backend folder</p>
+
 ```
 npm i
 ```
