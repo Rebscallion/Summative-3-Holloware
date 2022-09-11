@@ -853,6 +853,28 @@ i:hover {
   display: none;
 }
 
+.modal-body #image-preview {
+  width: 100%;
+}
+.modal-body #image-preview img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modal-body #productForm {
+  margin-top: 3rem;
+  padding: 10px 20px;
+  width: 500px;
+}
+.modal-body #productForm label,
+.modal-body #productForm input {
+  margin-top: 8px;
+}
+.modal-body #productForm label {
+  margin-right: 5px;
+}
+
 #grid-container {
   width: 100vw;
   display: grid;
