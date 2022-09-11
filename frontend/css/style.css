@@ -60,9 +60,6 @@ nav ul li {
 #header ul {
   display: flex;
 }
-#header ul .member {
-  display: none;
-}
 
 .landing-container {
   width: 100%;
@@ -173,32 +170,6 @@ nav ul li {
   .landing-container {
     height: 1000px;
   }
-  .landing-container .landing-left {
-    display: block;
-    width: 50%;
-    background-image: url(../img/left.png);
-    background-size: cover;
-    background-position: 60% 100%;
-  }
-  .landing-container .landing-right {
-    width: 50%;
-    background-position: 80% 10%;
-  }
-}
-@media screen and (min-width: 1920px) {
-  .landing-h1 {
-    font-size: 150px;
-  }
-  .landing-h2 {
-    font-size: 40px;
-  }
-  nav ul li {
-    font-size: 30px;
-    margin: 0px 90px;
-  }
-  .landing-container {
-    height: 1000px;
-  }
 }
 #add-product-form {
   display: none;
@@ -217,6 +188,9 @@ nav ul li {
   font-weight: 500;
   color: #591727;
   font-size: 20px;
+}
+#add-product-form.active .form-label {
+  margin-bottom: 0;
 }
 #add-product-form.active #close-add-bttn {
   position: absolute;
@@ -341,11 +315,14 @@ i:hover {
   position: relative;
   border: 1px solid #591727;
 }
-#grid-container .product-wrapper .bi-heart {
+#grid-container .product-wrapper .hover-functions {
   position: absolute;
   top: 6px;
-  right: 6px;
-  font-size: 25px;
+  right: 20px;
+  font-size: 20px;
+}
+#grid-container .product-wrapper .hover-functions i {
+  margin-left: 6px;
 }
 #grid-container .product-wrapper img {
   width: 247px;
@@ -381,9 +358,8 @@ i:hover {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 438px;
   }
-  #grid-container .product-wrapper .bi-heart {
+  #grid-container .product-wrapper .hover-functions {
     top: 11px;
-    right: 14px;
   }
   #grid-container .product-wrapper img {
     width: 305px;
@@ -403,9 +379,9 @@ i:hover {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 478px;
   }
-  #grid-container .product-wrapper .bi-heart {
+  #grid-container .product-wrapper .hover-functions {
     top: 11px;
-    right: 14px;
+    right: 25px;
   }
   #grid-container .product-wrapper img {
     width: 342px;

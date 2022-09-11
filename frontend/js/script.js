@@ -13,34 +13,34 @@ const closeBttn = document.getElementById("close-add-bttn");
 
 //-----show all products function-----
 let showAllProducts = () => {
-    $.ajax({
-        type: 'GET', 
-        url: "http://localhost:3000/allProducts",
-        //the success function contains an object which can be named anything 
-        success: (products) => {
-            console.log(products);
-            renderProducts(products);
-        },
-        error: (error) => {
-            console.log(error);
-        }
-    })
+  $.ajax({
+    type: 'GET',
+    url: "http://localhost:3000/allProducts",
+    //the success function contains an object which can be named anything 
+    success: (products) => {
+      console.log(products);
+      renderProducts(products);
+    },
+    error: (error) => {
+      console.log(error);
+    }
+  })
 };
 
 //-----render products function-----
 let renderProducts = (products) => {
-    const gridContainer = document.getElementById("grid-container");
-    console.log("the render projects function is working");
-    console.log("the render products function is working");
-    gridContainer.innerHTML = "";
-    products.forEach((item) => {
-        gridContainer.innerHTML += `
+  const gridContainer = document.getElementById("grid-container");
+  console.log("the render projects function is working");
+  console.log("the render products function is working");
+  gridContainer.innerHTML = "";
+  products.forEach((item) => {
+    gridContainer.innerHTML += `
         <div class="product-wrapper" id="${item._id}">
-            <i class="bi bi-heart"></i>
-            <div class="hover-functions">
-               <i class="bi bi-pencil-fill edit-button"></i>
-               <i class="bi bi-trash3-fill delete-button"></i>             
-            </div>
+          <div class="hover-functions">
+            <i class="bi bi-pencil-fill edit-button"></i>
+            <i class="bi bi-trash3-fill delete-button"></i>     
+            <i class="bi bi-heart"></i>        
+          </div>
             <img src="${item.image_url}" alt="${item.name}">
             <div class="product-bio">
             <h3>${item.name}</h3>
@@ -49,44 +49,44 @@ let renderProducts = (products) => {
             </div>
         </div>
         `
-    });
+  });
 };
 
 //-----add item function-----
 addBttn.onclick = () => {
-    addForm.classList.toggle('active');
-    console.log("clicked");
-  };
+  addForm.classList.toggle('active');
+  console.log("clicked");
+};
 
-  closeBttn.onclick = () => {
-    addForm.classList.toggle('active');
-    console.log("clicked");
-  };
-  
-  submit.onclick = () => {
-    console.log("clicked submit");
-    $.ajax({
-      url: `http://localhost:3000/addProduct`,
-      type: "POST",
-      data: {
-        image_url: imageURLInput.value,
-        name: nameInput.value,
-        price: pricetInput.value,
-        description: descriptiontInput.value
-      },
-      success: () => {
-        console.log("A new product was added.");
-        showAllProducts();
-      },
-      error: () => {
-        console.log("Error: cannot reach the backend");
-      },
-    });
-  };
-  console.log('connected');
+closeBttn.onclick = () => {
+  addForm.classList.toggle('active');
+  console.log("clicked");
+};
+
+submit.onclick = () => {
+  console.log("clicked submit");
+  $.ajax({
+    url: `http://localhost:3000/addProduct`,
+    type: "POST",
+    data: {
+      image_url: imageURLInput.value,
+      name: nameInput.value,
+      price: pricetInput.value,
+      description: descriptiontInput.value
+    },
+    success: () => {
+      console.log("A new product was added.");
+      showAllProducts();
+    },
+    error: () => {
+      console.log("Error: cannot reach the backend");
+    },
+  });
+};
+console.log('connected');
 
 //-----------------------------
-    // LIST ALL PRODUCTS
+// LIST ALL PRODUCTS
 //-----------------------------
 showAllProducts();
 

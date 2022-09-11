@@ -16,6 +16,10 @@
     color: $burgundy;
     font-size: 20px;
 
+    .form-label {
+        margin-bottom: 0;
+    }
+
     #close-add-bttn {
         position: absolute;
         top: 5px;
