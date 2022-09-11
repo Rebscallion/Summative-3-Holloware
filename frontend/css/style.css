@@ -660,7 +660,6 @@ nav ul li {
     background-size: cover;
     background-repeat: none;
     height: 100vh;
-    position: absolute;
   }
   #login-container .image-container h1 {
     transform: rotate(90deg);
@@ -671,6 +670,9 @@ nav ul li {
     left: 20%;
     font-family: lust-sans, "sans-serif";
     overflow: hidden;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -897,6 +899,19 @@ i:hover {
   margin-right: 54px;
 }
 
+@media screen and (min-width: 768px) {
+  #shop-header {
+    padding: 1.5rem;
+  }
+  #shop-header #logo-link {
+    width: 10%;
+  }
+  #shop-header #profile-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
 @media screen and (min-width: 834px) {
   #grid-container {
     grid-template-columns: repeat(2, 1fr);
