@@ -39,6 +39,8 @@ Open terminal and run in backend folder
 npm i
 ```
 
+3.Create config.json
+
 ```
 {
     "username": "your username",
