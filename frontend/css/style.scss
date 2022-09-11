@@ -106,11 +106,15 @@ i:hover {
         position: relative;
         border: 1px solid $burgundy;
 
-        .bi-heart {
+        .hover-functions {
             position: absolute;
             top: 6px;
-            right: 6px;
-            font-size: 25px;
+            right: 20px;
+            font-size: 20px;
+
+            i {
+                margin-left: 6px;
+            }
         }
 
         img {
@@ -156,9 +160,8 @@ i:hover {
 
         .product-wrapper {
 
-            .bi-heart {
+            .hover-functions {
                 top: 11px;
-                right: 14px;
             }
 
             img {
@@ -187,9 +190,9 @@ i:hover {
 
         .product-wrapper {
 
-            .bi-heart {
+            .hover-functions {
                 top: 11px;
-                right: 14px;
+                right: 25px;
             }
 
             img {
