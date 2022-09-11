@@ -29,7 +29,7 @@
 - Run
 
 ```
-git clone https://github.com/Rebscallion/Summative-3-Holloware.git
+git clone https://github.com/Rebscallion/Summative-3-Holloware
 ```
 
 ```
