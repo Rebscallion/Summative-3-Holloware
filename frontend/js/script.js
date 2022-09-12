@@ -53,37 +53,37 @@ let renderProducts = (products) => {
 };
 
 //-----add item function-----
-addBttn.onclick = () => {
-  addForm.classList.toggle('active');
-  console.log("clicked");
-};
+// addBttn.onclick = () => {
+//   addForm.classList.toggle('active');
+//   console.log("clicked");
+// };
 
-closeBttn.onclick = () => {
-  addForm.classList.toggle('active');
-  console.log("clicked");
-};
+// closeBttn.onclick = () => {
+//   addForm.classList.toggle('active');
+//   console.log("clicked");
+// };
 
-submit.onclick = () => {
-  console.log("clicked submit");
-  $.ajax({
-    url: `http://localhost:3000/addProduct`,
-    type: "POST",
-    data: {
-      image_url: imageURLInput.value,
-      name: nameInput.value,
-      price: pricetInput.value,
-      description: descriptiontInput.value
-    },
-    success: () => {
-      console.log("A new product was added.");
-      showAllProducts();
-    },
-    error: () => {
-      console.log("Error: cannot reach the backend");
-    },
-  });
-};
-console.log('connected');
+// submit.onclick = () => {
+//   console.log("clicked submit");
+//   $.ajax({
+//     url: `http://localhost:3000/addProduct`,
+//     type: "POST",
+//     data: {
+//       image_url: imageURLInput.value,
+//       name: nameInput.value,
+//       price: pricetInput.value,
+//       description: descriptiontInput.value
+//     },
+//     success: () => {
+//       console.log("A new product was added.");
+//       showAllProducts();
+//     },
+//     error: () => {
+//       console.log("Error: cannot reach the backend");
+//     },
+//   });
+// };
+// console.log('connected');
 
 //-----------------------------
 // LIST ALL PRODUCTS
@@ -104,9 +104,9 @@ let checkLogin = () => {
     loggedin = true;
     navContent=` 
       <div id="user-details">
-        <i class="bi bi-plus-circle" id="small-add"></i>
-        <button id="big-add">Add New Product <i class="bi bi-plus-circle"></i></button>     
-        <i class="bi bi-bag-heart"></i>       
+        <i class="bi bi-plus-circle small-add" id="new-product-bttn"></i>
+        <button class="big-add" id="bignew-product-bttn">Add New Product <i class="bi bi-plus-circle"></i></button>     
+        <i class="bi bi-bag-heart" id="likes"></i>       
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
       </div>
     `
@@ -123,17 +123,99 @@ let checkLogin = () => {
   }
   profileContainer.innerHTML = navContent;
   if (loggedin == true){
+    
     const profileBtn = document.getElementById("dp");
     const userProfle = document.getElementById("user-profile");
+    const userOverlay = document.getElementById("user-overlay");
+    const topSignUpIn = document.getElementById("topSignUpIn");
+
+    topSignUpIn.classList.toggle('hidden');
+
 
     profileBtn.onclick = () => {
+      userOverlay.classList.toggle('active');
       userProfle.classList.toggle('active');
-      userProfle.innerHTML = `
-      <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
-      <button id="log-out">Log Out</button>     
+      
 
+      userProfle.innerHTML = `
+      <i class="bi bi-x" id="close-profile-bttn"></i>
+        <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
+        <h3>Hi ${sessionStorage.userName}!</h3>
+        <h4>Password   <i class="bi bi-pencil-fill edit-button"></i></h4>
+        <div class="btn-wrapper">
+          <button id="myProducts-Btn">My Products</button>    
+          <button id="logout-Btn">Log Out</button>     
+        </div>
+   
       `
+      //-----logout and close modal function-----
+      const logoutBtn = document.getElementById("logout-Btn");
+
+      let logOut = () => {
+        console.log("you've logged out")
+        sessionStorage.clear();
+        topSignUpIn.classList.toggle('hidden');
+        window.location.reload();
+      }
+      if (sessionStorage.userID) {
+        const closePrfileBtn = document.getElementById("close-profile-bttn");
+        closePrfileBtn.onclick = () => {
+          userProfle.classList.toggle('active');
+          userOverlay.classList.toggle('active');
+          console.log("closed");
+        };
+
+        logoutBtn.onclick = () => logOut();
+      };
     }
+
+    const addBttn = document.getElementById("new-product-bttn");
+    const bigAddBttn = document.getElementById("bignew-product-bttn");
+
+    const addForm = document.getElementById("add-product-form");
+    const submit = document.getElementById("submit-product-bttn");
+    const closeBttn = document.getElementById("close-add-bttn");
+
+    //-----add item function-----
+      addBttn.onclick = () => {
+        addForm.classList.toggle('active');
+        console.log("clicked");
+      };
+
+      bigAddBttn.onclick = () => {
+        addForm.classList.toggle('active');
+        console.log("clicked");
+      };
+
+
+
+      closeBttn.onclick = () => {
+        addForm.classList.toggle('active');
+        console.log("clicked");
+      };
+
+      submit.onclick = () => {
+        console.log("clicked submit");
+        $.ajax({
+          url: `http://localhost:3000/addProduct`,
+          type: "POST",
+          data: {
+            image_url: imageURLInput.value,
+            name: nameInput.value,
+            price: pricetInput.value,
+            description: descriptiontInput.value
+          },
+          success: () => {
+            console.log("A new product was added.");
+            showAllProducts();
+          },
+          error: () => {
+            console.log("Error: cannot reach the backend");
+          },
+        });
+      };
+
   };
 };
 checkLogin();
+
