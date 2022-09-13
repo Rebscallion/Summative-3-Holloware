@@ -22,3 +22,40 @@
 - Use a project management tool to ensure on time delivery.
 - Demonstrate collaborative and/or leadership skills to manage a group web project using version control tools.
 - Apply professional best practices for using an online repository hosting service collaboratively.
+
+<h3>How to run the app</h3>
+
+<b>1.Git clone</b>
+
+<p>Run</p>
+
+```
+git clone https://github.com/Rebscallion/Summative-3-Holloware
+```
+
+<b>2.Install the package</b>
+
+<p>Open terminal and run this in backend folder</p>
+
+```
+npm i
+```
+
+<b>3.Create config.json</b>
+
+```
+{
+    "username": "your username",
+    "password": "your password"
+}
+```
+
+<b>4.Run the app</b>
+
+```
+cd backend
+```
+
+```
+npm run app
+```

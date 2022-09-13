@@ -20,14 +20,9 @@
 <body>
     <!-- ------------------ Header ---------------------- -->
     <div id="header">
-        <ul>
+        <ul id="topSignUpIn">
             <li class="landing-h5 guest">Register</li>
             <li class="landing-h5 guest">Login</li>
-            <li class="member" id="new-product-bttn">
-                <p>Add New Product</p><i class="bi bi-plus-circle"></i>
-            </li>
-            <li class="member" id="likes"><i class="bi bi-bag-heart"></i></li>
-            <li class="member" id="profile"><img src="img/profile.jpg" alt="user profile image"></li>
         </ul>
     </div>
     <!-- ------------------ Add Product Form ---------------------- -->
@@ -121,7 +116,9 @@
 
     <div class="modal-container" id="add-product"></div>
     <div class="modal-container" id="edit-product"></div>
-    <div class="modal-container" id="user-profile"></div>
+    <div id="user-overlay">
+        <div class="modal-container" id="user-profile"></div>
+    </div>
 
     <footer>
 
