@@ -203,11 +203,13 @@ i:hover {
             justify-content: flex-end;
             align-items: center;
             width: 92%;
-            #user-details{
-                .small-add{
+            
+            #user-details {
+                .small-add {
                     display: none;
                 }
-                .big-add{
+
+                .big-add {
                     display: flex;
                     align-items: center;
                     background-color: $yellow;
@@ -220,6 +222,7 @@ i:hover {
                     width: fit-content;
                     overflow: hidden;
                     margin-right: 1rem;
+                    
                     i {
                         font-size: 24px;
                         padding-top: 1px;
