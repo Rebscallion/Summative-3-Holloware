@@ -15,6 +15,14 @@
   overflow: hidden;
 }
 
+#topSignUpIn {
+  display: block;
+}
+
+#topSignUpIn.hidden {
+  display: none;
+}
+
 #logo {
   display: none;
   position: absolute;
@@ -33,6 +41,9 @@ nav {
   font-family: roc-grotesk, sans-serif;
   font-weight: 500;
   font-style: normal;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
 }
 nav ul {
   display: flex;
@@ -63,7 +74,7 @@ nav ul li {
 
 .landing-container {
   width: 100%;
-  height: 719px;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -233,7 +244,7 @@ nav ul li {
   position: fixed;
   top: 0;
   background-color: #FDE7AE;
-  z-index: 50;
+  z-index: 200;
   width: 100vw;
   height: 100%;
   border: 2px solid #591727;
@@ -243,18 +254,88 @@ nav ul li {
   color: #591727;
   font-size: 20px;
 }
+#user-profile.active #close-profile-bttn {
+  display: block;
+  position: relative;
+  font-size: 40px;
+  padding: 0.5rem;
+  left: 42%;
+}
 #user-profile.active #dp {
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
   border-radius: 50%;
   background-position: 50% 50%;
   background-size: cover;
   border: 1px solid #591727;
   background-color: #F4C9FF;
-  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+#user-profile.active h3 {
+  margin-bottom: 2rem;
+}
+#user-profile.active .btn-wrapper {
+  margin-top: 2rem;
+}
+#user-profile.active #myProducts-Btn {
+  background-color: #F4C9FF;
+  border: 1px solid #591727;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: roc-grotesk, "sans-serif";
+  color: #591727;
+  padding: 9px 35px;
+  margin: 0.5rem 0;
+  width: 80vw;
+}
+#user-profile.active #logout-Btn {
+  background-color: #FF6347;
+  border: 1px solid #591727;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: roc-grotesk, "sans-serif";
+  color: #591727;
+  padding: 9px 35px;
+  margin: 0.5rem 0;
+  width: 80vw;
 }
 
+@media screen and (min-width: 768px) {
+  #user-profile.active {
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  #user-profile.active #close-profile-bttn {
+    font-size: 50px;
+    padding: 1.5rem;
+  }
+  #user-profile.active .btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #user-profile.active #myProducts-Btn {
+    width: 40%;
+    margin: 0.5rem 20%;
+    font-size: 22px;
+  }
+  #user-profile.active #logout-Btn {
+    width: 40%;
+    margin: 0.5rem 20%;
+    font-size: 22px;
+  }
+  #user-overlay.active {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: 2;
+  }
+}
 @media screen and (min-width: 834px) {
   .mb-3 {
     margin-bottom: 2rem !important;
@@ -574,7 +655,6 @@ nav ul li {
   margin-bottom: 1rem;
 }
 #login-container .form-container #login-form button {
-  border: 1px solid #591727;
   background-color: #F4C9FF;
   border: 1px solid #591727;
   font-weight: bold;
@@ -851,7 +931,7 @@ i:hover {
   font-size: 22px;
   margin-left: 1rem;
 }
-#shop-header #profile-container #user-details #big-add {
+#shop-header #profile-container #user-details .big-add {
   display: none;
 }
 
@@ -932,15 +1012,42 @@ i:hover {
     padding: 1.5rem;
   }
   #shop-header #logo-link {
-    width: 10%;
+    width: 8%;
   }
   #shop-header #profile-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 92%;
+  }
+  #shop-header #profile-container #user-details .small-add {
+    display: none;
+  }
+  #shop-header #profile-container #user-details .big-add {
+    display: flex;
+    align-items: center;
+    background-color: #FDE7AE;
+    border: 1px solid #591727;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: roc-grotesk, "sans-serif";
+    color: #591727;
+    padding: 9px 35px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    overflow: hidden;
+    margin-right: 1rem;
+  }
+  #shop-header #profile-container #user-details .big-add i {
+    font-size: 24px;
+    padding-top: 1px;
   }
 }
 @media screen and (min-width: 834px) {
+  #shop-header #profile-container #user-details i {
+    font-size: 24px;
+  }
   #grid-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 438px;
@@ -962,6 +1069,16 @@ i:hover {
   }
 }
 @media screen and (min-width: 1024px) {
+  #shop-header #logo-link {
+    width: 7%;
+  }
+  #shop-header #profile-container {
+    width: 93%;
+  }
+  #shop-header #profile-container #user-details #dp {
+    width: 60px;
+    height: 60px;
+  }
   #grid-container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 478px;

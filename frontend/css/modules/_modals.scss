@@ -65,8 +65,9 @@
     display: block;
     position: fixed;
     top: 0;
+    
     background-color: $yellow;
-    z-index: 50;
+    z-index: 200;
     width: 100vw;
     height: 100%;
     border: 2px solid $burgundy;
@@ -75,16 +76,90 @@
     font-weight: 500;
     color: $burgundy;
     font-size: 20px;
+    #close-profile-bttn {
+        display: block;
+        position: relative;
+        font-size: 40px;
+        padding: 0.5rem;
+        left: 42%;
+    }
     #dp {
-        width: 50px;
-        height: 50px;
+        width: 200px;
+        height: 200px;
         display: inline-block;
         border-radius: 50%;
         background-position: 50% 50%;
         background-size: cover;
         border: 1px solid $burgundy;
         background-color: $pink;
-        margin-left: 2rem;
+        margin-bottom: 2rem;
+
+    }
+    h3 {
+        margin-bottom: 2rem;
+    }
+    .btn-wrapper{
+       margin-top: 2rem;
+    }
+    #myProducts-Btn {
+        background-color: $pink;
+        border: 1px solid $burgundy;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: $roc;
+        color: $burgundy;
+        padding: 9px 35px;
+        margin: .5rem 0;
+        width: 80vw;
+    }
+    #logout-Btn {
+        background-color: $tomato;
+        border: 1px solid $burgundy;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: $roc;
+        color: $burgundy;
+        padding: 9px 35px;
+        margin: .5rem 0;
+        width: 80vw;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    #user-profile.active {
+        width: 80%;
+        height: 80%;
+        margin-left: 10%;
+        margin-top: 10%;
+        #close-profile-bttn {
+            font-size: 50px;
+            padding: 1.5rem;
+        }
+        .btn-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+           
+         }
+        #myProducts-Btn{
+            width: 40%;
+            margin: .5rem 20%;
+            font-size: 22px;
+        }
+        #logout-Btn{
+            width: 40%;
+            margin: .5rem 20%;
+            font-size: 22px;
+        }
+    }
+    #user-overlay.active {
+        background-color: rgba(0, 0, 0, .5);
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        z-index: 2;
     }
 }
 
