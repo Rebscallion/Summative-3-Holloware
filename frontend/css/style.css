@@ -931,7 +931,7 @@ i:hover {
   font-size: 22px;
   margin-left: 1rem;
 }
-#shop-header #profile-container #user-details #big-add {
+#shop-header #profile-container #user-details .big-add {
   display: none;
 }
 
@@ -1012,7 +1012,7 @@ i:hover {
     padding: 1.5rem;
   }
   #shop-header #logo-link {
-    width: 10%;
+    width: 8%;
   }
   #shop-header #profile-container {
     display: flex;
