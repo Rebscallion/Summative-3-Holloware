@@ -49,7 +49,8 @@ app.post(`/addProduct`, (req, res) => {
         image_url: req.body.image_url,
         name: req.body.name,
         price: req.body.price,
-        description: req.body.description
+        description: req.body.description,
+        product_owner: req.body.product_owner,
     });
     newProduct
         .save()

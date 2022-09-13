@@ -37,9 +37,7 @@ let renderProducts = (products) => {
     gridContainer.innerHTML += `
         <div class="product-wrapper" id="${item._id}">
           <div class="hover-functions">
-            <i class="bi bi-pencil-fill edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-            <i class="bi bi-trash3-fill delete-button"></i>     
-            <i class="bi bi-heart"></i>        
+        
           </div>
             <img src="${item.image_url}" alt="${item.name}">
             <div class="product-bio">
@@ -49,43 +47,24 @@ let renderProducts = (products) => {
             </div>
         </div>
         `
+        if (sessionStorage.userID == item.product_owner){
+          productOwned = true;      
+          let hoverFunctions = document.getElementsByClassName("hover-functions");
+          hoverFunctions.innerHTML += `
+          <i class="bi bi-pencil-fill edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
+          <i class="bi bi-trash3-fill delete-button"></i>     
+          <i class="bi bi-heart"></i>  
+          `  
+
+          console.log(item.product_owner)
+
+        }
   });
   collectDeleteButtons();
   collectEditButtons();
+ 
 };
 
-//-----add item function-----
-// addBttn.onclick = () => {
-//   addForm.classList.toggle('active');
-//   console.log("clicked");
-// };
-
-// closeBttn.onclick = () => {
-//   addForm.classList.toggle('active');
-//   console.log("clicked");
-// };
-
-// submit.onclick = () => {
-//   console.log("clicked submit");
-//   $.ajax({
-//     url: `http://localhost:3000/addProduct`,
-//     type: "POST",
-//     data: {
-//       image_url: imageURLInput.value,
-//       name: nameInput.value,
-//       price: pricetInput.value,
-//       description: descriptiontInput.value
-//     },
-//     success: () => {
-//       console.log("A new product was added.");
-//       showAllProducts();
-//     },
-//     error: () => {
-//       console.log("Error: cannot reach the backend");
-//     },
-//   });
-// };
-// console.log('connected');
 
 //------------------------
 //Delete Product
@@ -135,8 +114,7 @@ let fillEditInputs = (product, id) => {
   $("#updateProduct").click(function () {
     event.preventDefault();
     let productId = id;
-    let imageurl = document.getElementById("imageUrl").value;
-    let productName = document.getElementById("productName").value;
+     let productName = document.getElementById("productName").value;
     let productPrice = document.getElementById("productPrice").value;
     let productDescription = document.getElementById("productDescription").value;
     console.log(productId, imageurl, productName, productPrice, productDescription);
@@ -147,7 +125,8 @@ let fillEditInputs = (product, id) => {
         name: productName,
         price: productPrice,
         image_url: imageurl,
-        description: productDescription
+        description: productDescription,
+
       },
       success: function (data) {
         console.log(data);
@@ -304,7 +283,9 @@ let checkLogin = () => {
             image_url: imageURLInput.value,
             name: nameInput.value,
             price: pricetInput.value,
-            description: descriptiontInput.value
+            description: descriptiontInput.value,
+            product_owner: sessionStorage.userID
+
           },
           success: () => {
             console.log("A new product was added.");
