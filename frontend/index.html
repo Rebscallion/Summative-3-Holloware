@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/frontend/css/style.css">
     <title>Holloware</title>
 </head>
+
 <body>
     <!-- ------------------ Header ---------------------- -->
     <div id="header">
@@ -38,29 +39,20 @@
             <input class="form-control" id="image-url-input" name="image-url-input" type="text"
                 placeholder="https://myimage.com/123abc">
         </div>
-        <!-- ------------------ Add Product Form ---------------------- -->
-        <form id="add-product-form" action="javascript:void(0)">
-            <i class="bi bi-x" id="close-add-bttn"></i>
-            <h2>Add New Product</h2>
-            <div class="mb-3">
-                <label class="form-label" for="image-url-input">Image URL</label>
-                <input class="form-control" id="image-url-input" name="image-url-input" type="text"
-                    placeholder="https://myimage.com/123abc">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="name-input">Name</label>
-                <input class="form-control" id="name-input" name="name-input" type="text">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="price-input">Price</label>
-                <input class="form-control" id="price-input" name="price-input" type="number">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="description-input">Description</label>
-                <input class="form-control" id="description-input" name="description-input" type="text">
-            </div>
-            <button id="submit-product-bttn">Save Product</i></button>
-        </form>
+        <div class="mb-3">
+            <label class="form-label" for="name-input">Name</label>
+            <input class="form-control" id="name-input" name="name-input" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="price-input">Price</label>
+            <input class="form-control" id="price-input" name="price-input" type="number">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description-input">Description</label>
+            <input class="form-control" id="description-input" name="description-input" type="text">
+        </div>
+        <button id="submit-product-bttn">Save Product</i></button>
+    </form>
 
     <!-------------------- Edit Product Form -------------------->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -98,18 +90,18 @@
             </div>
         </div>
     </div>
-    
-        <!-- ------------------ LANDING WORK SPACE ---------------------- -->
-        <div class="landing-container">
-            <img id="logo" src="img/HWlogo1.png" alt="Logo image">
-            <div class="landing-titles">
-                <h1 class="landing-h1">Holloware</h1>
-                <h2 class="landing-h2">Handmade Pottery & Ceramics</h2>
-            </div>
-            <div class="landing-left"></div>
-            <div class="landing-right"></div>
+
+    <!-- ------------------ LANDING WORK SPACE ---------------------- -->
+    <div class="landing-container">
+        <img id="logo" src="img/HWlogo1.png" alt="Logo image">
+        <div class="landing-titles">
+            <h1 class="landing-h1">Holloware</h1>
+            <h2 class="landing-h2">Handmade Pottery & Ceramics</h2>
         </div>
-        
+        <div class="landing-left"></div>
+        <div class="landing-right"></div>
+    </div>
+
     <!-- ------------------ Nav Bar ---------------------- -->
     <nav>
         <ul>
