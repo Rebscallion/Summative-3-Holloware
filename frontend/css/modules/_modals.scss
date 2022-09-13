@@ -58,7 +58,7 @@
 
 #user-profile {
     display: none;
-    
+
 }
 
 #user-profile.active {
@@ -76,6 +76,7 @@
     font-weight: 500;
     color: $burgundy;
     font-size: 20px;
+
     #close-profile-bttn {
         display: block;
         position: relative;
@@ -83,6 +84,7 @@
         padding: 0.5rem;
         left: 42%;
     }
+
     #dp {
         width: 200px;
         height: 200px;

@@ -193,10 +193,12 @@ i:hover {
 @media screen and (min-width: 768px) {
     #shop-header {
         padding: 1.5rem;
-        #logo-link{ 
-            width: 8%;
+
+        #logo-link {
+            width: 10%;
         }
-        #profile-container{
+
+        #profile-container {
             display: flex;
             justify-content: flex-end;
             align-items: center;
