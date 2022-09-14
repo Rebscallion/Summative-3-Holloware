@@ -974,6 +974,7 @@ i:hover {
   top: 6px;
   right: 20px;
   font-size: 20px;
+  background: red;
 }
 #grid-container .product-wrapper .hover-functions i {
   margin-left: 6px;
