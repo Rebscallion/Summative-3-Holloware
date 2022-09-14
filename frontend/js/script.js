@@ -1,4 +1,3 @@
-
 // -----Inputs-----
 const imageURLInput = document.getElementById("image-url-input");
 const nameInput = document.getElementById("name-input");
@@ -31,38 +30,44 @@ let showAllProducts = () => {
 let renderProducts = (products) => {
   const gridContainer = document.getElementById("grid-container");
   console.log("the render projects function is working");
-  console.log("the render products function is working");
   gridContainer.innerHTML = "";
   products.forEach((item) => {
-    gridContainer.innerHTML += `
-        <div class="product-wrapper" id="${item._id}">
-          <div class="hover-functions">
-        
-          </div>
-            <img src="${item.image_url}" alt="${item.name}">
-            <div class="product-bio">
-            <h3>${item.name}</h3>
-            <p>$${item.price}</p>
-            <i class="bi bi-chat-dots"></i>
-            </div>
+    if (sessionStorage.userID == item.product_owner) {
+      productOwned = true;
+      gridContainer.innerHTML += `
+      <div class="product-wrapper" id="${item._id}">
+        <div class="hover-functions">
+        <i class="bi bi-pencil-fill edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
+        <i class="bi bi-trash3-fill delete-button"></i>     
+        <i class="bi bi-heart"></i>  
         </div>
-        `
-        if (sessionStorage.userID == item.product_owner){
-          productOwned = true;      
-          let hoverFunctions = document.getElementsByClassName("hover-functions");
-          hoverFunctions.innerHTML += `
-          <i class="bi bi-pencil-fill edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-          <i class="bi bi-trash3-fill delete-button"></i>     
-          <i class="bi bi-heart"></i>  
-          `  
-
-          console.log(item.product_owner)
-
-        }
+          <img src="${item.image_url}" alt="${item.name}">
+          <div class="product-bio">
+          <h3>${item.name}</h3>
+          <p>$${item.price}</p>
+          <i class="bi bi-chat-dots"></i>
+          </div>
+      </div>
+      `
+      console.log(item.product_owner)
+    } else {
+      gridContainer.innerHTML += `
+      <div class="product-wrapper" id="${item._id}">
+        <div class="hover-functions">
+      
+        </div>
+          <img src="${item.image_url}" alt="${item.name}">
+          <div class="product-bio">
+          <h3>${item.name}</h3>
+          <p>$${item.price}</p>
+          <i class="bi bi-chat-dots"></i>
+          </div>
+      </div>
+      `
+    }
   });
   collectDeleteButtons();
   collectEditButtons();
- 
 };
 
 
@@ -114,7 +119,8 @@ let fillEditInputs = (product, id) => {
   $("#updateProduct").click(function () {
     event.preventDefault();
     let productId = id;
-     let productName = document.getElementById("productName").value;
+    let imageurl = document.getElementById("imageUrl").value;
+    let productName = document.getElementById("productName").value;
     let productPrice = document.getElementById("productPrice").value;
     let productDescription = document.getElementById("productDescription").value;
     console.log(productId, imageurl, productName, productPrice, productDescription);
@@ -126,10 +132,8 @@ let fillEditInputs = (product, id) => {
         price: productPrice,
         image_url: imageurl,
         description: productDescription,
-
       },
       success: function (data) {
-        console.log(data);
         showAllProducts();
         $('#editModal').modal('hide');
         $("#updateProduct").off('click');
@@ -191,7 +195,6 @@ let checkLogin = () => {
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
       </div>
     `
-
   } else {
     loggedin = false;
     console.log("you are a guest");
@@ -203,7 +206,7 @@ let checkLogin = () => {
     `
   }
   profileContainer.innerHTML = navContent;
-  if (loggedin == true){
+  if (loggedin == true) {
     const profileBtn = document.getElementById("dp");
     const userProfle = document.getElementById("user-profile");
     const userOverlay = document.getElementById("user-overlay");
@@ -215,7 +218,7 @@ let checkLogin = () => {
     profileBtn.onclick = () => {
       userOverlay.classList.toggle('active');
       userProfle.classList.toggle('active');
-      
+
 
       userProfle.innerHTML = `
       <i class="bi bi-x" id="close-profile-bttn"></i>
@@ -251,51 +254,46 @@ let checkLogin = () => {
 
     const addBttn = document.getElementById("new-product-bttn");
     const bigAddBttn = document.getElementById("bignew-product-bttn");
-
     const addForm = document.getElementById("add-product-form");
     const submit = document.getElementById("submit-product-bttn");
     const closeBttn = document.getElementById("close-add-bttn");
 
     //-----add item function-----
-      addBttn.onclick = () => {
-        addForm.classList.toggle('active');
-        console.log("clicked");
-      };
+    addBttn.onclick = () => {
+      addForm.classList.toggle('active');
+    };
 
-      bigAddBttn.onclick = () => {
-        addForm.classList.toggle('active');
-        console.log("clicked");
-      };
+    bigAddBttn.onclick = () => {
+      addForm.classList.toggle('active');
+    };
 
+    closeBttn.onclick = () => {
+      addForm.classList.toggle('active');
+      console.log("clicked");
+    };
 
+    submit.onclick = () => {
+      console.log("clicked submit");
+      $.ajax({
+        url: `http://localhost:3000/addProduct`,
+        type: "POST",
+        data: {
+          image_url: imageURLInput.value,
+          name: nameInput.value,
+          price: pricetInput.value,
+          description: descriptiontInput.value,
+          product_owner: sessionStorage.userID
 
-      closeBttn.onclick = () => {
-        addForm.classList.toggle('active');
-        console.log("clicked");
-      };
-
-      submit.onclick = () => {
-        console.log("clicked submit");
-        $.ajax({
-          url: `http://localhost:3000/addProduct`,
-          type: "POST",
-          data: {
-            image_url: imageURLInput.value,
-            name: nameInput.value,
-            price: pricetInput.value,
-            description: descriptiontInput.value,
-            product_owner: sessionStorage.userID
-
-          },
-          success: () => {
-            console.log("A new product was added.");
-            showAllProducts();
-          },
-          error: () => {
-            console.log("Error: cannot reach the backend");
-          },
-        });
-      };
+        },
+        success: () => {
+          console.log("A new product was added.");
+          showAllProducts();
+        },
+        error: () => {
+          console.log("Error: cannot reach the backend");
+        },
+      });
+    };
 
   };
 };
