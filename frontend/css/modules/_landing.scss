@@ -15,10 +15,12 @@
     margin: 20px 0 0 20px;
     overflow: hidden;
 }
+
 #topSignUpIn {
     display: block;
 }
-#topSignUpIn.hidden{
+
+#topSignUpIn.hidden {
     display: none;
 }
 
@@ -40,9 +42,10 @@ nav {
     font-family: roc-grotesk, sans-serif;
     font-weight: 500;
     font-style: normal;
-    position: fixed;
+    // position: fixed;
     bottom: 0;
     z-index: 100;
+
     ul {
         display: flex;
         justify-content: center;
