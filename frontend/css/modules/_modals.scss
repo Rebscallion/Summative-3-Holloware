@@ -127,6 +127,10 @@
     }
 
 }
+// ---------comment modal styles 
+
+
+// ---------end of comment modal styles 
 
 @media screen and (min-width: 768px) {
     #user-profile.active {
@@ -161,7 +165,7 @@
         height: 100vh;
         width: 100vw;
         top: 0;
-        z-index: 2;
+        z-index: 100;
     }
 }
 
