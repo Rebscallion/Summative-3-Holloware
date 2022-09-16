@@ -1,0 +1,105 @@
+// COMMENTS MODAL ------------------------
+
+#commentsModal {
+    width: 30%;
+    height: 100vh;
+    background-color: $orange;
+    border-left: 3px solid $burgundy;
+    position: fixed;
+    top: 0;
+    left: 70%;
+    // visibility: hidden;
+    // opacity: 0;
+    transition: all 0.6s ease;
+
+    .modal-header {
+        width: 100%;
+        height: 10vh;
+
+        border: none;
+        box-shadow: none;
+        position: fixed;
+        top: 0;
+    }
+
+    .modal-body {
+        background-color: $orange;
+        height: 85vh;
+        position: fixed;
+        top: 0;
+    }
+
+    .comment-text {
+        font-family: $roc;
+        font-weight: 500;
+        color: $burgundy;
+        font-size: 22px;
+        padding: 15px;
+        margin: 15px 8% 15px 0;
+        background-color: $offwhite;
+        border: 2px solid $burgundy;
+    }
+
+    .modal-footer {
+        width: 30%;
+        height: 14vh;
+        font-family: $roc;
+        font-weight: 500;
+        color: $burgundy;
+        font-size: 18px;
+        background-color: $pink;
+        border-top: 4px solid $burgundy;
+        border-radius: 0 0 0 0;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .comments-image {
+        width: 80%;
+        height: auto;
+        border: 2px solid $burgundy;
+        margin: 0 0 20px 10%;
+    }
+
+    .comments-description {
+        background-color: $yellow;
+        padding: 15px;
+        border: 2px solid $burgundy;
+        width: 80%;
+        font-size: 18px;
+        font-family: $roc;
+        font-weight: 500;
+        color: $burgundy;
+        margin: 0 0 20px 10%;
+    }
+
+    #comments-input {
+        width: 66%;
+        padding: 10px;
+        border: 2px solid $burgundy;
+        text-align: left;
+    }
+
+    #post-comment-button {
+        padding: 12px 18px 2px 15px;
+        font-size: 30px;
+        color: $burgundy;
+        margin: 0 5% 0 5%;
+        background-color: $yellow;
+        border: 2px solid $burgundy;
+        transition: all 0.3s ease;
+    }
+
+    #post-comment-button:hover {
+        color: $yellow;
+        background-color: $burgundy;
+        border: 2px solid $yellow;
+    }
+
+    .btn-close {
+        color: $burgundy;
+        position: absolute;
+        right: 1vw;
+        font-size: 24px;
+    }
+}

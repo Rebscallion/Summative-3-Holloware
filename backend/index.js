@@ -16,6 +16,7 @@ const config = require("./config.json");
 // Schemas
 const Products = require("./models/products.js");
 const Users = require("./models/users.js");
+const Comments = require("./models/comments.js");
 
 // -----Start Dependencies-----
 app.use(bodyParser.json());
@@ -49,7 +50,8 @@ app.post(`/addProduct`, (req, res) => {
         image_url: req.body.image_url,
         name: req.body.name,
         price: req.body.price,
-        description: req.body.description
+        description: req.body.description,
+        product_owner: req.body.product_owner,
     });
     newProduct
         .save()
@@ -176,3 +178,43 @@ app.get('/product/:id', (req, res) => {
         }
     })
 })
+
+// Comments ---------------------
+
+app.post('/postComment', (req, res) => {
+    const newComment = new Comments({
+        _id: new mongoose.Types.ObjectId,
+        text: req.body.text,
+        product_id: req.body.product_id
+    })
+    // post comment to MongoDb
+    newComment.save()
+        .then(result => {
+            Products.findByIdAndUpdate(
+                newComment.product_id,
+                // pushing into the empty comments array in products.js
+                { $push: { comments: newComment } }
+            ).then(result => {
+                res.send(newComment)
+            }).catch(error => {
+                res.send(error)
+            })
+        })
+})
+
+//------------------------
+// REQ INDIVIDUAL PRODUCT
+//------------------------
+
+// The :id is Expresses way of grabbing our ${productId} from the ajax paramter in our openCommentModal function in the frontend
+app.get('/product/:id', (req, res) => {
+    let productId = req.params.id
+    console.log(productId);
+    Products.findOne({ _id: productId }, (err, productResult) => {
+        if (productResult) {
+            res.send(productResult);
+        } else {
+            res.send('Product not found');
+        }
+    })
+});

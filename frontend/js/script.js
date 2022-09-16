@@ -1,4 +1,4 @@
-
+AOS.init();
 // -----Inputs-----
 const imageURLInput = document.getElementById("image-url-input");
 const nameInput = document.getElementById("name-input");
@@ -27,65 +27,129 @@ let showAllProducts = () => {
   })
 };
 
+//-----------------------------
+// COMMENTS MODAL
+//-----------------------------
+
+// Declaring button that posts comment input text
+const postCommentsButton = document.getElementById("post-comment-button");
+// Declaring inner modal div that displays comment input text
+const commentsResult = document.getElementById("comments-result");
+
+// Renders the comments in the modal, passing our data, named 'product' to the ajax via arguments
+let renderComments = (product) => {
+  if (product.comments.length > 0) {
+    // Declaring an empty string that the comments get pushed into
+    let allComments = "";
+    product.comments.forEach((comment) => {
+      collectCommentButtons();
+      // Filling our empty string that the comments get pushed into
+      allComments += `<li class="comment-text">${comment.text}</li>`;
+    });
+    return allComments;
+  } else {
+    // If there are no comments pushed to allComments, return a small message
+    return "<p>No comments yet</p>";
+  }
+};
+
+openCommentModal = (productId) => {
+  // Ajax GET to request the individual product via ID
+  $.ajax({
+    type: 'GET',
+    url: `http://localhost:3000/product/${productId}`,
+    //the success function contains an object which can be named anything 
+    success: (product) => {
+      commentsResult.innerHTML = `
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <img class="comments-image" src="${product.image_url}" alt="${product.name}">
+    <p class="comments-description">${product.description}</p>
+    <ul class="comments-box">${renderComments(product)}</ul>
+        `;
+    },
+    error: (error) => {
+      console.log(error);
+    }
+  });
+  postCommentsButton.onclick = () => {
+    console.log(productId);
+    console.log("left a comment");
+    $.ajax({
+      url: `http://localhost:3000/postComment`,
+      type: 'POST',
+      data: {
+        text: document.getElementById("comments-input").value,
+        product_id: productId,
+      },
+      success: () => {
+        console.log("Comment posted");
+        showAllProducts();
+        $('#commentsModal').modal('hide');
+      },
+      error: () => {
+        console.log("Error can't post comment");
+      }
+    });
+  };
+}
+
+let collectCommentButtons = () => {
+  let commentButtonsArray = document.getElementsByClassName("comment-button");
+  for (let i = 0; i < commentButtonsArray.length; i++) {
+    commentButtonsArray[i].onclick = () => {
+      let productId = commentButtonsArray[i].parentNode.parentNode.id;
+      openCommentModal(productId);
+    };
+  }
+};
+//----- end of comments modal ------
+
 //-----render products function-----
 let renderProducts = (products) => {
   const gridContainer = document.getElementById("grid-container");
   console.log("the render projects function is working");
-  console.log("the render products function is working");
   gridContainer.innerHTML = "";
   products.forEach((item) => {
-    gridContainer.innerHTML += `
-        <div class="product-wrapper" id="${item._id}">
-          <div class="hover-functions">
-            <i class="bi bi-pencil-fill edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-            <i class="bi bi-trash3-fill delete-button"></i>     
-            <i class="bi bi-heart"></i>        
-          </div>
-            <img src="${item.image_url}" alt="${item.name}">
-            <div class="product-bio">
+    if (sessionStorage.userID == item.product_owner) {
+      productOwned = true;
+      gridContainer.innerHTML += `
+      <div class="product-wrapper" id="${item._id}" data-aos="fade-up">
+        <div class="hover-functions">
+        <i class="bi bi-pencil-fill edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
+        <i class="bi bi-trash3-fill delete-button"></i>     
+        <i class="bi bi-heart"></i>  
+        </div>
+          <img src="${item.image_url}" alt="${item.name}">
+          <div class="product-bio">
             <h3>${item.name}</h3>
             <p>$${item.price}</p>
-            <i class="bi bi-chat-dots"></i>
-            </div>
+            <i id="comment-button" class="bi bi-chat-dots comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
+          </div>
+      </div>
+      `;
+      console.log(item.product_owner)
+    } else {
+      gridContainer.innerHTML += `
+      <div class="product-wrapper" id="${item._id}" data-aos="fade-up">
+        <div class="hover-functions">
+        <i class="bi bi-heart"></i>  
+
         </div>
-        `
+          <img src="${item.image_url}" alt="${item.name}">
+          <div class="product-bio">
+          <h3>${item.name}</h3>
+          <p>$${item.price}</p>
+          <i id="comment-button" class="bi bi-chat-dots comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
+          </div>
+      </div>
+      `
+    }
   });
   collectDeleteButtons();
+  collectCommentButtons();
   collectEditButtons();
 };
 
-//-----add item function-----
-// addBttn.onclick = () => {
-//   addForm.classList.toggle('active');
-//   console.log("clicked");
-// };
-
-// closeBttn.onclick = () => {
-//   addForm.classList.toggle('active');
-//   console.log("clicked");
-// };
-
-// submit.onclick = () => {
-//   console.log("clicked submit");
-//   $.ajax({
-//     url: `http://localhost:3000/addProduct`,
-//     type: "POST",
-//     data: {
-//       image_url: imageURLInput.value,
-//       name: nameInput.value,
-//       price: pricetInput.value,
-//       description: descriptiontInput.value
-//     },
-//     success: () => {
-//       console.log("A new product was added.");
-//       showAllProducts();
-//     },
-//     error: () => {
-//       console.log("Error: cannot reach the backend");
-//     },
-//   });
-// };
-// console.log('connected');
 
 //------------------------
 //Delete Product
@@ -95,7 +159,9 @@ let deleteProduct = (productId) => {
   $.ajax({
     url: `http://localhost:3000/deleteProduct/${productId}`,
     type: "DELETE",
-    success: () => { },
+    success: () => { 
+      showAllProducts();
+    },
     error: () => {
       console.log("Cannot call API");
     },
@@ -147,10 +213,9 @@ let fillEditInputs = (product, id) => {
         name: productName,
         price: productPrice,
         image_url: imageurl,
-        description: productDescription
+        description: productDescription,
       },
       success: function (data) {
-        console.log(data);
         showAllProducts();
         $('#editModal').modal('hide');
         $("#updateProduct").off('click');
@@ -212,7 +277,6 @@ let checkLogin = () => {
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
       </div>
     `
-
   } else {
     loggedin = false;
     console.log("you are a guest");
@@ -224,7 +288,7 @@ let checkLogin = () => {
     `
   }
   profileContainer.innerHTML = navContent;
-  if (loggedin == true){
+  if (loggedin == true) {
     const profileBtn = document.getElementById("dp");
     const userProfle = document.getElementById("user-profile");
     const userOverlay = document.getElementById("user-overlay");
@@ -236,7 +300,7 @@ let checkLogin = () => {
     profileBtn.onclick = () => {
       userOverlay.classList.toggle('active');
       userProfle.classList.toggle('active');
-      
+
 
       userProfle.innerHTML = `
       <i class="bi bi-x" id="close-profile-bttn"></i>
@@ -272,49 +336,47 @@ let checkLogin = () => {
 
     const addBttn = document.getElementById("new-product-bttn");
     const bigAddBttn = document.getElementById("bignew-product-bttn");
-
     const addForm = document.getElementById("add-product-form");
     const submit = document.getElementById("submit-product-bttn");
     const closeBttn = document.getElementById("close-add-bttn");
 
     //-----add item function-----
-      addBttn.onclick = () => {
-        addForm.classList.toggle('active');
-        console.log("clicked");
-      };
+    addBttn.onclick = () => {
+      addForm.classList.toggle('active');
+    };
 
-      bigAddBttn.onclick = () => {
-        addForm.classList.toggle('active');
-        console.log("clicked");
-      };
+    bigAddBttn.onclick = () => {
+      addForm.classList.toggle('active');
+    };
 
+    closeBttn.onclick = () => {
+      addForm.classList.toggle('active');
+      console.log("clicked");
+    };
 
+    submit.onclick = () => {
+      console.log("clicked submit");
+      $.ajax({
+        url: `http://localhost:3000/addProduct`,
+        type: "POST",
+        data: {
+          image_url: imageURLInput.value,
+          name: nameInput.value,
+          price: pricetInput.value,
+          description: descriptiontInput.value,
+          product_owner: sessionStorage.userID
 
-      closeBttn.onclick = () => {
-        addForm.classList.toggle('active');
-        console.log("clicked");
-      };
-
-      submit.onclick = () => {
-        console.log("clicked submit");
-        $.ajax({
-          url: `http://localhost:3000/addProduct`,
-          type: "POST",
-          data: {
-            image_url: imageURLInput.value,
-            name: nameInput.value,
-            price: pricetInput.value,
-            description: descriptiontInput.value
-          },
-          success: () => {
-            console.log("A new product was added.");
-            showAllProducts();
-          },
-          error: () => {
-            console.log("Error: cannot reach the backend");
-          },
-        });
-      };
+        },
+        success: () => {
+          console.log("A new product was added.");
+          showAllProducts();
+          addForm.classList.toggle('active');
+        },
+        error: () => {
+          console.log("Error: cannot reach the backend");
+        },
+      });
+    };
 
   };
 };
