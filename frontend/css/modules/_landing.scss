@@ -4,7 +4,7 @@
     color: $burgundy;
     font-size: 60px;
     position: relative;
-    animation: bounce 5s ease infinite;
+    animation: bounce 5s ease;
     overflow: hidden;
 }
 
@@ -106,10 +106,6 @@ nav {
 
     ul {
         display: flex;
-
-        a{
-            text-decoration: none;
-        }
     }
 }
 
