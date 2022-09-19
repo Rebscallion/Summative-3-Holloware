@@ -184,6 +184,7 @@ app.get('/product/:id', (req, res) => {
 app.post('/postComment', (req, res) => {
     const newComment = new Comments({
         _id: new mongoose.Types.ObjectId,
+        commentedBy: req.body.commentedBy,
         text: req.body.text,
         product_id: req.body.product_id
     })
