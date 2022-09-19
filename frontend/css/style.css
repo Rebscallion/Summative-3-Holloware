@@ -122,6 +122,9 @@ nav ul li {
 #header ul {
   display: flex;
 }
+#header ul a {
+  text-decoration: none;
+}
 
 .landing-container {
   width: 100%;
@@ -426,9 +429,9 @@ nav ul li {
 @media screen and (min-width: 768px) {
   #user-profile.active {
     width: 80%;
-    height: 80%;
+    height: 80vh;
     margin-left: 10%;
-    margin-top: 10%;
+    margin-top: 10vh;
   }
   #user-profile.active #close-profile-bttn {
     font-size: 50px;
@@ -790,6 +793,8 @@ nav ul li {
   display: flex;
   width: 100vw;
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 #login-container .form-container {
   width: 100%;
@@ -925,7 +930,8 @@ nav ul li {
     width: 50%;
     background-image: url(../img/loginHero.png);
     background-size: cover;
-    background-repeat: none;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
   }
   #login-container .image-container h1 {

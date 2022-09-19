@@ -107,9 +107,9 @@ nav {
     ul {
         display: flex;
 
-        // .member {
-        //     display: none;
-        // }
+        a{
+            text-decoration: none;
+        }
     }
 }
 
