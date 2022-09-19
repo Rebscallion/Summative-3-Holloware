@@ -29,36 +29,48 @@
             <li class="landing-h5 guest">Login</li>
         </ul>
     </div>
-    <!-- ------------------ Add Product Form ---------------------- -->
-    <form id="add-product-form" action="javascript:void(0)">
-        <i class="bi bi-x" id="close-add-bttn"></i>
-        <h2>Add New Product</h2>
-        <div class="mb-3">
-            <label class="form-label" for="image-url-input">Image URL</label>
-            <input class="form-control" id="image-url-input" name="image-url-input" type="text"
-                placeholder="https://myimage.com/123abc">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="name-input">Name</label>
-            <input class="form-control" id="name-input" name="name-input" type="text">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="price-input">Price</label>
-            <input class="form-control" id="price-input" name="price-input" type="number">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="description-input">Description</label>
-            <input class="form-control" id="description-input" name="description-input" type="text">
-        </div>
-        <button id="submit-product-bttn">Save Product</i></button>
-    </form>
-
-    <!-------------------- Edit Product Form -------------------->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- ------------------ Add Product Form ------------------------>
+    <div class="modal fade" id="add-product-modal" tabindex="-1" aria-labelledby="addProductLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Edit Mode</h2>
+                    <h2 class="modal-title" id="addProductLabel">Add New Product</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-product-form">
+                        <label class="form-label" for="image-url-input">Image URL</label>
+                        <input class="form-control" id="image-url-input" name="image-url-input" type="text"
+                            placeholder="https://myimage.com/123abc">
+                        <br><br>
+
+                        <label class="form-label" for="name-input">Name</label>
+                        <input class="form-control" id="name-input" name="name-input" type="text">
+                        <br><br>
+
+                        <label class="form-label" for="price-input">Price</label>
+                        <input class="form-control" id="price-input" name="price-input" type="number">
+                        <br><br>
+
+                        <label class="form-label" for="description-input">Description</label>
+                        <input class="form-control" id="description-input" name="description-input" type="text">
+                        <br><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="submit-product-bttn" name="productButton" type="submit" class="btn btn-primary">Upload
+                        Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------- Edit Product Form -------------------->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="editProductModalLabel">Edit Mode</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -184,7 +196,7 @@
                 </div>
             </div>
             <div class="f-wrapper f-4">
-                <img src="../frontend/img/HWlogo1.png" alt="">
+                <img src="img/HWlogo1.png" alt="">
             </div>
         </div>
         <div class="f-wrapper f-5">

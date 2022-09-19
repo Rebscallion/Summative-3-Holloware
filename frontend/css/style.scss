@@ -194,6 +194,13 @@ i:hover {
                 text-align: right;
                 margin-right: 54px;
             }
+
+            #comment-button {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                font-size: 20px;
+            }
         }
     }
 }
@@ -280,6 +287,10 @@ i:hover {
                     font-size: 23px;
                     line-height: 58px;
                 }
+
+                #comment-button {
+                    bottom: 24px;
+                }
             }
         }
     }
@@ -318,6 +329,10 @@ i:hover {
             img {
                 width: 342px;
                 height: 342px;
+            }
+
+            .product-bio #comment-button {
+                bottom: 26px;
             }
         }
     }
