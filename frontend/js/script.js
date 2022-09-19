@@ -44,12 +44,12 @@ let renderComments = (product) => {
     product.comments.forEach((comment) => {
       collectCommentButtons();
       // Filling our empty string that the comments get pushed into
-      allComments += `<li class="comment-text">${comment.text}</li>`;
+      allComments += `<li class="comment-text"><img class="comments-pfp" src="${comment.commentedBy}"> ${comment.text}</li>`;
     });
     return allComments;
   } else {
     // If there are no comments pushed to allComments, return a small message
-    return "<p>No comments yet</p>";
+    return `<p class="no-comments">No comments yet</p>`;
   }
 };
 
@@ -65,6 +65,9 @@ openCommentModal = (productId) => {
     <img class="comments-image" src="${product.image_url}" alt="${product.name}">
     <p class="comments-description">${product.description}</p>
     <ul class="comments-box">${renderComments(product)}</ul>
+    <div class="laptop-image-container">
+    <img class="comments-image-laptop" src="${product.image_url}" alt="${product.name}">
+    </div>
         `;
     },
     error: (error) => {
@@ -80,9 +83,11 @@ openCommentModal = (productId) => {
       data: {
         text: document.getElementById("comments-input").value,
         product_id: productId,
+        commentedBy: sessionStorage.profileImg,
       },
-      success: () => {
+      success: (commentedBy) => {
         console.log("Comment posted");
+        console.log(commentedBy);
         showAllProducts();
         $('#commentsModal').modal('hide');
       },
@@ -159,7 +164,7 @@ let deleteProduct = (productId) => {
   $.ajax({
     url: `http://localhost:3000/deleteProduct/${productId}`,
     type: "DELETE",
-    success: () => { 
+    success: () => {
       showAllProducts();
     },
     error: () => {
