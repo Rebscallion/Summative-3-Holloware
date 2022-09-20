@@ -1,29 +1,34 @@
-#register-wrapper{
+#register-wrapper {
     display: flex;
     width: 100vw;
     position: relative;
-    .form-container{
+
+    .form-container {
         width: 100%;
         height: 100vh;
         background-image: url(../img/registerHero.png);
         background-size: cover;
         -webkit-box-shadow: inset 0 0 0 1000px rgba(254, 251, 220, 0.5);
-            box-shadow: inset 0 0 0 1000px rgba(254, 251, 220, 0.5);
-         .logo-row{
+        box-shadow: inset 0 0 0 1000px rgba(254, 251, 220, 0.5);
+
+        .logo-row {
             width: 100%;
             height: auto;
             padding: 2rem;
             display: flex;
             text-align: center;
+
             #logo-link {
                 width: 15%;
             }
+
             #HWlogo {
                 width: 100%;
                 object-fit: cover;
 
-            } 
-            h1{
+            }
+
+            h1 {
                 width: 90%;
                 font-family: $lust;
                 color: $burgundy;
@@ -31,25 +36,29 @@
                 margin-top: 0.5rem;
             }
         }
-        #register-form{
+
+        #register-form {
             margin-left: 20%;
             margin-top: 5%;
             width: 100%;
-            label{
+
+            label {
                 font-family: $roc;
                 font-weight: bold;
                 font-size: 18px;
                 color: $burgundy;
                 margin-bottom: 0.5rem;
             }
-            input{
+
+            input {
                 width: 60%;
                 color: $burgundy;
-                border: 1px solid #591727!important;
+                border: 1px solid #591727 !important;
                 padding: 0.4rem;
                 margin-bottom: 1rem;
             }
-            button{
+
+            button {
                 border: 1px solid $burgundy;
                 background-color: $pink;
                 border: 1px solid $burgundy;
@@ -63,22 +72,24 @@
             }
         }
     }
-    .image-container{
+
+    .image-container {
         display: none;
     }
 }
 
 @media screen and (min-width: 414px) {
-    #register-wrapper{
-        .form-container{
-            #register-form{
+    #register-wrapper {
+        .form-container {
+            #register-form {
                 height: 75vh;
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: column;
                 justify-content: center;
                 margin-top: 0;
-                label{
+
+                label {
                     margin-bottom: 0;
                 }
             }
@@ -88,41 +99,47 @@
 
 @media screen and (min-width: 768px) {
     #register-wrapper {
-        display:flex;
+        display: flex;
         width: 100vw;
         position: relative;
-        .form-container{
+
+        .form-container {
             background-color: $pink;
             width: 50%;
             background-image: none;
             display: flex;
             flex-direction: column;
-           
-            .logo-row{
-                h1{
+
+            .logo-row {
+                h1 {
                     display: none;
                 }
+
                 #logo-link {
                     width: 20%;
                 }
             }
-            #register-form{
+
+            #register-form {
                 margin-top: 0;
-                label{
+
+                label {
                     font-size: 22px;
-                    
+
                 }
-                input{
+
+                input {
                     font-size: 18px;
                 }
-                button{
+
+                button {
                     background-color: $yellow;
                     font-size: 22px;
                 }
             }
-        }   
-        
-        .image-container{
+        }
+
+        .image-container {
             display: block;
             width: 50%;
             background-image: url(../img/loginHero.png);
@@ -131,6 +148,7 @@
             background-position: center;
             height: 100vh;
             position: relative;
+
             h1 {
                 transform: rotate(90deg);
                 font-size: 150px;
@@ -145,19 +163,21 @@
     }
 }
 
-    
+
 @media screen and (min-width: 1000px) {
-    #register-wrapper{
-        .form-container{
-            .logo-row{
+    #register-wrapper {
+        .form-container {
+            .logo-row {
                 padding: 2rem 2rem 0 2rem;
+
                 #logo-link {
                     width: 13%;
                 }
             }
         }
-        .image-container{
-            h1{
+
+        .image-container {
+            h1 {
                 left: 10%;
             }
         }
@@ -165,40 +185,48 @@
 }
 
 @media screen and (min-width: 1200px) {
-    #register-wrapper{
-        .form-container{
-            .logo-row{
-                #logo-link{
+    #register-wrapper {
+        .form-container {
+            .logo-row {
+                #logo-link {
                     width: 12%;
                 }
             }
-            #register-form{
-                label{
+
+            #register-form {
+                label {
                     font-size: 24px;
-                    
+
                 }
-                input{
+
+                input {
                     padding: 0.6rem;
                     margin-bottom: 0;
                 }
-                button{
+
+                button {
                     font-size: 24px;
                 }
-                #register-container{
-                   
-                    p{
+
+                #register-container {
+
+                    p {
                         font-size: 18px;
                     }
-                    a,b {
+
+                    a,
+                    b {
                         font-size: 24px;
                     }
                 }
             }
         }
-        .image-container{
+
+        .image-container {
             overflow: hidden;
-            h1{
-                left:25%;
+
+            h1 {
+                left: 25%;
             }
         }
     }
@@ -206,9 +234,9 @@
 }
 
 @media screen and (min-width: 1400px) {
-    #register-wrapper{
-        .image-container{
-            h1{
+    #register-wrapper {
+        .image-container {
+            h1 {
                 left: 35%;
             }
         }
@@ -216,24 +244,27 @@
 }
 
 @media screen and (min-width: 1600px) {
-    #register-wrapper{
-        .form-container{
-            .logo-row{
-                #logo-link{
+    #register-wrapper {
+        .form-container {
+            .logo-row {
+                #logo-link {
                     width: 10%;
                 }
             }
-            #register-form{
-                label{
+
+            #register-form {
+                label {
                     font-size: 26px;
                 }
-                input{
+
+                input {
                     font-size: 20px;
                 }
             }
         }
-        .image-container{
-            h1{
+
+        .image-container {
+            h1 {
                 left: 45%;
             }
         }
@@ -241,9 +272,9 @@
 }
 
 @media screen and (min-width: 1800px) {
-    #register-wrapper{
-        .image-container{
-            h1{
+    #register-wrapper {
+        .image-container {
+            h1 {
                 left: 50%;
             }
         }
@@ -251,16 +282,17 @@
 }
 
 @media screen and (min-width: 2000px) {
-    #register-wrapper{
-        .form-container{
-            .logo-row{
-                #logo-link{
+    #register-wrapper {
+        .form-container {
+            .logo-row {
+                #logo-link {
                     width: 8%;
                 }
             }
         }
-        .image-container{
-            h1{
+
+        .image-container {
+            h1 {
                 left: 55%;
             }
         }
@@ -268,9 +300,9 @@
 }
 
 @media screen and (min-width: 2200px) {
-    #register-wrapper{
-        .image-container{
-            h1{
+    #register-wrapper {
+        .image-container {
+            h1 {
                 left: 60%;
             }
         }

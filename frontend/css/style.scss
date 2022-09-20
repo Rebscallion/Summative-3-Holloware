@@ -11,6 +11,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -18,6 +20,7 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll;
+    user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -143,6 +146,8 @@ i:hover {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 373px;
+    color: $burgundy;
+    overflow-y: hidden;
 
     .product-wrapper {
         background-color: $orange;
@@ -179,9 +184,13 @@ i:hover {
 
             h3,
             p {
+                width: 40%;
                 font-size: 20px;
                 line-height: 55px;
                 margin-bottom: 0%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             h3 {
@@ -286,6 +295,9 @@ i:hover {
                 p {
                     font-size: 23px;
                     line-height: 58px;
+                    // white-space: nowrap;
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
                 }
 
                 #comment-button {
@@ -321,22 +333,37 @@ i:hover {
 
         .product-wrapper {
 
-            .hover-functions {
-                top: 11px;
-                right: 25px;
+            img {
+                width: 242px;
+                height: 242px;
             }
+
+            h3,
+            p {
+                font-size: 2px;
+                line-height: 58px;
+            }
+        }
+    }
+}
+
+// LAPTOP-----------------------------------------------------------------------------------
+@media screen and (min-width: 1440px) {
+
+    #grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 478px;
+
+        .product-wrapper {
 
             img {
                 width: 342px;
                 height: 342px;
             }
-
-            .product-bio #comment-button {
-                bottom: 26px;
-            }
         }
     }
 }
+
 
 // Desktop-----------------------------------------------------------------------------------
 @media screen and (min-width: 1920px) {
