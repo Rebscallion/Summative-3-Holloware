@@ -134,6 +134,10 @@
         font-size: 24px;
         opacity: 1;
     }
+    .modal-content {
+        border: none;
+    }
+    
 }
 
 // MOBILE MEDIUM ----------------------
@@ -304,7 +308,9 @@
 
         .comments-image-laptop {
             display: block;
-            width: auto;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
             height: 86vh;
             border: none;
         }
@@ -383,11 +389,7 @@
             right: 0;
         }
 
-        .comments-image-laptop {
-            display: block;
-            width: auto;
-            height: 86vh;
-        }
+       
 
         .comments-description {
             width: 88%;

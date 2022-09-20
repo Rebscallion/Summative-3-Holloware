@@ -31,7 +31,6 @@ let showAllProducts = () => {
 //-----------------------------
 // COMMENTS MODAL
 //-----------------------------
-
 // Renders the comments in the modal, passing our data, named 'product' to the ajax via arguments
 let renderComments = (product) => {
   if (product.comments.length > 0) {
@@ -84,8 +83,8 @@ openCommentModal = (productId) => {
       success: (commentedBy) => {
         console.log("Comment posted");
         console.log(commentedBy);
+        openCommentModal(productId);
         showAllProducts();
-        $('#commentsModal').modal('hide');
       },
       error: () => {
         console.log("Error can't post comment");
@@ -302,6 +301,7 @@ let checkLogin = () => {
 
       userProfle.innerHTML = `
       <i class="bi bi-x" id="close-profile-bttn"></i>
+      <div id="profile-content-wrapper">
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
         <h3>Hi ${sessionStorage.userName}!</h3>
         <h4>Password   <i class="bi bi-pencil-fill edit-button"></i></h4>
@@ -309,6 +309,7 @@ let checkLogin = () => {
           <button id="myProducts-Btn">My Products</button>    
           <button id="logout-Btn">Log Out</button>     
         </div>
+      </div>
    
       `
       //-----logout and close modal function-----
