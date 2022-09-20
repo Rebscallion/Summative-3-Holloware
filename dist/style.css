@@ -1,59 +1,8 @@
 .landing-h1 {
   color: #591727;
   font-size: 60px;
-  position: relative;
-  -webkit-animation: bounce 5s ease;
-          animation: bounce 5s ease;
-  overflow: hidden;
 }
 
-@-webkit-keyframes bounce {
-  0% {
-    transform: scale(1, 1) translateY(0);
-  }
-  10% {
-    transform: scale(1.1, 0.9) translateY(0);
-  }
-  30% {
-    transform: scale(0.9, 1.1) translateY(-15px);
-  }
-  50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-  58% {
-    transform: scale(1, 1) translateY(-7px);
-  }
-  65% {
-    transform: scale(1, 1) translateY(0);
-  }
-  100% {
-    transform: scale(1, 1) translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0% {
-    transform: scale(1, 1) translateY(0);
-  }
-  10% {
-    transform: scale(1.1, 0.9) translateY(0);
-  }
-  30% {
-    transform: scale(0.9, 1.1) translateY(-15px);
-  }
-  50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-  58% {
-    transform: scale(1, 1) translateY(-7px);
-  }
-  65% {
-    transform: scale(1, 1) translateY(0);
-  }
-  100% {
-    transform: scale(1, 1) translateY(0);
-  }
-}
 .landing-h2 {
   color: #591727;
   font-size: 20px;
@@ -92,7 +41,6 @@ nav {
   font-family: roc-grotesk, sans-serif;
   font-weight: 500;
   font-style: normal;
-  position: fixed;
   bottom: 0;
   z-index: 100;
 }
@@ -121,9 +69,6 @@ nav ul li {
 }
 #header ul {
   display: flex;
-}
-#header ul a {
-  text-decoration: none;
 }
 
 .landing-container {
@@ -236,79 +181,57 @@ nav ul li {
     height: 1000px;
   }
 }
-#editModal,
-#add-product-modal {
-  --bs-modal-bg: #FDE7AE;
+#add-product-form {
+  display: none;
+}
+
+#add-product-form.active {
+  display: block;
+  position: absolute;
+  background-color: #FDE7AE;
+  z-index: 50;
+  width: 100vw;
+  height: 100%;
   border: 2px solid #591727;
   text-align: center;
   font-family: roc-grotesk, "sans-serif";
   font-weight: 500;
   color: #591727;
   font-size: 20px;
-  --bs-modal-border-radius: 0%;
 }
-#editModal h2,
-#add-product-modal h2 {
+#add-product-form.active .form-label {
+  margin-bottom: 0;
+}
+#add-product-form.active #close-add-bttn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 35px;
+}
+#add-product-form.active h2 {
   font-family: roc-grotesk-wide, sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 30px;
-  width: 190px;
+  width: 173px;
   margin: auto;
   margin-top: 60px;
   margin-bottom: 63px;
 }
-#editModal .modal-header,
-#add-product-modal .modal-header {
-  padding: 0;
-}
-#editModal .modal-header .btn-close,
-#add-product-modal .modal-header .btn-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 25px;
-}
-#editModal .modal-body,
-#add-product-modal .modal-body {
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#editModal .modal-body #image-preview img,
-#add-product-modal .modal-body #image-preview img {
-  width: 92%;
-}
-#editModal .modal-body #productForm,
-#editModal .modal-body #add-product-form,
-#add-product-modal .modal-body #productForm,
-#add-product-modal .modal-body #add-product-form {
-  padding: 0;
-}
-#editModal .modal-body #productForm input,
-#editModal .modal-body #add-product-form input,
-#add-product-modal .modal-body #productForm input,
-#add-product-modal .modal-body #add-product-form input {
-  width: 290px;
+#add-product-form.active input {
+  width: 340px;
   height: 60px;
   margin: 0 9px;
   border: 1px solid #591727;
   border-radius: 0;
 }
-#editModal .modal-footer,
-#add-product-modal .modal-footer {
-  justify-content: center;
-}
-#editModal .modal-footer .btn-primary,
-#add-product-modal .modal-footer .btn-primary {
+#add-product-form.active button {
   background-color: #F4C9FF;
   border: 1px solid #591727;
   font-weight: 700;
   font-size: 24px;
   color: #591727;
   padding: 9px 35px;
-  border-radius: 0%;
 }
 
 #user-profile {
@@ -380,9 +303,9 @@ nav ul li {
 @media screen and (min-width: 768px) {
   #user-profile.active {
     width: 80%;
-    height: 80vh;
+    height: 80%;
     margin-left: 10%;
-    margin-top: 10vh;
+    margin-top: 10%;
   }
   #user-profile.active #close-profile-bttn {
     font-size: 50px;
@@ -409,351 +332,61 @@ nav ul li {
     height: 100vh;
     width: 100vw;
     top: 0;
-    z-index: 100;
+    z-index: 2;
   }
 }
-#commentsModal {
-  width: 90%;
-  height: 100vh;
-  background-color: #E78550;
-  border-left: 3px solid #591727;
-  position: fixed;
-  top: 0;
-  transition: all 0.6s ease;
-}
-#commentsModal .modal-header {
-  width: 100%;
-  height: 10vh;
-  border: none;
-  box-shadow: none;
-  position: fixed;
-  top: 0;
-}
-#commentsModal .modal-body {
-  background-color: #E78550;
-  height: 85vh;
-  position: fixed;
-  top: 0;
-}
-#commentsModal .comment-text {
-  font-family: roc-grotesk, "sans-serif";
-  font-weight: 500;
-  color: #591727;
-  font-size: 18px;
-  padding: 12px 15px 12px 25px;
-  margin: 15px 4% 15px -30px;
-  background-color: #FEFBDC;
-  border: 2px solid #591727;
-}
-#commentsModal .no-comments {
-  background-color: #F4C9FF;
-  padding: 12px;
-  border: 2px solid #591727;
-  border-radius: 16px 16px 0 0;
-  width: 64%;
-  font-size: 14px;
-  font-family: roc-grotesk, "sans-serif";
-  font-weight: 500;
-  color: #591727;
-  margin: 0px 0 10px 1%;
-  position: absolute;
-  bottom: -1vh;
-  z-index: 200;
-  text-align: center;
-}
-#commentsModal .modal-footer {
-  width: 100%;
-  height: 16vh;
-  font-family: roc-grotesk, "sans-serif";
-  font-weight: 500;
-  color: #591727;
-  font-size: 18px;
-  background-color: #F4C9FF;
-  border-top: 4px solid #591727;
-  border-radius: 0 0 0 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-#commentsModal .comments-image {
-  width: 80%;
-  height: auto;
-  border: 2px solid #591727;
-  margin: 20px 0 20px 8%;
-}
-#commentsModal .laptop-image-container {
-  display: none;
-}
-#commentsModal .comments-image-laptop {
-  display: none;
-}
-#commentsModal .comments-description {
-  background-color: #FDE7AE;
-  padding: 15px;
-  border: 2px solid #591727;
-  width: 98%;
-  font-size: 14px;
-  font-family: roc-grotesk, "sans-serif";
-  font-weight: 500;
-  color: #591727;
-  margin: 0 0 -3px 0;
-}
-#commentsModal #comments-input {
-  width: 64%;
-  padding: 10px;
-  border: 2px solid #591727;
-  text-align: left;
-}
-#commentsModal .comments-pfp {
-  width: 35px;
-  height: 35px;
-  border: 2px solid #591727;
-  border-radius: 50%;
-  margin: 0 12px 0px 0;
-}
-#commentsModal #post-comment-button {
-  padding: 7px 12px 0px 11px;
-  font-size: 28px;
-  color: #591727;
-  margin: 0 5% 0 5%;
-  background-color: #FDE7AE;
-  border: 2px solid #591727;
-  transition: all 0.3s ease;
-}
-#commentsModal #post-comment-button:hover {
-  color: #FDE7AE;
-  background-color: #591727;
-  border: 2px solid #FDE7AE;
-}
-#commentsModal .btn-close {
-  background-color: #E78550;
-  color: #591727;
-  position: fixed;
-  right: 2vw;
-  font-size: 24px;
-  opacity: 1;
-}
-
-@media screen and (min-width: 375px) {
-  #commentsModal .no-comments {
-    width: 60%;
-    margin: 0px 0 10px 5%;
+@media screen and (min-width: 834px) {
+  .mb-3 {
+    margin-bottom: 2rem !important;
   }
-  #commentsModal .comments-image {
-    margin: 20px 0 20px 8%;
+  #add-product-form.active {
+    font-size: 28px;
   }
-  #commentsModal .comments-description {
-    margin: 0 0 0 0.5%;
-    width: 95.5%;
+  #add-product-form.active #close-add-bttn {
+    top: 5px;
+    right: 15px;
+    font-size: 65px;
   }
-  #commentsModal #post-comment-button {
-    padding: 10px 15px 0px 12px;
-    font-size: 26px;
-    margin: 0 5% 0 5%;
+  #add-product-form.active h2 {
+    font-size: 40px;
+    width: 230px;
+    margin-top: 125px;
   }
-  #commentsModal .btn-close {
-    right: 3vw;
+  #add-product-form.active input {
+    margin: auto;
   }
-}
-@media screen and (min-width: 425px) {
-  #commentsModal .comment-text {
-    padding: 12px 15px 12px 25px;
-    margin: 15px 13% 15px -2px;
-  }
-  #commentsModal .no-comments {
-    width: 60%;
-    margin: 0px 0 10px 5%;
-  }
-  #commentsModal .comments-image {
-    margin: 20px 0 20px 8%;
-  }
-  #commentsModal .comments-description {
-    font-size: 18px;
-    margin: 0 0 0 8%;
-    width: 80%;
-  }
-  #commentsModal #post-comment-button {
-    padding: 10px 15px 0px 12px;
-    font-size: 26px;
-    margin: 0 5% 0 5%;
-  }
-  #commentsModal .btn-close {
-    right: 3vw;
-  }
-}
-@media screen and (min-width: 768px) {
-  #commentsModal .modal-body {
-    background-color: #E78550;
-    height: 90vh;
-    position: fixed;
-    top: 0;
-  }
-  #commentsModal .comment-text {
-    font-size: 26px;
-    padding: 12px 15px 12px 25px;
-    margin: 15px 26% 15px 0;
-    background-color: #FEFBDC;
-    border: 2px solid #591727;
-  }
-  #commentsModal .no-comments {
-    width: 60%;
-    margin: 0px 0 10px 5%;
-  }
-  #commentsModal .modal-footer {
-    height: 14vh;
-    font-size: 26px;
-  }
-  #commentsModal .comments-image {
-    width: 60%;
-    margin: 30px 0 30px 10%;
-  }
-  #commentsModal .comments-description {
-    font-size: 22px;
-    margin: 0 0 30px 10%;
-    width: 60%;
-  }
-  #commentsModal #post-comment-button {
-    padding: 10px 15px 0px 12px;
-    font-size: 32px;
-    margin: 0 12% 0 5%;
-  }
-  #commentsModal .btn-close {
-    right: 3vw;
+  #add-product-form.active button {
+    margin-top: 15px;
   }
 }
 @media screen and (min-width: 1024px) {
-  #commentsModal {
-    width: 100%;
-    height: 100vh;
+  .mb-3 {
+    margin-bottom: 1rem !important;
   }
-  #commentsModal .modal-body {
-    width: 55%;
-    position: fixed;
-    top: 4vh;
-    left: 5vw;
-  }
-  #commentsModal .comment-text {
-    font-size: 16px;
-    padding: 12px 15px 12px 25px;
-    margin: 15px 13% 15px -30px;
-  }
-  #commentsModal .no-comments {
-    font-size: 22px;
-    bottom: 4vh;
-  }
-  #commentsModal .modal-footer {
-    height: 18vh;
-    font-size: 18px;
-  }
-  #commentsModal .comments-image {
-    display: none;
-  }
-  #commentsModal .laptop-image-container {
-    display: block;
-    width: 42%;
-    height: 86vh;
-    overflow: hidden;
-    position: fixed;
-    top: -3px;
-    right: 0;
-    border-left: 3px solid #591727;
-  }
-  #commentsModal .comments-image-laptop {
-    display: block;
-    width: auto;
-    height: 86vh;
-    border: none;
-  }
-  #commentsModal .comments-description {
-    width: 88%;
-    font-size: 16px;
-    margin: 0 0 30px 0;
-  }
-  #commentsModal #comments-input {
-    width: 54%;
-  }
-  #commentsModal .comments-pfp {
-    width: 40px;
-    height: 40px;
-  }
-  #commentsModal #post-comment-button {
+  #add-product-form.active {
     font-size: 28px;
-    margin: 0 16% 0 5%;
+    height: 928px;
+    width: 464px;
+    margin: 5vh 33vw;
   }
-  #commentsModal #post-comment-button:hover {
-    color: #FDE7AE;
-    background-color: #591727;
-    border: 2px solid #FDE7AE;
+  #add-product-form.active #close-add-bttn {
+    top: 5px;
+    right: 15px;
+    font-size: 65px;
   }
-  #commentsModal .btn-close {
-    position: fixed;
-    right: 4vw;
-    font-size: 24px;
-    z-index: 99;
+  #add-product-form.active h2 {
+    margin-top: 70px;
+  }
+  #add-product-form.active input {
+    margin: auto;
+  }
+  #add-product-form.active button {
+    margin-top: 15px;
   }
 }
-@media screen and (min-width: 1440px) {
-  #commentsModal .modal-body {
-    top: 3vh;
-  }
-  #commentsModal .comment-text {
-    font-size: 24px;
-    padding: 18px 20px 18px 30px;
-  }
-  #commentsModal .no-comments {
-    font-size: 28px;
-    bottom: 9vh;
-    padding: 20px;
-  }
-  #commentsModal .modal-footer {
-    height: 18vh;
-    font-size: 22px;
-  }
-  #commentsModal .comments-image {
-    display: none;
-  }
-  #commentsModal .laptop-image-container {
-    display: block;
-    width: 42%;
-    height: 86vh;
-    overflow: hidden;
-    position: fixed;
-    top: -3px;
-    right: 0;
-  }
-  #commentsModal .comments-image-laptop {
-    display: block;
-    width: auto;
-    height: 86vh;
-  }
-  #commentsModal .comments-description {
-    width: 88%;
-    font-size: 22px;
-    margin: 0 0 30px 0;
-  }
-  #commentsModal #comments-input {
-    width: 54%;
-    padding: 16px;
-  }
-  #commentsModal .comments-pfp {
-    width: 40px;
-    height: 40px;
-  }
-  #commentsModal #post-comment-button {
-    font-size: 34px;
-    padding: 15px 20px 3px 18px;
-    margin: 0 16% 0 6%;
-  }
-  #commentsModal #post-comment-button:hover {
-    color: #FDE7AE;
-    background-color: #591727;
-    border: 2px solid #FDE7AE;
-  }
-  #commentsModal .btn-close {
-    position: fixed;
-    right: 4vw;
-    font-size: 32px;
-    z-index: 99;
+@media screen and (min-width: 1920px) {
+  #add-product-form.active {
+    margin: 7vh 38vw;
   }
 }
 #register-wrapper {
@@ -972,8 +605,6 @@ nav ul li {
   display: flex;
   width: 100vw;
   position: relative;
-  height: 100vh;
-  overflow: hidden;
 }
 #login-container .form-container {
   width: 100%;
@@ -1101,8 +732,7 @@ nav ul li {
   #login-container .form-container #login-form #register-container p {
     font-size: 18px;
   }
-  #login-container .form-container #login-form #register-container a,
-#login-container .form-container #login-form #register-container b {
+  #login-container .form-container #login-form #register-container a, #login-container .form-container #login-form #register-container b {
     font-size: 22px;
   }
   #login-container .image-container {
@@ -1110,8 +740,7 @@ nav ul li {
     width: 50%;
     background-image: url(../img/loginHero.png);
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: none;
     height: 100vh;
   }
   #login-container .image-container h1 {
@@ -1156,8 +785,7 @@ nav ul li {
   #login-container .form-container #login-form #register-container p {
     font-size: 18px;
   }
-  #login-container .form-container #login-form #register-container a,
-#login-container .form-container #login-form #register-container b {
+  #login-container .form-container #login-form #register-container a, #login-container .form-container #login-form #register-container b {
     font-size: 24px;
   }
   #login-container .image-container {
@@ -1188,8 +816,7 @@ nav ul li {
   #login-container .form-container #login-form #register-container p {
     font-size: 20px;
   }
-  #login-container .form-container #login-form #register-container a,
-#login-container .form-container #login-form #register-container b {
+  #login-container .form-container #login-form #register-container a, #login-container .form-container #login-form #register-container b {
     font-size: 26px;
   }
   #login-container .image-container {
@@ -1218,169 +845,6 @@ nav ul li {
 @media screen and (min-width: 2200px) {
   #login-container .image-container h1 {
     left: 70%;
-  }
-}
-footer {
-  margin-bottom: 80px;
-}
-footer .footer-container .f-wrapper ul {
-  padding: 0;
-}
-footer .footer-container .f-wrapper ul li {
-  list-style: none;
-}
-footer .footer-container .f-wrapper ul li a {
-  text-decoration: none;
-  color: #591727;
-  font-family: "roc-grotesk";
-}
-footer .footer-container .f-wrapper h4.f-title {
-  font-family: "roc-grotesk";
-}
-footer .footer-container .f-1 {
-  display: flex;
-  padding-inline: 1.875rem;
-  padding-top: 1rem;
-  justify-content: center;
-}
-footer .footer-container .f-1 .fm-1 {
-  margin-right: 4rem;
-}
-footer .footer-container .f-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-footer .footer-container .f-2 h4 {
-  margin-right: 10rem;
-}
-footer .footer-container .f-2 .social-media-icon {
-  margin-top: 1rem;
-  text-align: center;
-}
-footer .footer-container .f-2 ion-icon {
-  font-size: 1.635rem;
-  margin-inline: 0.775rem;
-}
-footer .footer-container .f-2 .f-sub {
-  display: flex;
-  align-items: center;
-}
-footer .footer-container .f-2 .f-sub .email-fill input[type=text] {
-  border: 0.175rem solid black;
-  border-radius: 0.5rem;
-  min-width: 14.5rem;
-  min-height: 2.5rem;
-  max-height: 2.625rem;
-  max-width: 26.375rem;
-  margin-right: 1rem;
-  padding-left: 0.456rem;
-  font-family: "roc-grotesk";
-  font-size: 0.875rem;
-}
-footer .footer-container .f-2 .sub-btn-text {
-  display: none;
-}
-footer .footer-container .f-4 {
-  margin-top: 1rem;
-}
-footer .footer-container .f-4 img {
-  width: 7rem;
-  height: 7rem;
-  display: none;
-}
-footer .f-5 p {
-  text-align: center;
-  font-family: "roc-grotesk";
-  font-size: 0.625rem;
-  color: #591727;
-  margin-bottom: 0.675rem;
-  margin-top: 1rem;
-}
-footer .sub-btn {
-  width: 1.938rem;
-  height: 1.938rem;
-  border: 0.163rem solid black;
-  border-radius: 0.163rem;
-  position: relative;
-}
-footer .sub-btn span.arrow {
-  position: absolute;
-  width: 0.85rem;
-  height: 0.85rem;
-  border: 2px solid black;
-  border-radius: 0.163rem;
-  top: 50%;
-  left: 20%;
-  transform: translateY(-50%) rotate(-45deg);
-  border-left: none;
-  border-top: none;
-}
-
-@media screen and (min-width: 768px) {
-  .footer-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 4rem;
-    row-gap: 0rem;
-  }
-  .footer-container .f-2 .email-fill input[type=text] {
-    border: 0.175rem solid black;
-    border-radius: 0.5rem;
-    min-height: 2.625rem;
-    min-width: 26.375rem;
-    margin-right: 1rem;
-    padding-left: 0.456rem;
-    font-family: "roc-grotesk";
-    font-size: 0.875rem;
-  }
-  .footer-container .f-4 {
-    width: 20%;
-  }
-  .footer-container .f-4 img {
-    margin-left: 2rem;
-    display: block !important;
-  }
-  .footer-container .f-2 .f-title {
-    align-self: flex-start;
-  }
-  .footer-container .f-2 .f-sub {
-    align-self: flex-start;
-  }
-  .footer-container .f-2 .social-media-icon {
-    align-self: flex-start;
-  }
-  .footer-container .f-2 .social-media-icon:first-child {
-    margin-inline: 0;
-  }
-  .footer-container .f-2 .sub-btn-text {
-    display: inline-block !important;
-  }
-  .footer-container .f-2 .sub-btn-text a {
-    border: 0.163rem solid black;
-    background-color: white;
-    border-radius: 0.163rem;
-    padding: 0.2rem 0.4rem;
-    text-decoration: none;
-    color: black;
-    font-family: "roc-grotesk";
-    font-size: 0.875rem;
-    text-transform: uppercase;
-  }
-  .sub-btn {
-    width: 1.938rem;
-    height: 1.938rem;
-    border: 0.163rem solid black;
-    background-color: white;
-    border-radius: 0.163rem;
-    position: relative;
-    display: none;
-  }
-  .sub-btn span.arrow {
-    display: none;
   }
 }
 * {
@@ -1468,7 +932,7 @@ i:hover {
   font-size: 22px;
   margin-left: 1rem;
 }
-#shop-header #profile-container #user-details .big-add {
+#shop-header #profile-container #user-details #big-add {
   display: none;
 }
 
@@ -1502,8 +966,6 @@ i:hover {
 }
 #grid-container .product-wrapper {
   background-color: #E78550;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   position: relative;
   border: 1px solid #591727;
@@ -1522,14 +984,13 @@ i:hover {
   height: 247px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-top: 54px;
+  margin: 54px 54px 0 54px;
   border: 2px solid #591727;
 }
 #grid-container .product-wrapper .product-bio {
   display: flex;
   justify-content: center;
   height: 58px;
-  width: 100%;
 }
 #grid-container .product-wrapper .product-bio h3,
 #grid-container .product-wrapper .product-bio p {
@@ -1545,12 +1006,6 @@ i:hover {
   width: 30%;
   text-align: right;
   margin-right: 54px;
-}
-#grid-container .product-wrapper .product-bio #comment-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1569,7 +1024,7 @@ i:hover {
   #shop-header #profile-container #user-details .small-add {
     display: none;
   }
-  #shop-header #profile-container #user-details #bignew-product-bttn {
+  #shop-header #profile-container #user-details .big-add {
     display: flex;
     align-items: center;
     background-color: #FDE7AE;
@@ -1585,12 +1040,9 @@ i:hover {
     overflow: hidden;
     margin-right: 1rem;
   }
-  #shop-header #profile-container #user-details #bignew-product-bttn i {
+  #shop-header #profile-container #user-details .big-add i {
     font-size: 24px;
     padding-top: 1px;
-  }
-  #grid-container {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (min-width: 834px) {
@@ -1616,9 +1068,6 @@ i:hover {
     font-size: 23px;
     line-height: 58px;
   }
-  #grid-container .product-wrapper .product-bio #comment-button {
-    bottom: 24px;
-  }
 }
 @media screen and (min-width: 1024px) {
   #shop-header #logo-link {
@@ -1643,9 +1092,6 @@ i:hover {
     width: 342px;
     height: 342px;
   }
-  #grid-container .product-wrapper .product-bio #comment-button {
-    bottom: 26px;
-  }
 }
 @media screen and (min-width: 1920px) {
   #grid-container {
@@ -1657,3 +1103,83 @@ i:hover {
     height: 368px;
   }
 }
+.footer-container .f-wrapper ul {
+  padding: 0;
+}
+.footer-container .f-wrapper ul li {
+  list-style: none;
+}
+.footer-container .f-wrapper ul li a {
+  text-decoration: none;
+  color: #591727;
+  font-family: "roc-grotesk";
+}
+.footer-container .f-wrapper h4.f-title {
+  font-family: "roc-grotesk";
+}
+.footer-container .f-1 {
+  display: flex;
+  padding-inline: 1.875rem;
+  padding-top: 1rem;
+  justify-content: space-between;
+}
+.footer-container .f-1 .fm-1 {
+  margin-right: 1rem;
+}
+.footer-container .f-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 2.625rem;
+}
+.footer-container .f-2 h4.f-title {
+  align-self: flex-start;
+}
+.footer-container .f-2 .f-sub {
+  display: flex;
+  align-items: center;
+}
+.footer-container .f-2 .f-sub .email-fill input[type=text] {
+  border: 0.175rem solid black;
+  border-radius: 0.5rem;
+  min-width: 14.5rem;
+  min-height: 2.5rem;
+  max-height: 2.625rem;
+  max-width: 26.375rem;
+  margin-right: 1rem;
+  padding-left: 0.456rem;
+}
+.footer-container .f-4 {
+  margin-top: 0.675rem;
+}
+.footer-container .f-4 .social-media-icon {
+  text-align: center;
+}
+.footer-container .f-5 p {
+  text-align: center;
+  font-family: "roc-grotesk";
+  font-size: 0.625rem;
+  color: #591727;
+  margin-bottom: 0;
+  margin-top: 0.675rem;
+}
+
+.sub-btn {
+  width: 1.938rem;
+  height: 1.938rem;
+  border: 0.163rem solid black;
+  border-radius: 0.163rem;
+  position: relative;
+}
+.sub-btn span.arrow {
+  position: absolute;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid black;
+  border-radius: 0.163rem;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%) rotate(-45deg);
+  border-left: none;
+  border-top: none;
+}/*# sourceMappingURL=style.css.map */

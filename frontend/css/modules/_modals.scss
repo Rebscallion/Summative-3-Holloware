@@ -1,4 +1,5 @@
-#editModal {
+#editModal,
+#add-product-modal {
     --bs-modal-bg: #FDE7AE;
     border: 2px solid $burgundy;
     text-align: center;
@@ -32,13 +33,16 @@
 
     .modal-body {
         padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
         #image-preview img {
             width: 92%;
         }
 
-        #productForm {
-            width: 100%;
+        #productForm,
+        #add-product-form {
             padding: 0;
 
             input {
@@ -63,76 +67,6 @@
             padding: 9px 35px;
             border-radius: 0%;
         }
-    }
-}
-
-.mb-3 {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-#add-product-form {
-    display: none;
-}
-
-#add-product-form.active {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: $yellow;
-    margin: 0.5rem;
-    margin-bottom: 0.5rem;
-    z-index: 500;
-    width: 96%;
-    height: 100%;
-    overflow-y: auto;
-    border: 2px solid $burgundy;
-    text-align: center;
-    font-family: $roc;
-    font-weight: 500;
-    color: $burgundy;
-    font-size: 20px;
-
-    .form-label {
-        margin-bottom: 0;
-    }
-
-    #close-add-bttn {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        font-size: 35px;
-    }
-
-    h2 {
-        font-family: roc-grotesk-wide, sans-serif;
-        font-weight: 600;
-        font-style: normal;
-        font-size: 30px;
-        width: 173px;
-        margin: auto;
-        margin-top: 60px;
-        margin-bottom: 63px;
-    }
-
-    input {
-        width: 290px;
-        height: 60px;
-        margin: 0 9px;
-        border: 1px solid $burgundy;
-        border-radius: 0;
-    }
-
-    button {
-        background-color: $pink;
-        border: 1px solid $burgundy;
-        font-weight: 700;
-        font-size: 24px;
-        color: $burgundy;
-        padding: 9px 35px;
-        margin-bottom: 1rem;
     }
 }
 
@@ -212,18 +146,14 @@
 
 }
 
-// ---------comment modal styles 
-
-
-// ---------end of comment modal styles 
 
 // TABLET/IPAD -----------------------------------------------------------------------------------
 @media screen and (min-width: 768px) {
     #user-profile.active {
         width: 80%;
-        height: 80%;
+        height: 80vh;
         margin-left: 10%;
-        margin-top: 10%;
+        margin-top: 10vh;
 
         #close-profile-bttn {
             font-size: 50px;
@@ -257,36 +187,5 @@
         width: 100vw;
         top: 0;
         z-index: 100;
-    }
-
-    #add-product-form.active {
-        top: 100px;
-        left: 200px;
-        width: 45%;
-        height: 72%;
-    }
-}
-
-// LAPTOP-----------------------------------------------------------------------------------
-@media screen and (min-width: 1024px) {
-    .mb-3 {
-        margin-bottom: 1rem !important;
-    }
-
-    #add-product-form.active {
-        top: 35px;
-        left: 325px;
-        width: 35%;
-        height: 80%;
-    }
-}
-
-// Desktop-----------------------------------------------------------------------------------
-@media screen and (min-width: 1920px) {
-    #add-product-form.active {
-        top: 138px;
-        left: 775px;
-        width: 18%;
-        height: 68%;
     }
 }

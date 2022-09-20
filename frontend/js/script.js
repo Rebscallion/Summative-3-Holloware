@@ -5,11 +5,12 @@ const nameInput = document.getElementById("name-input");
 const pricetInput = document.getElementById("price-input");
 const descriptiontInput = document.getElementById("description-input");
 
-//-----buttons-----
-const addBttn = document.getElementById("new-product-bttn");
-const addForm = document.getElementById("add-product-form");
+//-----Buttons-----
 const submit = document.getElementById("submit-product-bttn");
-const closeBttn = document.getElementById("close-add-bttn");
+const postCommentsButton = document.getElementById("post-comment-button");
+
+//-----Declerations-----
+const commentsResult = document.getElementById("comments-result");
 
 //-----show all products function-----
 let showAllProducts = () => {
@@ -31,11 +32,6 @@ let showAllProducts = () => {
 // COMMENTS MODAL
 //-----------------------------
 
-// Declaring button that posts comment input text
-const postCommentsButton = document.getElementById("post-comment-button");
-// Declaring inner modal div that displays comment input text
-const commentsResult = document.getElementById("comments-result");
-
 // Renders the comments in the modal, passing our data, named 'product' to the ajax via arguments
 let renderComments = (product) => {
   if (product.comments.length > 0) {
@@ -44,12 +40,12 @@ let renderComments = (product) => {
     product.comments.forEach((comment) => {
       collectCommentButtons();
       // Filling our empty string that the comments get pushed into
-      allComments += `<li class="comment-text">${comment.text}</li>`;
+      allComments += `<li class="comment-text"><img class="comments-pfp" src="${comment.commentedBy}"> ${comment.text}</li>`;
     });
     return allComments;
   } else {
     // If there are no comments pushed to allComments, return a small message
-    return "<p>No comments yet</p>";
+    return `<p class="no-comments">No comments yet</p>`;
   }
 };
 
@@ -65,6 +61,9 @@ openCommentModal = (productId) => {
     <img class="comments-image" src="${product.image_url}" alt="${product.name}">
     <p class="comments-description">${product.description}</p>
     <ul class="comments-box">${renderComments(product)}</ul>
+    <div class="laptop-image-container">
+    <img class="comments-image-laptop" src="${product.image_url}" alt="${product.name}">
+    </div>
         `;
     },
     error: (error) => {
@@ -80,9 +79,11 @@ openCommentModal = (productId) => {
       data: {
         text: document.getElementById("comments-input").value,
         product_id: productId,
+        commentedBy: sessionStorage.profileImg,
       },
-      success: () => {
+      success: (commentedBy) => {
         console.log("Comment posted");
+        console.log(commentedBy);
         showAllProducts();
         $('#commentsModal').modal('hide');
       },
@@ -102,7 +103,6 @@ let collectCommentButtons = () => {
     };
   }
 };
-//----- end of comments modal ------
 
 //-----render products function-----
 let renderProducts = (products) => {
@@ -159,7 +159,7 @@ let deleteProduct = (productId) => {
   $.ajax({
     url: `http://localhost:3000/deleteProduct/${productId}`,
     type: "DELETE",
-    success: () => { 
+    success: () => {
       showAllProducts();
     },
     error: () => {
@@ -260,8 +260,6 @@ showAllProducts();
 //-----------------------------
 // LOGIN FUNCTION
 //-----------------------------
-// this function checks if the users logged in
-// if they are, show the username, their profile image, add new product, 
 let loggedin = false;
 let checkLogin = () => {
   let navContent;
@@ -271,8 +269,8 @@ let checkLogin = () => {
     loggedin = true;
     navContent = ` 
       <div id="user-details">
-        <i class="bi bi-plus-circle small-add" id="new-product-bttn"></i>
-        <button class="big-add" id="bignew-product-bttn">Add New Product <i class="bi bi-plus-circle"></i></button>     
+        <i class="bi bi-plus-circle small-add" id="new-product-bttn" data-bs-toggle="modal" data-bs-target="#add-product-modal"></i>
+        <button class="big-add" id="bignew-product-bttn" data-bs-toggle="modal" data-bs-target="#add-product-modal">Add New Product <i class="bi bi-plus-circle"></i></button>     
         <i class="bi bi-bag-heart" id="likes"></i>       
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
       </div>
@@ -334,26 +332,6 @@ let checkLogin = () => {
       };
     }
 
-    const addBttn = document.getElementById("new-product-bttn");
-    const bigAddBttn = document.getElementById("bignew-product-bttn");
-    const addForm = document.getElementById("add-product-form");
-    const submit = document.getElementById("submit-product-bttn");
-    const closeBttn = document.getElementById("close-add-bttn");
-
-    //-----add item function-----
-    addBttn.onclick = () => {
-      addForm.classList.toggle('active');
-    };
-
-    bigAddBttn.onclick = () => {
-      addForm.classList.toggle('active');
-    };
-
-    closeBttn.onclick = () => {
-      addForm.classList.toggle('active');
-      console.log("clicked");
-    };
-
     submit.onclick = () => {
       console.log("clicked submit");
       $.ajax({
@@ -370,7 +348,6 @@ let checkLogin = () => {
         success: () => {
           console.log("A new product was added.");
           showAllProducts();
-          addForm.classList.toggle('active');
         },
         error: () => {
           console.log("Error: cannot reach the backend");
