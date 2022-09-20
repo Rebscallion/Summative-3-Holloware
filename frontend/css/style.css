@@ -69,6 +69,7 @@
 #topSignUpIn {
   display: block;
 }
+
 #topSignUpIn li a {
   color: #591727;
   text-decoration: none;
@@ -217,11 +218,11 @@ nav ul li:hover {
     flex-wrap: wrap;
   }
   .landing-container .landing-titles {
-    width: 60%;
+    width: 70%;
     height: 30vh;
     position: absolute;
     top: 34vh;
-    left: 20%;
+    left: 15%;
     text-align: center;
   }
   .landing-container .landing-left {
@@ -565,6 +566,8 @@ nav ul li:hover {
 #commentsModal .comments-pfp {
   width: 35px;
   height: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 2px solid #591727;
   border-radius: 50%;
   margin: 0 12px 0px 0;
@@ -1191,11 +1194,27 @@ nav ul li:hover {
   }
 }
 @media screen and (min-width: 1000px) {
+  #login-container .form-container {
+    position: relative;
+  }
   #login-container .form-container .logo-row {
     padding: 2rem 2rem 0 2rem;
   }
   #login-container .form-container .logo-row #logo-link {
     width: 13%;
+  }
+  #login-container .form-container #login-form {
+    position: absolute;
+    height: 100vh;
+  }
+  #login-container .form-container #login-form #login-button {
+    margin: 1rem 0;
+  }
+  #login-container .form-container #login-form input {
+    margin-bottom: 0;
+  }
+  #login-container .form-container #login-form #register-container {
+    margin-top: 0;
   }
   #login-container .image-container h1 {
     left: 35%;
@@ -1283,6 +1302,7 @@ nav ul li:hover {
   }
 }
 footer {
+  padding: 2rem;
   margin-bottom: 80px;
 }
 footer .footer-container .f-wrapper ul {
@@ -1298,6 +1318,7 @@ footer .footer-container .f-wrapper ul li a {
 }
 footer .footer-container .f-wrapper h4.f-title {
   font-family: "roc-grotesk";
+  color: #591727;
 }
 footer .footer-container .f-1 {
   display: flex;
@@ -1317,6 +1338,7 @@ footer .footer-container .f-2 {
 }
 footer .footer-container .f-2 h4 {
   margin-right: 10rem;
+  color: #591727;
 }
 footer .footer-container .f-2 .social-media-icon {
   margin-top: 1rem;
@@ -1325,14 +1347,14 @@ footer .footer-container .f-2 .social-media-icon {
 footer .footer-container .f-2 ion-icon {
   font-size: 1.635rem;
   margin-inline: 0.775rem;
+  color: #591727;
 }
 footer .footer-container .f-2 .f-sub {
   display: flex;
   align-items: center;
 }
 footer .footer-container .f-2 .f-sub .email-fill input[type=text] {
-  border: 0.175rem solid black;
-  border-radius: 0.5rem;
+  border: 1px solid #591727;
   min-width: 14.5rem;
   min-height: 2.5rem;
   max-height: 2.625rem;
@@ -1352,6 +1374,8 @@ footer .footer-container .f-4 img {
   width: 7rem;
   height: 7rem;
   display: none;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 footer .f-5 p {
   text-align: center;
@@ -1364,16 +1388,15 @@ footer .f-5 p {
 footer .sub-btn {
   width: 1.938rem;
   height: 1.938rem;
-  border: 0.163rem solid black;
-  border-radius: 0.163rem;
+  border: 1px solid #591727;
   position: relative;
+  background-color: #F4C9FF;
 }
 footer .sub-btn span.arrow {
   position: absolute;
   width: 0.85rem;
   height: 0.85rem;
-  border: 2px solid black;
-  border-radius: 0.163rem;
+  border: 1px solid #591727;
   top: 50%;
   left: 20%;
   transform: translateY(-50%) rotate(-45deg);
@@ -1390,8 +1413,7 @@ footer .sub-btn span.arrow {
     row-gap: 0rem;
   }
   .footer-container .f-2 .email-fill input[type=text] {
-    border: 0.175rem solid black;
-    border-radius: 0.5rem;
+    border: 1px solid #591727;
     min-height: 2.625rem;
     min-width: 26.375rem;
     margin-right: 1rem;
@@ -1422,12 +1444,11 @@ footer .sub-btn span.arrow {
     display: inline-block !important;
   }
   .footer-container .f-2 .sub-btn-text a {
-    border: 0.163rem solid black;
-    background-color: white;
-    border-radius: 0.163rem;
-    padding: 0.2rem 0.4rem;
+    border: 1px solid #591727;
+    background-color: #F4C9FF;
+    padding: 0.5rem;
     text-decoration: none;
-    color: black;
+    color: #591727;
     font-family: "roc-grotesk";
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -1435,9 +1456,8 @@ footer .sub-btn span.arrow {
   .sub-btn {
     width: 1.938rem;
     height: 1.938rem;
-    border: 0.163rem solid black;
+    border: 1px solid #591727;
     background-color: white;
-    border-radius: 0.163rem;
     position: relative;
     display: none;
   }

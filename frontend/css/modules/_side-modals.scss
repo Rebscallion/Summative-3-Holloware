@@ -120,6 +120,7 @@
     .comments-pfp {
         width: 35px;
         height: 35px;
+        object-fit: cover;
         border: 2px solid $burgundy;
         border-radius: 50%;
         margin: 0 12px 0px 0;
