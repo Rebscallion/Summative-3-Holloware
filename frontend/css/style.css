@@ -122,9 +122,6 @@ nav ul li {
 #header ul {
   display: flex;
 }
-#header ul a {
-  text-decoration: none;
-}
 
 .landing-container {
   width: 100%;
@@ -312,13 +309,9 @@ nav ul li {
 }
 
 #user-profile {
-  display: none;
-}
-
-#user-profile.active {
-  display: block;
-  position: fixed;
+  left: 100vw;
   top: 0;
+  transition: all 0.3s ease-in-out;
   background-color: #FDE7AE;
   z-index: 200;
   width: 100vw;
@@ -329,17 +322,23 @@ nav ul li {
   font-weight: 500;
   color: #591727;
   font-size: 20px;
+  position: fixed;
 }
-#user-profile.active #close-profile-bttn {
+#user-profile #close-profile-bttn {
   display: block;
   position: relative;
   font-size: 40px;
   padding: 0.5rem;
   left: 42%;
+  z-index: 1000;
 }
-#user-profile.active #dp {
-  width: 200px;
-  height: 200px;
+#user-profile #profile-content-wrapper {
+  position: relative;
+  max-height: 80%;
+}
+#user-profile #profile-content-wrapper #dp {
+  width: 20vh;
+  height: 20vh;
   display: inline-block;
   border-radius: 50%;
   background-position: 50% 50%;
@@ -348,13 +347,13 @@ nav ul li {
   background-color: #F4C9FF;
   margin-bottom: 2rem;
 }
-#user-profile.active h3 {
+#user-profile #profile-content-wrapper h3 {
   margin-bottom: 2rem;
 }
-#user-profile.active .btn-wrapper {
+#user-profile #profile-content-wrapper .btn-wrapper {
   margin-top: 2rem;
 }
-#user-profile.active #myProducts-Btn {
+#user-profile #profile-content-wrapper #myProducts-Btn {
   background-color: #F4C9FF;
   border: 1px solid #591727;
   font-weight: bold;
@@ -365,7 +364,7 @@ nav ul li {
   margin: 0.5rem 0;
   width: 80vw;
 }
-#user-profile.active #logout-Btn {
+#user-profile #profile-content-wrapper #logout-Btn {
   background-color: #FF6347;
   border: 1px solid #591727;
   font-weight: bold;
@@ -377,29 +376,46 @@ nav ul li {
   width: 80vw;
 }
 
+#user-profile.active {
+  transform: translateX(-100vw);
+  transition: all 0.3s ease-in-out !important;
+}
+
 @media screen and (min-width: 768px) {
-  #user-profile.active {
+  #user-profile {
     width: 80%;
     height: 80vh;
     margin-left: 10%;
     margin-top: 10vh;
   }
-  #user-profile.active #close-profile-bttn {
-    font-size: 50px;
-    padding: 1.5rem;
-  }
-  #user-profile.active .btn-wrapper {
+  #user-profile #profile-content-wrapper {
+    top: -5rem;
     display: flex;
-    flex-wrap: wrap;
+    height: 90%;
+    max-height: 90%;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
-  #user-profile.active #myProducts-Btn {
-    width: 40%;
+  #user-profile #close-profile-bttn {
+    font-size: 50px;
+    padding: 0.5rem;
+  }
+  #user-profile .btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  #user-profile .btn-wrapper #myProducts-Btn {
+    width: 40% !important;
     margin: 0.5rem 20%;
     font-size: 22px;
   }
-  #user-profile.active #logout-Btn {
-    width: 40%;
+  #user-profile .btn-wrapper #logout-Btn {
+    width: 40% !important;
     margin: 0.5rem 20%;
     font-size: 22px;
   }
@@ -410,6 +426,12 @@ nav ul li {
     width: 100vw;
     top: 0;
     z-index: 100;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #user-profile.active {
+    width: 50%;
+    margin-left: 25%;
   }
 }
 #commentsModal {
@@ -532,6 +554,9 @@ nav ul li {
   right: 2vw;
   font-size: 24px;
   opacity: 1;
+}
+#commentsModal .modal-content {
+  border: none;
 }
 
 @media screen and (min-width: 375px) {
@@ -660,7 +685,11 @@ nav ul li {
   }
   #commentsModal .comments-image-laptop {
     display: block;
-    width: auto;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
     height: 86vh;
     border: none;
   }
@@ -720,11 +749,6 @@ nav ul li {
     position: fixed;
     top: -3px;
     right: 0;
-  }
-  #commentsModal .comments-image-laptop {
-    display: block;
-    width: auto;
-    height: 86vh;
   }
   #commentsModal .comments-description {
     width: 88%;
