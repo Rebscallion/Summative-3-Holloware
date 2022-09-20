@@ -2,8 +2,8 @@
   color: #591727;
   font-size: 60px;
   position: relative;
-  -webkit-animation: bounce 5s ease;
-          animation: bounce 5s ease;
+  -webkit-animation: bounce 5s ease infinite;
+          animation: bounce 5s ease infinite;
   overflow: hidden;
 }
 
@@ -69,8 +69,15 @@
 #topSignUpIn {
   display: block;
 }
-#topSignUpIn a {
+
+#topSignUpIn li a {
+  color: #591727;
   text-decoration: none;
+}
+#topSignUpIn li a:hover {
+  color: #591727;
+  text-decoration: underline;
+  opacity: 60%;
 }
 
 #topSignUpIn.hidden {
@@ -111,6 +118,11 @@ nav ul li {
   font-size: 20px;
   margin: 0 10px;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+nav ul li:hover {
+  color: #E78550;
+  cursor: pointer;
 }
 
 #header {
@@ -190,6 +202,12 @@ nav ul li {
   }
 }
 @media screen and (min-width: 1024px) {
+  .landing-h1 {
+    font-size: 104px;
+  }
+  .landing-h2 {
+    font-size: 30px;
+  }
   #logo {
     width: 6%;
     left: 4%;
@@ -217,6 +235,14 @@ nav ul li {
   .landing-container .landing-right {
     width: 50%;
     background-position: 80% 10%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .landing-h1 {
+    font-size: 124px;
+  }
+  .landing-h2 {
+    font-size: 40px;
   }
 }
 @media screen and (min-width: 1920px) {
@@ -439,7 +465,6 @@ nav ul li {
   border-left: 3px solid #591727;
   position: fixed;
   top: 0;
-  transition: all 0.6s ease;
 }
 #commentsModal .modal-header {
   width: 100%;
@@ -454,6 +479,8 @@ nav ul li {
   height: 85vh;
   position: fixed;
   top: 0;
+  overflow-y: scroll;
+  padding-bottom: 14vh;
 }
 #commentsModal .modal-body::-webkit-scrollbar {
   display: none;
@@ -491,6 +518,21 @@ nav ul li {
   position: fixed;
   bottom: 0;
   left: 0;
+}
+#commentsModal .comments-title {
+  width: 80%;
+  position: absolute;
+  top: 38vh;
+  left: 9%;
+  right: 11%;
+  font-family: lust-sans, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #591727;
+  background-color: #FEFBDC;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #591727;
 }
 #commentsModal .comments-image {
   width: 80%;
@@ -551,6 +593,10 @@ nav ul li {
   right: 2vw;
   font-size: 24px;
   opacity: 1;
+  transition: all 0.3s ease;
+}
+#commentsModal .btn-close:hover {
+  background-color: #F4C9FF;
 }
 #commentsModal .modal-content {
   border: none;
@@ -939,7 +985,8 @@ nav ul li {
   #register-wrapper .form-container #register-form #register-container p {
     font-size: 18px;
   }
-  #register-wrapper .form-container #register-form #register-container a, #register-wrapper .form-container #register-form #register-container b {
+  #register-wrapper .form-container #register-form #register-container a,
+#register-wrapper .form-container #register-form #register-container b {
     font-size: 24px;
   }
   #register-wrapper .image-container {
@@ -1423,6 +1470,8 @@ footer .sub-btn span.arrow {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -1430,6 +1479,10 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -1534,6 +1587,8 @@ i:hover {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 373px;
+  color: #591727;
+  overflow-y: hidden;
 }
 #grid-container .product-wrapper {
   background-color: #E78550;
@@ -1568,9 +1623,13 @@ i:hover {
 }
 #grid-container .product-wrapper .product-bio h3,
 #grid-container .product-wrapper .product-bio p {
+  width: 40%;
   font-size: 20px;
   line-height: 55px;
   margin-bottom: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #grid-container .product-wrapper .product-bio h3 {
   width: 70%;
@@ -1670,16 +1729,24 @@ i:hover {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 478px;
   }
-  #grid-container .product-wrapper .hover-functions {
-    top: 11px;
-    right: 25px;
+  #grid-container .product-wrapper img {
+    width: 242px;
+    height: 242px;
+  }
+  #grid-container .product-wrapper h3,
+#grid-container .product-wrapper p {
+    font-size: 2px;
+    line-height: 58px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 478px;
   }
   #grid-container .product-wrapper img {
     width: 342px;
     height: 342px;
-  }
-  #grid-container .product-wrapper .product-bio #comment-button {
-    bottom: 26px;
   }
 }
 @media screen and (min-width: 1920px) {

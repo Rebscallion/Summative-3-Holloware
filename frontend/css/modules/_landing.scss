@@ -4,7 +4,7 @@
     color: $burgundy;
     font-size: 60px;
     position: relative;
-    animation: bounce 5s ease;
+    animation: bounce 5s ease infinite;
     overflow: hidden;
 }
 
@@ -37,6 +37,7 @@
         transform: scale(1, 1) translateY(0);
     }
 }
+
 .landing-h2 {
     color: $burgundy;
     font-size: 20px;
@@ -51,8 +52,16 @@
 
 #topSignUpIn {
     display: block;
-    a {
+
+    li a {
+        color: $burgundy;
         text-decoration: none;
+    }
+
+    li a:hover {
+        color: $burgundy;
+        text-decoration: underline;
+        opacity: 60%;
     }
 }
 
@@ -90,10 +99,16 @@ nav {
         line-height: 79px;
 
         li {
-            color: #591727;
+            color: $burgundy;
             font-size: 20px;
             margin: 0 10px;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            color: $orange;
+            cursor: pointer;
         }
     }
 }
@@ -192,8 +207,16 @@ nav {
     }
 }
 
-// LAPTOP-----------------------------------------------------------------------------------
+// LAPTOP SMALL ---------------------------------------------------------------------------------
 @media screen and (min-width: 1024px) {
+
+    .landing-h1 {
+        font-size: 104px;
+    }
+
+    .landing-h2 {
+        font-size: 30px;
+    }
 
     #logo {
         width: 6%;
@@ -230,6 +253,18 @@ nav {
     }
 }
 
+// LAPTOP LARGE -----------------------------------------------------------------------------
+@media screen and (min-width: 1440px) {
+
+    .landing-h1 {
+        font-size: 124px;
+    }
+
+    .landing-h2 {
+        font-size: 40px;
+    }
+}
+
 
 //Desktop-----------------------------------------------------------------------------------
 @media screen and (min-width: 1920px) {
@@ -247,7 +282,3 @@ nav {
         font-size: 30px;
         margin: 0px 90px;
     }
-
-    //-----Landing Page-----
-   
-}

@@ -7,7 +7,6 @@
     border-left: 3px solid $burgundy;
     position: fixed;
     top: 0;
-    transition: all 0.6s ease;
 
     .modal-header {
         width: 100%;
@@ -23,6 +22,8 @@
         height: 85vh;
         position: fixed;
         top: 0;
+        overflow-y: scroll;
+        padding-bottom: 14vh;
     }
 
     .modal-body::-webkit-scrollbar {
@@ -64,6 +65,22 @@
         position: fixed;
         bottom: 0;
         left: 0;
+    }
+
+    .comments-title {
+        width: 80%;
+        position: absolute;
+        top: 38vh;
+        left: 9%;
+        right: 11%;
+        font-family: lust-sans, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        color: $burgundy;
+        background-color: $offwhite;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid $burgundy;
     }
 
     .comments-image {
@@ -132,11 +149,17 @@
         right: 2vw;
         font-size: 24px;
         opacity: 1;
+        transition: all 0.3s ease;
     }
+
+    .btn-close:hover {
+        background-color: $pink;
+    }
+
     .modal-content {
         border: none;
     }
-    
+
 }
 
 // MOBILE MEDIUM ----------------------
@@ -380,7 +403,7 @@
             right: 0;
         }
 
-       
+
 
         .comments-description {
             width: 88%;

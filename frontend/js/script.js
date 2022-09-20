@@ -25,7 +25,7 @@ let showAllProducts = () => {
     error: (error) => {
       console.log(error);
     }
-  })
+  });
 };
 
 //-----------------------------
@@ -48,7 +48,7 @@ let renderComments = (product) => {
   }
 };
 
-openCommentModal = (productId) => {
+let openCommentModal = (productId) => {
   // Ajax GET to request the individual product via ID
     $.ajax({
       type: 'GET',
@@ -62,6 +62,7 @@ openCommentModal = (productId) => {
       <ul class="comments-box">${renderComments(product)}</ul>
       <div class="laptop-image-container">
       <img class="comments-image-laptop" src="${product.image_url}" alt="${product.name}">
+       <h2 class="comments-title">${product.name}</h2>
       </div>
           `;
       },
@@ -96,7 +97,7 @@ openCommentModal = (productId) => {
       }
     });
   };
-}
+};
 
 let collectCommentButtons = () => {
   let commentButtonsArray = document.getElementsByClassName("comment-button");
@@ -115,7 +116,6 @@ let renderProducts = (products) => {
   gridContainer.innerHTML = "";
   products.forEach((item) => {
     if (sessionStorage.userID == item.product_owner) {
-      productOwned = true;
       gridContainer.innerHTML += `
       <div class="product-wrapper" id="${item._id}" data-aos="fade-up">
         <div class="hover-functions">
@@ -131,7 +131,7 @@ let renderProducts = (products) => {
           </div>
       </div>
       `;
-      console.log(item.product_owner)
+      console.log(item.product_owner);
     } else {
       gridContainer.innerHTML += `
       <div class="product-wrapper" id="${item._id}" data-aos="fade-up">
@@ -146,7 +146,7 @@ let renderProducts = (products) => {
           <i id="comment-button" class="bi bi-chat-dots comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
           </div>
       </div>
-      `
+      `;
     }
   });
   collectDeleteButtons();
@@ -229,9 +229,9 @@ let fillEditInputs = (product, id) => {
       },
     });
   });
-}
+};
 
-populateEditModal = (productId) => {
+let populateEditModal = (productId) => {
   console.log(productId);
   $.ajax({
     type: 'GET',
@@ -243,8 +243,8 @@ populateEditModal = (productId) => {
     error: (error) => {
       console.log(error);
     }
-  })
-}
+  });
+};
 
 let collectEditButtons = () => {
   let editButtonsArray = document.getElementsByClassName("edit-button");
@@ -278,7 +278,7 @@ let checkLogin = () => {
         <i class="bi bi-bag-heart" id="likes"></i>       
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
       </div>
-    `
+    `;
   } else {
     loggedin = false;
     console.log("you are a guest");
@@ -287,7 +287,7 @@ let checkLogin = () => {
         <li class="landing-h5 guest"><a href="register.html">Register</a></li>
         <li class="landing-h5 guest"><a href="login.html">Login</a></li>
       </ul>
-    `
+    `;
   }
   profileContainer.innerHTML = navContent;
   if (loggedin == true) {
@@ -316,16 +316,16 @@ let checkLogin = () => {
         </div>
       </div>
    
-      `
+      `;
       //-----logout and close modal function-----
       const logoutBtn = document.getElementById("logout-Btn");
 
       let logOut = () => {
-        console.log("you've logged out")
+        console.log("you've logged out");
         sessionStorage.clear();
         topSignUpIn.classList.toggle('hidden');
         window.location.reload();
-      }
+      };
       if (sessionStorage.userID) {
         const closePrfileBtn = document.getElementById("close-profile-bttn");
         closePrfileBtn.onclick = () => {
@@ -335,8 +335,8 @@ let checkLogin = () => {
         };
 
         logoutBtn.onclick = () => logOut();
-      };
-    }
+      }
+    };
 
     submit.onclick = () => {
       console.log("clicked submit");
@@ -361,7 +361,6 @@ let checkLogin = () => {
       });
     };
 
-  };
+  }
 };
 checkLogin();
-
