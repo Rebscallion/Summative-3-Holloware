@@ -1244,7 +1244,7 @@ footer .footer-container .f-1 {
   justify-content: center;
 }
 footer .footer-container .f-1 .fm-1 {
-  margin-right: 1rem;
+  margin-right: 4rem;
 }
 footer .footer-container .f-2 {
   display: flex;
@@ -1325,6 +1325,7 @@ footer .sub-btn span.arrow {
     justify-content: center;
     flex-wrap: wrap;
     gap: 4rem;
+    row-gap: 0rem;
   }
   .footer-container .f-2 .email-fill input[type=text] {
     border: 0.175rem solid black;
@@ -1339,6 +1340,10 @@ footer .sub-btn span.arrow {
   .footer-container .f-4 {
     width: 20%;
   }
+  .footer-container .f-4 img {
+    margin-left: 2rem;
+    display: block !important;
+  }
   .footer-container .f-2 .f-title {
     align-self: flex-start;
   }
@@ -1352,9 +1357,9 @@ footer .sub-btn span.arrow {
     margin-inline: 0;
   }
   .footer-container .f-2 .sub-btn-text {
-    display: inline-block;
+    display: inline-block !important;
   }
-  .footer-container .f-2 .sub-btn-text a.sub-text {
+  .footer-container .f-2 .sub-btn-text a {
     border: 0.163rem solid black;
     background-color: white;
     border-radius: 0.163rem;
@@ -1363,10 +1368,7 @@ footer .sub-btn span.arrow {
     color: black;
     font-family: "roc-grotesk";
     font-size: 0.875rem;
-  }
-  .footer-container .f-4 img {
-    display: inline-block;
-    margin-left: 2rem;
+    text-transform: uppercase;
   }
   .sub-btn {
     width: 1.938rem;
