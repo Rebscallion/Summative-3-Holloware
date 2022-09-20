@@ -195,12 +195,26 @@
 @media screen and (min-width: 1000px) {
     #login-container {
         .form-container {
+            position: relative;
             .logo-row {
                 padding: 2rem 2rem 0 2rem;
 
                 #logo-link {
                     width: 13%;
                 }
+            }
+            #login-form{
+               position: absolute;
+               height: 100vh;
+               #login-button{
+                margin: 1rem 0;
+               }
+               input{
+                margin-bottom: 0;
+               }
+               #register-container{
+                margin-top: 0
+               }
             }
         }
 

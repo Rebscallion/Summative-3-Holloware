@@ -51,6 +51,9 @@
 
 #topSignUpIn {
     display: block;
+    a {
+        text-decoration: none;
+    }
 }
 
 #topSignUpIn.hidden {
@@ -175,7 +178,6 @@ nav {
     // -----Landing Page Divs-----
     .landing-container {
         width: 100%;
-        height: 1113px;
         display: flex;
         flex-wrap: wrap;
 
@@ -201,16 +203,15 @@ nav {
     //-----Landing Page-----
     .landing-container {
         width: 100%;
-        height: 943px;
         display: flex;
         flex-wrap: wrap;
 
         .landing-titles {
-            width: 60%;
+            width: 70%;
             height: 30vh;
             position: absolute;
             top: 34vh;
-            left: 20%;
+            left: 15%;
             text-align: center;
         }
 
@@ -248,7 +249,5 @@ nav {
     }
 
     //-----Landing Page-----
-    .landing-container {
-        height: 1000px;
-    }
+   
 }

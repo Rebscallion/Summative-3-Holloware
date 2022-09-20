@@ -1,4 +1,5 @@
 footer {
+    padding: 2rem;
     margin-bottom: 80px;
 
     .footer-container {
@@ -21,6 +22,7 @@ footer {
 
             h4.f-title {
                 font-family: 'roc-grotesk';
+                color: $burgundy;
             }
 
         }
@@ -49,6 +51,7 @@ footer {
 
             h4 {
                 margin-right: 10rem;
+                color: $burgundy;
             }
 
             .social-media-icon {
@@ -59,6 +62,8 @@ footer {
             ion-icon {
                 font-size: 1.635rem;
                 margin-inline: 0.775rem;
+                color: $burgundy;
+               
             }
 
 
@@ -70,8 +75,7 @@ footer {
 
                 .email-fill {
                     input[type=text] {
-                        border: 0.175rem solid black;
-                        border-radius: 0.5rem;
+                        border: 1px solid $burgundy;
                         min-width: 14.5rem;
                         min-height: 2.5rem;
                         max-height: 2.625rem;
@@ -96,6 +100,7 @@ footer {
                 width: 7rem;
                 height: 7rem;
                 display: none;
+                object-fit: contain;
             }
 
         }
@@ -117,17 +122,15 @@ footer {
     .sub-btn {
         width: 1.938rem;
         height: 1.938rem;
-        border: 0.163rem solid black;
-        border-radius: 0.163rem;
+        border: 1px solid $burgundy;
         position: relative;
+        background-color: $pink;
 
         span.arrow {
             position: absolute;
             width: .85rem;
             height: .85rem;
-            border: 2px solid black;
-            border-radius: 0.163rem;
-
+            border: 1px solid $burgundy;
             top: 50%;
             left: 20%;
             transform: translateY(-50%) rotate(-45deg);
@@ -152,8 +155,7 @@ footer {
 
             .email-fill {
                 input[type=text] {
-                    border: 0.175rem solid black;
-                    border-radius: 0.5rem;
+                    border: 1px solid $burgundy;
                     min-height: 2.625rem;
                     min-width: 26.375rem;
                     margin-right: 1rem;
@@ -193,14 +195,14 @@ footer {
 
             .sub-btn-text {
                 display: inline-block !important;
+               
 
                 a {
-                    border: 0.163rem solid black;
-                    background-color: #ffff;
-                    border-radius: 0.163rem;
-                    padding: 0.2rem 0.4rem;
+                    border: 1px solid $burgundy;
+                    background-color: $pink;
+                    padding: 0.5rem;
                     text-decoration: none;
-                    color: black;
+                    color: $burgundy;
                     font-family: 'roc-grotesk';
                     font-size: 0.875rem;
                     text-transform: uppercase;
@@ -214,9 +216,8 @@ footer {
     .sub-btn {
         width: 1.938rem;
         height: 1.938rem;
-        border: 0.163rem solid black;
+        border: 1px solid $burgundy;
         background-color: #ffff;
-        border-radius: 0.163rem;
         position: relative;
         display: none;
 
