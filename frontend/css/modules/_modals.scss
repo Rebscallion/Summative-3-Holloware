@@ -129,6 +129,12 @@
             padding: 9px 35px;
             margin: .5rem 0;
             width: 80vw;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #myProducts-Btn:hover{
+            background-color: $orange;
+            cursor: pointer;
         }
     
         #logout-Btn {
@@ -141,6 +147,9 @@
             padding: 9px 35px;
             margin: .5rem 0;
             width: 80vw;
+        }
+        #logout-Btn:hover{
+            background-color: $orange;
         }
     }
 }

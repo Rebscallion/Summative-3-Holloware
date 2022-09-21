@@ -127,7 +127,7 @@ let renderProducts = (products) => {
           <div class="product-bio">
             <h3>${item.name}</h3>
             <p>$${item.price}</p>
-            <i id="comment-button" class="bi bi-chat-dots comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
+            <i id="comment-button" class="bi bi-chat-left-text-fill comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
           </div>
       </div>
       `;
@@ -143,7 +143,7 @@ let renderProducts = (products) => {
           <div class="product-bio">
           <h3>${item.name}</h3>
           <p>$${item.price}</p>
-          <i id="comment-button" class="bi bi-chat-dots comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
+          <i id="comment-button" class="bi bi-chat-left-text-fill comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
           </div>
       </div>
       `;
@@ -152,6 +152,7 @@ let renderProducts = (products) => {
   collectDeleteButtons();
   collectCommentButtons();
   collectEditButtons();
+  collectLikeButtons();
 };
 
 
@@ -181,6 +182,17 @@ let collectDeleteButtons = () => {
     };
   }
 };
+
+let collectLikeButtons = () => {
+  let likeBtnArray = document.getElementsByClassName("bi-heart");
+    for (let i = 0; i < likeBtnArray.length; i++) {
+    likeBtnArray[i].onclick = () => {
+      console.log("you liked me");
+      likeBtnArray[i].style.color = "#F4C9FF";
+      likeBtnArray[i].style.fontSize = "30px";
+    }
+  } 
+}
 
 //------------------------
 //Edit Product
@@ -275,7 +287,7 @@ let checkLogin = () => {
       <div id="user-details">
         <i class="bi bi-plus-circle small-add" id="new-product-bttn" data-bs-toggle="modal" data-bs-target="#add-product-modal"></i>
         <button class="big-add" id="bignew-product-bttn" data-bs-toggle="modal" data-bs-target="#add-product-modal">Add New Product <i class="bi bi-plus-circle"></i></button>     
-        <i class="bi bi-bag-heart" id="likes"></i>       
+            
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
       </div>
     `;
@@ -309,7 +321,6 @@ let checkLogin = () => {
       <div id="profile-content-wrapper">
         <span id="dp" style="background-image: url('${sessionStorage.profileImg}')"></span>
         <h3>Hi ${sessionStorage.userName}!</h3>
-        <h4>Password   <i class="bi bi-pencil-fill edit-button"></i></h4>
         <div class="btn-wrapper">
           <button id="myProducts-Btn">My Products</button>    
           <button id="logout-Btn">Log Out</button>     

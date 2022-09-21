@@ -29,6 +29,10 @@
                 object-fit: cover;
 
             }
+            #HWlogo:hover{
+                opacity: 0.7;
+                cursor: pointer;
+            }
 
             h1 {
                 width: 90%;
@@ -85,6 +89,11 @@
                 padding: 9px 35px;
                 margin: 2rem 0;
                 width: fit-content;
+                transition: all 0.3s ease-in-out;
+            }
+            button:hover{
+                background-color: $orange;
+                cursor: pointer;
             }
 
             #register-container {
@@ -181,6 +190,7 @@
                     background-color: $yellow;
                     font-size: 22px;
                 }
+                 
 
                 #register-container {
 
