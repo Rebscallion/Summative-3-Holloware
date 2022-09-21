@@ -386,6 +386,11 @@ nav ul li:hover {
   padding: 9px 35px;
   margin: 0.5rem 0;
   width: 80vw;
+  transition: all 0.3s ease-in-out;
+}
+#user-profile #profile-content-wrapper #myProducts-Btn:hover {
+  background-color: #E78550;
+  cursor: pointer;
 }
 #user-profile #profile-content-wrapper #logout-Btn {
   background-color: #FF6347;
@@ -397,6 +402,9 @@ nav ul li:hover {
   padding: 9px 35px;
   margin: 0.5rem 0;
   width: 80vw;
+}
+#user-profile #profile-content-wrapper #logout-Btn:hover {
+  background-color: #E78550;
 }
 
 #user-profile.active {
@@ -846,6 +854,10 @@ nav ul li:hover {
   -o-object-fit: cover;
      object-fit: cover;
 }
+#register-wrapper .form-container .logo-row #HWlogo:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
 #register-wrapper .form-container .logo-row h1 {
   width: 90%;
   font-family: lust-sans, "sans-serif";
@@ -885,6 +897,11 @@ nav ul li:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+#register-wrapper .form-container #register-form button:hover {
+  background-color: #E78550;
+  cursor: pointer;
 }
 #register-wrapper .image-container {
   display: none;
@@ -943,7 +960,6 @@ nav ul li:hover {
     background-repeat: none;
     background-position: center;
     height: 100vh;
-    position: relative;
   }
   #register-wrapper .image-container h1 {
     transform: rotate(90deg);
@@ -951,20 +967,29 @@ nav ul li:hover {
     color: #591727;
     position: absolute;
     top: 40%;
-    left: -10%;
+    left: 40%;
     font-family: lust-sans, "sans-serif";
     overflow: hidden;
   }
 }
 @media screen and (min-width: 1000px) {
+  #register-wrapper .form-container {
+    position: relative;
+  }
   #register-wrapper .form-container .logo-row {
     padding: 2rem 2rem 0 2rem;
   }
   #register-wrapper .form-container .logo-row #logo-link {
     width: 13%;
   }
+  #register-wrapper .form-container #register-form {
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
   #register-wrapper .image-container h1 {
-    left: 10%;
+    left: 55%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -992,12 +1017,12 @@ nav ul li:hover {
     overflow: hidden;
   }
   #register-wrapper .image-container h1 {
-    left: 25%;
+    left: 65%;
   }
 }
 @media screen and (min-width: 1400px) {
   #register-wrapper .image-container h1 {
-    left: 35%;
+    left: 70%;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -1011,12 +1036,12 @@ nav ul li:hover {
     font-size: 20px;
   }
   #register-wrapper .image-container h1 {
-    left: 45%;
+    left: 73%;
   }
 }
 @media screen and (min-width: 1800px) {
   #register-wrapper .image-container h1 {
-    left: 50%;
+    left: 75%;
   }
 }
 @media screen and (min-width: 2000px) {
@@ -1024,12 +1049,12 @@ nav ul li:hover {
     width: 8%;
   }
   #register-wrapper .image-container h1 {
-    left: 55%;
+    left: 75%;
   }
 }
 @media screen and (min-width: 2200px) {
   #register-wrapper .image-container h1 {
-    left: 60%;
+    left: 80%;
   }
 }
 #login-container {
@@ -1060,6 +1085,10 @@ nav ul li:hover {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+#login-container .form-container .logo-row #HWlogo:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 #login-container .form-container .logo-row h1 {
   width: 90%;
@@ -1098,6 +1127,11 @@ nav ul li:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+#login-container .form-container #login-form button:hover {
+  background-color: #E78550;
+  cursor: pointer;
 }
 #login-container .form-container #login-form #register-container {
   margin-top: 2rem;
@@ -1303,6 +1337,7 @@ nav ul li:hover {
 footer {
   padding: 2rem;
   margin-bottom: 80px;
+  border-top: 2px solid #591727;
 }
 footer .footer-container .f-wrapper ul {
   padding: 0;
@@ -1318,6 +1353,7 @@ footer .footer-container .f-wrapper ul li a {
 footer .footer-container .f-wrapper h4.f-title {
   font-family: "roc-grotesk";
   color: #591727;
+  overflow-y: hidden;
 }
 footer .footer-container .f-1 {
   display: flex;
@@ -1347,6 +1383,11 @@ footer .footer-container .f-2 ion-icon {
   font-size: 1.635rem;
   margin-inline: 0.775rem;
   color: #591727;
+  transition: all 0.3 ease-in-out;
+}
+footer .footer-container .f-2 ion-icon:hover {
+  color: #E78550;
+  cursor: pointer;
 }
 footer .footer-container .f-2 .f-sub {
   display: flex;
@@ -1375,6 +1416,10 @@ footer .footer-container .f-4 img {
   display: none;
   -o-object-fit: contain;
      object-fit: contain;
+}
+footer .footer-container .f-4 img:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 footer .f-5 p {
   text-align: center;
@@ -1451,6 +1496,12 @@ footer .sub-btn span.arrow {
     font-family: "roc-grotesk";
     font-size: 0.875rem;
     text-transform: uppercase;
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+  .footer-container .f-2 .sub-btn-text a:hover {
+    background-color: #E78550;
+    cursor: pointer;
   }
   .sub-btn {
     width: 1.938rem;
@@ -1501,6 +1552,7 @@ i:hover {
   width: 100vw;
   padding: 2rem;
   display: flex;
+  border-top: 1px solid #591727;
 }
 #shop-header #logo-link {
   width: 15%;
@@ -1549,6 +1601,11 @@ i:hover {
   border: 1px solid #591727;
   background-color: #F4C9FF;
   margin-left: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+#shop-header #profile-container #user-details #dp:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 #shop-header #profile-container #user-details i {
   color: #591727;
@@ -1664,7 +1721,7 @@ i:hover {
   #shop-header #profile-container #user-details #bignew-product-bttn {
     display: flex;
     align-items: center;
-    background-color: #FDE7AE;
+    background-color: #F4C9FF;
     border: 1px solid #591727;
     font-weight: bold;
     font-size: 18px;
@@ -1676,10 +1733,15 @@ i:hover {
     width: fit-content;
     overflow: hidden;
     margin-right: 1rem;
+    transition: all 0.3s ease-in-out;
   }
   #shop-header #profile-container #user-details #bignew-product-bttn i {
     font-size: 24px;
     padding-top: 1px;
+  }
+  #shop-header #profile-container #user-details #bignew-product-bttn:hover {
+    background-color: #FDE7AE;
+    cursor: pointer;
   }
   #grid-container {
     grid-template-columns: repeat(2, 1fr);
