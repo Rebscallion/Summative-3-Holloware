@@ -1,6 +1,7 @@
 footer {
     padding: 2rem;
     margin-bottom: 80px;
+    border-top: 2px solid $burgundy;
 
     .footer-container {
 
@@ -63,7 +64,7 @@ footer {
                 font-size: 1.635rem;
                 margin-inline: 0.775rem;
                 color: $burgundy;
-               
+
             }
 
 
@@ -195,7 +196,7 @@ footer {
 
             .sub-btn-text {
                 display: inline-block !important;
-               
+
 
                 a {
                     border: 1px solid $burgundy;

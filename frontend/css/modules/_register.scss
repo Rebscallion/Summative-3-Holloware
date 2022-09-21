@@ -35,6 +35,22 @@
                 font-size: 40px;
                 margin-top: 0.5rem;
             }
+
+            .home-link-register {
+                color: $burgundy;
+                font-family: $roc;
+                font-size: 20px;
+                font-weight: 500;
+                position: absolute;
+                top: 10px;
+                left: 80%;
+                z-index: 99;
+            }
+
+            .home-link-register:hover {
+                text-decoration: underline;
+                opacity: 50%;
+            }
         }
 
         #register-form {
@@ -118,6 +134,12 @@
                 #logo-link {
                     width: 20%;
                 }
+
+                .home-link-register {
+                    font-size: 26px;
+                    top: 140px;
+                    left: 4%;
+                }
             }
 
             #register-form {
@@ -173,6 +195,12 @@
                 #logo-link {
                     width: 13%;
                 }
+
+                .home-link-register {
+                    font-size: 18px;
+                    top: 120px;
+                    left: 3%;
+                }
             }
         }
 
@@ -190,6 +218,12 @@
             .logo-row {
                 #logo-link {
                     width: 12%;
+                }
+
+                .home-link-register {
+                    font-size: 20px;
+                    top: 140px;
+                    left: 3%;
                 }
             }
 

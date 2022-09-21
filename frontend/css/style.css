@@ -55,8 +55,10 @@
   }
 }
 .landing-h2 {
+  font-family: roc-grotesk, "sans-serif";
   color: #591727;
   font-size: 20px;
+  overflow: hidden;
 }
 
 .landing-h5 {
@@ -69,7 +71,6 @@
 #topSignUpIn {
   display: block;
 }
-
 #topSignUpIn li a {
   color: #591727;
   text-decoration: none;
@@ -105,6 +106,7 @@ nav {
   position: fixed;
   bottom: 0;
   z-index: 100;
+  color: #591727;
 }
 nav ul {
   display: flex;
@@ -113,14 +115,15 @@ nav ul {
   margin: 0;
   line-height: 79px;
 }
-nav ul li {
+nav ul li a {
   color: #591727;
-  font-size: 20px;
+  text-decoration: none;
+  font-size: 28px;
   margin: 0 10px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
-nav ul li:hover {
+nav ul li a:hover {
   color: #E78550;
   cursor: pointer;
 }
@@ -854,6 +857,20 @@ nav ul li:hover {
   font-size: 40px;
   margin-top: 0.5rem;
 }
+#register-wrapper .form-container .logo-row .home-link-register {
+  color: #591727;
+  font-family: roc-grotesk, "sans-serif";
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  top: 10px;
+  left: 80%;
+  z-index: 99;
+}
+#register-wrapper .form-container .logo-row .home-link-register:hover {
+  text-decoration: underline;
+  opacity: 50%;
+}
 #register-wrapper .form-container #register-form {
   margin-left: 20%;
   margin-top: 5%;
@@ -923,6 +940,11 @@ nav ul li:hover {
   #register-wrapper .form-container .logo-row #logo-link {
     width: 20%;
   }
+  #register-wrapper .form-container .logo-row .home-link-register {
+    font-size: 26px;
+    top: 140px;
+    left: 4%;
+  }
   #register-wrapper .form-container #register-form {
     margin-top: 0;
   }
@@ -964,6 +986,11 @@ nav ul li:hover {
   #register-wrapper .form-container .logo-row #logo-link {
     width: 13%;
   }
+  #register-wrapper .form-container .logo-row .home-link-register {
+    font-size: 18px;
+    top: 120px;
+    left: 3%;
+  }
   #register-wrapper .image-container h1 {
     left: 10%;
   }
@@ -971,6 +998,11 @@ nav ul li:hover {
 @media screen and (min-width: 1200px) {
   #register-wrapper .form-container .logo-row #logo-link {
     width: 12%;
+  }
+  #register-wrapper .form-container .logo-row .home-link-register {
+    font-size: 20px;
+    top: 140px;
+    left: 3%;
   }
   #register-wrapper .form-container #register-form label {
     font-size: 24px;
@@ -1068,6 +1100,20 @@ nav ul li:hover {
   color: #591727;
   font-size: 40px;
 }
+#login-container .form-container .logo-row .home-link-login {
+  color: #591727;
+  font-family: roc-grotesk, "sans-serif";
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  top: 10px;
+  left: 80%;
+  z-index: 99;
+}
+#login-container .form-container .logo-row .home-link-login:hover {
+  text-decoration: underline;
+  opacity: 50%;
+}
 #login-container .form-container #login-form {
   margin-left: 20%;
   margin-top: 5%;
@@ -1130,6 +1176,11 @@ nav ul li:hover {
   #login-container .form-container #login-form label {
     margin-bottom: 0;
   }
+  #login-container .form-container #login-form .home-link-login {
+    font-size: 26px;
+    top: 140px;
+    left: 4%;
+  }
 }
 @media screen and (min-width: 768px) {
   #login-container {
@@ -1149,6 +1200,11 @@ nav ul li:hover {
   }
   #login-container .form-container .logo-row #logo-link {
     width: 20%;
+  }
+  #login-container .form-container .logo-row .home-link-login {
+    font-size: 20px;
+    top: 110px;
+    left: 3%;
   }
   #login-container .form-container #login-form {
     margin-top: 0;
@@ -1202,6 +1258,11 @@ nav ul li:hover {
   }
   #login-container .form-container .logo-row #logo-link {
     width: 13%;
+  }
+  #login-container .form-container .logo-row .home-link-login {
+    font-size: 20px;
+    top: 140px;
+    left: 5%;
   }
   #login-container .form-container #login-form {
     position: absolute;
@@ -1304,6 +1365,7 @@ nav ul li:hover {
 footer {
   padding: 2rem;
   margin-bottom: 80px;
+  border-top: 2px solid #591727;
 }
 footer .footer-container .f-wrapper ul {
   padding: 0;
@@ -1463,6 +1525,203 @@ footer .sub-btn span.arrow {
   }
   .sub-btn span.arrow {
     display: none;
+  }
+}
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 160vh;
+  background-color: #FDE7AE;
+}
+
+.left-container {
+  width: 100%;
+  height: 90vh;
+  background-color: #FDE7AE;
+}
+.left-container a img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 22%;
+  height: auto;
+  z-index: 99;
+}
+.left-container .home-link {
+  color: #591727;
+  font-family: roc-grotesk, "sans-serif";
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  top: 20px;
+  left: 72%;
+}
+.left-container .home-link:hover {
+  text-decoration: underline;
+  opacity: 50%;
+}
+
+.right-container {
+  background-image: url("../img/about-background.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 70vh;
+  background-color: #E78550;
+}
+
+.about-heading {
+  font-family: lust-sans, sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  font-style: normal;
+  color: #591727;
+  margin: 10vh 0 0 36%;
+  -webkit-animation: bounce 5s ease;
+          animation: bounce 5s ease;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.05, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.95, 1.1) translateY(-15px);
+  }
+  50% {
+    transform: scale(1, 0.95) translateY(0);
+  }
+  58% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  65% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+.about-body-text {
+  width: 80%;
+  font-family: roc-grotesk, "sans-serif";
+  font-size: 14px;
+  color: #591727;
+  margin: 30px 0 30px 10%;
+  padding: 0;
+}
+
+@media screen and (min-width: 425px) {
+  .about-body-text {
+    width: 80%;
+    font-family: roc-grotesk, "sans-serif";
+    font-size: 16px;
+    color: #591727;
+    margin: 40px 0 30px 10%;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+  }
+  .left-container {
+    height: 50vh;
+  }
+  .left-container a img {
+    top: 30px;
+    left: 40px;
+    width: 12%;
+    height: auto;
+  }
+  .left-container .home-link {
+    top: 155px;
+    left: 6%;
+  }
+  .right-container {
+    background-image: url("../img/about-background.png");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    margin-left: 25%;
+    height: 40vh;
+    background-color: #E78550;
+  }
+  .about-body-text {
+    width: 60%;
+    font-family: roc-grotesk, "sans-serif";
+    font-size: 18px;
+    color: #591727;
+    margin: 20px 0 30px 20%;
+    padding: 0;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about-container {
+    height: 70vh;
+  }
+  .left-container {
+    width: 65%;
+    height: 100%;
+  }
+  .left-container a img {
+    width: 7%;
+  }
+  .left-container .home-link {
+    top: 125px;
+    left: 4.5%;
+  }
+  .right-container {
+    width: 35%;
+    margin: 0;
+    height: 100%;
+  }
+  .about-heading {
+    font-size: 60px;
+    margin: 8vh 0 0 22%;
+    overflow: hidden;
+  }
+  .about-body-text {
+    width: 66%;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .about-container {
+    height: 70vh;
+  }
+  .left-container {
+    width: 65%;
+    height: 100%;
+  }
+  .left-container a img {
+    width: 8%;
+  }
+  .left-container .home-link {
+    top: 185px;
+    font-size: 26px;
+    left: 3.5%;
+  }
+  .right-container {
+    width: 35%;
+    margin: 0;
+    height: 100%;
+  }
+  .about-heading {
+    font-size: 80px;
+    margin: 8vh 0 0 22%;
+  }
+  .about-body-text {
+    font-size: 20px;
+    margin: 30px 0 30px 20%;
   }
 }
 * {

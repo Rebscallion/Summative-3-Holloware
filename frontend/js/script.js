@@ -50,12 +50,12 @@ let renderComments = (product) => {
 
 let openCommentModal = (productId) => {
   // Ajax GET to request the individual product via ID
-    $.ajax({
-      type: 'GET',
-      url: `http://localhost:3000/product/${productId}`,
-      //the success function contains an object which can be named anything 
-      success: (product) => {
-        commentsResult.innerHTML = `
+  $.ajax({
+    type: 'GET',
+    url: `http://localhost:3000/product/${productId}`,
+    //the success function contains an object which can be named anything 
+    success: (product) => {
+      commentsResult.innerHTML = `
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       <img class="comments-image" src="${product.image_url}" alt="${product.name}">
       <p class="comments-description">${product.description}</p>
@@ -65,16 +65,16 @@ let openCommentModal = (productId) => {
        <h2 class="comments-title">${product.name}</h2>
       </div>
           `;
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
-    if (loggedin == false) {
-      console.log("boo");
-      document.getElementById("comments-input").style.display = "none";
-      document.getElementById("post-comment-button").style.display = "none";
+    },
+    error: (error) => {
+      console.log(error);
     }
+  });
+  if (loggedin == false) {
+    console.log("boo");
+    document.getElementById("comments-input").style.display = "none";
+    document.getElementById("post-comment-button").style.display = "none";
+  }
   postCommentsButton.onclick = () => {
     console.log(productId);
     console.log("left a comment");
@@ -354,6 +354,7 @@ let checkLogin = () => {
         success: () => {
           console.log("A new product was added.");
           showAllProducts();
+          $('#add-product-modal').modal('hide');
         },
         error: () => {
           console.log("Error: cannot reach the backend");
