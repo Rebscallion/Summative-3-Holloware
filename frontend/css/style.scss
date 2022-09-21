@@ -145,7 +145,7 @@ i:hover {
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 373px;
+    // grid-template-rows: 373px;
     color: $burgundy;
     overflow-y: hidden;
 
@@ -206,9 +206,9 @@ i:hover {
 
             #comment-button {
                 position: absolute;
-                bottom: 20px;
-                right: 20px;
-                font-size: 20px;
+                bottom: 12px;
+                right: 18px;
+                font-size: 22px;
             }
         }
     }
@@ -260,6 +260,12 @@ i:hover {
 
     #grid-container {
         grid-template-columns: repeat(2, 1fr);
+
+        .product-wrapper .product-bio #comment-button {
+            bottom: 11px;
+            right: 18px;
+            font-size: 24px;
+        }
     }
 }
 
@@ -276,7 +282,6 @@ i:hover {
 
     #grid-container {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 438px;
 
         .product-wrapper {
             .hover-functions {
@@ -295,13 +300,6 @@ i:hover {
                 p {
                     font-size: 23px;
                     line-height: 58px;
-                    // white-space: nowrap;
-                    // overflow: hidden;
-                    // text-overflow: ellipsis;
-                }
-
-                #comment-button {
-                    bottom: 24px;
                 }
             }
         }
@@ -329,7 +327,6 @@ i:hover {
 
     #grid-container {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 478px;
 
         .product-wrapper {
 
