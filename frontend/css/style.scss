@@ -45,6 +45,7 @@ i:hover {
     width: 100vw;
     padding: 2rem;
     display: flex;
+    border-top: 1px solid $burgundy;
 
     #logo-link {
         width: 15%;
@@ -98,6 +99,11 @@ i:hover {
                 border: 1px solid $burgundy;
                 background-color: $pink;
                 margin-left: 2rem;
+                transition: all 0.3s ease-in-out;
+            }
+            #dp:hover{
+                opacity: 0.7;
+                cursor: pointer;
             }
 
             i {
@@ -238,7 +244,7 @@ i:hover {
                 #bignew-product-bttn {
                     display: flex;
                     align-items: center;
-                    background-color: $yellow;
+                    background-color: $pink;
                     border: 1px solid $burgundy;
                     font-weight: bold;
                     font-size: 18px;
@@ -248,11 +254,16 @@ i:hover {
                     width: fit-content;
                     overflow: hidden;
                     margin-right: 1rem;
+                    transition: all 0.3s ease-in-out;
 
                     i {
                         font-size: 24px;
                         padding-top: 1px;
                     }
+                }
+                #bignew-product-bttn:hover{
+                    background-color: $yellow;
+                    cursor: pointer;
                 }
             }
         }

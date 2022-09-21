@@ -1,6 +1,7 @@
 footer {
     padding: 2rem;
     margin-bottom: 80px;
+    border-top: 2px solid $burgundy;
 
     .footer-container {
 
@@ -23,6 +24,7 @@ footer {
             h4.f-title {
                 font-family: 'roc-grotesk';
                 color: $burgundy;
+                overflow-y: hidden;
             }
 
         }
@@ -63,7 +65,11 @@ footer {
                 font-size: 1.635rem;
                 margin-inline: 0.775rem;
                 color: $burgundy;
-               
+                transition: all 0.3 ease-in-out;
+            }
+            ion-icon:hover {
+                color: $orange;
+                cursor: pointer;
             }
 
 
@@ -101,6 +107,10 @@ footer {
                 height: 7rem;
                 display: none;
                 object-fit: contain;
+            }
+            img:hover{
+                opacity: 0.7;
+                cursor: pointer;
             }
 
         }
@@ -206,6 +216,12 @@ footer {
                     font-family: 'roc-grotesk';
                     font-size: 0.875rem;
                     text-transform: uppercase;
+                    display: block;
+                    transition: all 0.3s ease-in-out;
+                }
+                a:hover{
+                    background-color: $orange;
+                    cursor: pointer;
                 }
             }
 
