@@ -172,7 +172,7 @@ nav ul li:hover {
   }
   .landing-h5 {
     font-size: 30px;
-    margin: 30px 0 0 30px;
+    margin: 15px 0 0 30px;
   }
   nav ul li {
     font-size: 28px;
@@ -1585,7 +1585,6 @@ i:hover {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: 373px;
   color: #591727;
   overflow-y: hidden;
 }
@@ -1641,9 +1640,9 @@ i:hover {
 }
 #grid-container .product-wrapper .product-bio #comment-button {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 20px;
+  bottom: 12px;
+  right: 18px;
+  font-size: 22px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1685,6 +1684,11 @@ i:hover {
   #grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  #grid-container .product-wrapper .product-bio #comment-button {
+    bottom: 11px;
+    right: 18px;
+    font-size: 24px;
+  }
 }
 @media screen and (min-width: 834px) {
   #shop-header #profile-container #user-details i {
@@ -1692,7 +1696,6 @@ i:hover {
   }
   #grid-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 438px;
   }
   #grid-container .product-wrapper .hover-functions {
     top: 11px;
@@ -1709,9 +1712,6 @@ i:hover {
     font-size: 23px;
     line-height: 58px;
   }
-  #grid-container .product-wrapper .product-bio #comment-button {
-    bottom: 24px;
-  }
 }
 @media screen and (min-width: 1024px) {
   #shop-header #logo-link {
@@ -1726,7 +1726,6 @@ i:hover {
   }
   #grid-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 478px;
   }
   #grid-container .product-wrapper img {
     width: 242px;

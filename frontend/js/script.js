@@ -127,7 +127,7 @@ let renderProducts = (products) => {
           <div class="product-bio">
             <h3>${item.name}</h3>
             <p>$${item.price}</p>
-            <i id="comment-button" class="bi bi-chat-dots comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
+            <i id="comment-button" class="bi bi-chat-left-text-fill comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
           </div>
       </div>
       `;
@@ -143,7 +143,7 @@ let renderProducts = (products) => {
           <div class="product-bio">
           <h3>${item.name}</h3>
           <p>$${item.price}</p>
-          <i id="comment-button" class="bi bi-chat-dots comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
+          <i id="comment-button" class="bi bi-chat-left-text-fill comment-button" data-bs-toggle="modal" data-bs-target="#commentsModal"></i>
           </div>
       </div>
       `;
