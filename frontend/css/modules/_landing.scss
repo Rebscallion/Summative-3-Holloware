@@ -39,8 +39,10 @@
 }
 
 .landing-h2 {
+    font-family: $roc;
     color: $burgundy;
     font-size: 20px;
+    overflow: hidden;
 }
 
 .landing-h5 {
@@ -90,6 +92,7 @@ nav {
     position: fixed;
     bottom: 0;
     z-index: 100;
+    color: $burgundy;
 
     ul {
         display: flex;
@@ -98,15 +101,16 @@ nav {
         margin: 0;
         line-height: 79px;
 
-        li {
+        li a {
             color: $burgundy;
-            font-size: 20px;
+            text-decoration: none;
+            font-size: 28px;
             margin: 0 10px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        li:hover {
+        li a:hover {
             color: $orange;
             cursor: pointer;
         }
