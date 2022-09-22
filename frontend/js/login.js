@@ -17,8 +17,10 @@ loginBtn.onclick = () => {
         success: (user) => {
             if (user == 'user not found') {
                 console.log("user is not found please register");
+                alert("Username not found. please register or try again.");
             } else if (user == 'not authorised') {
                 console.log('Incorrect password, try again');
+                alert("Incorrect password. Please try again.");
             } else {
                 console.log("awesome you are logged in successfully")
                 console.log(user);
