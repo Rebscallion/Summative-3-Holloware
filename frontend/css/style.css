@@ -345,6 +345,7 @@ nav ul li:hover {
   font-weight: 500;
   color: #591727;
   font-size: 20px;
+  overflow: hidden;
   position: fixed;
 }
 #user-profile #close-profile-bttn {
@@ -1661,6 +1662,15 @@ i:hover {
 }
 #grid-container .product-wrapper .hover-functions i {
   margin-left: 6px;
+  transition: all 0.3s ease-in-out;
+}
+#grid-container .product-wrapper .hover-functions .edit-button:hover {
+  color: #F4C9FF;
+  cursor: pointer;
+}
+#grid-container .product-wrapper .hover-functions .delete-button:hover {
+  color: #F4C9FF;
+  cursor: pointer;
 }
 #grid-container .product-wrapper img {
   width: 247px;
@@ -1700,6 +1710,10 @@ i:hover {
   bottom: 12px;
   right: 18px;
   font-size: 22px;
+  transition: all 0.3s ease-in-out;
+}
+#grid-container .product-wrapper .product-bio #comment-button:hover {
+  color: #F4C9FF;
 }
 
 @media screen and (min-width: 768px) {
@@ -1802,7 +1816,6 @@ i:hover {
 @media screen and (min-width: 1440px) {
   #grid-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 478px;
   }
   #grid-container .product-wrapper img {
     width: 342px;
@@ -1812,7 +1825,6 @@ i:hover {
 @media screen and (min-width: 1920px) {
   #grid-container {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 486px;
   }
   #grid-container .product-wrapper img {
     width: 368px;
