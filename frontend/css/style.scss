@@ -31,9 +31,11 @@ body::-webkit-scrollbar {
 
 #header {
 
-    #profile img {
-        height: 96px;
-        border-radius: 100%;
+    #profile {
+        img {
+            height: 96px;
+            border-radius: 100%;
+        }
     }
 }
 
@@ -76,7 +78,7 @@ i:hover {
             }
 
             a:hover {
-                opacity: 0.7;
+                opacity: .7;
                 text-decoration: underline;
                 text-decoration-color: $burgundy;
             }
@@ -100,10 +102,11 @@ i:hover {
                 border: 1px solid $burgundy;
                 background-color: $pink;
                 margin-left: 2rem;
-                transition: all 0.3s ease-in-out;
+                transition: all .3s ease-in-out;
             }
-            #dp:hover{
-                opacity: 0.7;
+
+            #dp:hover {
+                opacity: .7;
                 cursor: pointer;
             }
 
@@ -173,11 +176,13 @@ i:hover {
                 margin-left: 6px;
                 transition: all 0.3s ease-in-out;
             }
-            .edit-button:hover{
+
+            .edit-button:hover {
                 color: $pink;
                 cursor: pointer;
             }
-            .delete-button:hover{
+
+            .delete-button:hover {
                 color: $pink;
                 cursor: pointer;
             }
@@ -227,7 +232,8 @@ i:hover {
                 transition: all 0.3s ease-in-out;
 
             }
-            #comment-button:hover{
+
+            #comment-button:hover {
                 color: $pink;
             }
         }
@@ -275,7 +281,8 @@ i:hover {
                         padding-top: 1px;
                     }
                 }
-                #bignew-product-bttn:hover{
+
+                #bignew-product-bttn:hover {
                     background-color: $yellow;
                     cursor: pointer;
                 }
