@@ -64,7 +64,7 @@
 .landing-h5 {
   color: #591727;
   font-size: 20px;
-  margin: 20px 0 0 20px;
+  margin: 15px 0 0 20px;
   overflow: hidden;
 }
 
@@ -176,7 +176,7 @@ nav ul li a:hover {
   }
   .landing-h5 {
     font-size: 30px;
-    margin: 15px 0 0 30px;
+    margin: 10px 0 0 30px;
   }
   nav ul li {
     font-size: 28px;
@@ -285,6 +285,7 @@ nav ul li a:hover {
 #editModal .modal-header,
 #add-product-modal .modal-header {
   padding: 0;
+  border-bottom: none;
 }
 #editModal .modal-header .btn-close,
 #add-product-modal .modal-header .btn-close {
@@ -323,6 +324,7 @@ nav ul li a:hover {
 #editModal .modal-footer,
 #add-product-modal .modal-footer {
   justify-content: center;
+  border-top: none;
 }
 #editModal .modal-footer .btn-primary,
 #add-product-modal .modal-footer .btn-primary {
