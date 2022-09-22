@@ -1006,7 +1006,6 @@ nav ul li a:hover {
   #register-wrapper .form-container .logo-row #logo-link {
     width: 13%;
   }
-
   #register-wrapper .form-container .logo-row .home-link-register {
     font-size: 18px;
     top: 120px;
@@ -1018,7 +1017,6 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
   }
-  
   #register-wrapper .image-container h1 {
     left: 55%;
   }
@@ -1773,7 +1771,19 @@ footer .sub-btn span.arrow {
     margin: 8vh 0 0 22%;
   }
   .about-body-text {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 30px 0 30px 20%;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .left-container a img {
+    width: 6%;
+  }
+  .left-container .home-link {
+    left: 3%;
+  }
+  .about-body-text {
+    font-size: 26px;
     margin: 30px 0 30px 20%;
   }
 }
