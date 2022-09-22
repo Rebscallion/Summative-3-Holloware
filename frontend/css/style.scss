@@ -171,6 +171,15 @@ i:hover {
 
             i {
                 margin-left: 6px;
+                transition: all 0.3s ease-in-out;
+            }
+            .edit-button:hover{
+                color: $pink;
+                cursor: pointer;
+            }
+            .delete-button:hover{
+                color: $pink;
+                cursor: pointer;
             }
         }
 
@@ -215,6 +224,11 @@ i:hover {
                 bottom: 12px;
                 right: 18px;
                 font-size: 22px;
+                transition: all 0.3s ease-in-out;
+
+            }
+            #comment-button:hover{
+                color: $pink;
             }
         }
     }
