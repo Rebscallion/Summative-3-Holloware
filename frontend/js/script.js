@@ -190,9 +190,9 @@ let collectLikeButtons = () => {
       console.log("you liked me");
       likeBtnArray[i].style.color = "#F4C9FF";
       likeBtnArray[i].style.fontSize = "30px";
-    }
+    };
   } 
-}
+};
 
 //------------------------
 //Edit Product

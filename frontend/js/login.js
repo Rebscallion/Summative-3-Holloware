@@ -13,7 +13,7 @@ loginBtn.onclick = () => {
             username: usernameInput.value,
             password: passwordInput.value
         },
-        
+
         success: (user) => {
             if (user == 'user not found') {
                 console.log("user is not found please register");
@@ -34,7 +34,7 @@ loginBtn.onclick = () => {
         }, //end of success 
         error: () => {
             console.log("error cannot call api");
-            
+
         }
     })// end of ajax
 }// end of login onclick function 
