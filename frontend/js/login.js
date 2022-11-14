@@ -3,7 +3,7 @@ const loginBtn = document.getElementById("login-button");
 const usernameInput = document.getElementById("username-input");
 const passwordInput = document.getElementById("password-input");
 
-const server = "http://summative-3-holloware.vercel.app";
+const server = "http://localhost:3000";
 
 loginBtn.onclick = () => {
     $.ajax({

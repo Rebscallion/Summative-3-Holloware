@@ -3,7 +3,7 @@ const usernameInput = document.getElementById("username-input");
 const passwordInput = document.getElementById("password-input");
 const profileImgInput = document.getElementById("image-url-input");
 
-const server = "http://summative-3-holloware.vercel.app";
+const server = "http://localhost:3000";
 
 registerBtn.onclick = function () {
     event.preventDefault();
