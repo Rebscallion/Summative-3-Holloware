@@ -16,7 +16,7 @@ const commentsResult = document.getElementById("comments-result");
 let showAllProducts = () => {
   $.ajax({
     type: 'GET',
-    url: "http://localhost:3000/allProducts",
+    url: "http://summative-3-holloware.vercel.app/allProducts",
     //the success function contains an object which can be named anything 
     success: (products) => {
       console.log(products);
@@ -52,7 +52,7 @@ let openCommentModal = (productId) => {
   // Ajax GET to request the individual product via ID
   $.ajax({
     type: 'GET',
-    url: `http://localhost:3000/product/${productId}`,
+    url: `http://summative-3-holloware.vercel.app/product/${productId}`,
     //the success function contains an object which can be named anything 
     success: (product) => {
       commentsResult.innerHTML = `
@@ -79,7 +79,7 @@ let openCommentModal = (productId) => {
     console.log(productId);
     console.log("left a comment");
     $.ajax({
-      url: `http://localhost:3000/postComment`,
+      url: `http://summative-3-holloware.vercel.app/postComment`,
       type: 'POST',
       data: {
         text: document.getElementById("comments-input").value,
@@ -162,7 +162,7 @@ let renderProducts = (products) => {
 
 let deleteProduct = (productId) => {
   $.ajax({
-    url: `http://localhost:3000/deleteProduct/${productId}`,
+    url: `http://summative-3-holloware.vercel.app/deleteProduct/${productId}`,
     type: "DELETE",
     success: () => {
       showAllProducts();
@@ -185,13 +185,13 @@ let collectDeleteButtons = () => {
 
 let collectLikeButtons = () => {
   let likeBtnArray = document.getElementsByClassName("bi-heart");
-    for (let i = 0; i < likeBtnArray.length; i++) {
+  for (let i = 0; i < likeBtnArray.length; i++) {
     likeBtnArray[i].onclick = () => {
       console.log("you liked me");
       likeBtnArray[i].style.color = "#F4C9FF";
       likeBtnArray[i].style.fontSize = "30px";
     };
-  } 
+  }
 };
 
 //------------------------
@@ -223,7 +223,7 @@ let fillEditInputs = (product, id) => {
     let productDescription = document.getElementById("productDescription").value;
     console.log(productId, imageurl, productName, productPrice, productDescription);
     $.ajax({
-      url: `http://localhost:3000/updateProduct/${productId}`,
+      url: `http://summative-3-holloware.vercel.app/updateProduct/${productId}`,
       type: "PATCH",
       data: {
         name: productName,
@@ -247,7 +247,7 @@ let populateEditModal = (productId) => {
   console.log(productId);
   $.ajax({
     type: 'GET',
-    url: `http://localhost:3000/product/${productId}`,
+    url: `http://summative-3-holloware.vercel.app/product/${productId}`,
     success: (productData) => {
       console.log(productData);
       fillEditInputs(productData, productId);
@@ -352,7 +352,7 @@ let checkLogin = () => {
     submit.onclick = () => {
       console.log("clicked submit");
       $.ajax({
-        url: `http://localhost:3000/addProduct`,
+        url: `http://summative-3-holloware.vercel.app/addProduct`,
         type: "POST",
         data: {
           image_url: imageURLInput.value,
